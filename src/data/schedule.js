@@ -964,8 +964,8 @@ export const schedule = [
     type: 'training',
     time: '4:00 PM',
     location: 'McDonogh — Field 16',
-    focus: 'Pre-match session — Archbishop Spalding',
-    note: 'Ahead of Spalding on Monday.',
+    focus: 'Training',
+    note: '',
   },
   // Paul VI (NJ) is parked — they can only play on a weekend, and no weekend in the
   // Sep 30 → Oct 9 gap is available. Re-add with a weekend sortDate if a date is agreed.
