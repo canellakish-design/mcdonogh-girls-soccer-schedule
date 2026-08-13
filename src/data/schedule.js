@@ -493,15 +493,18 @@ export const schedule = [
     focus: 'Training',
     note: '',
   },
+  // type: 'note' marks a block of days with no session — shown as a card but
+  // carrying no time, badge, or calendar duration.
   {
     no: 38,
-    date: 'Fri, Oct 2',
+    date: 'Fri, Oct 2 – Sun, Oct 4',
     sortDate: '2026-10-02',
-    type: 'training',
-    time: '4:00 PM',
-    location: 'McDonogh — Campus Fields',
-    focus: 'Training',
-    note: '',
+    endDate: '2026-10-04',
+    type: 'note',
+    title: 'College Visit Weekend',
+    time: '',
+    location: '',
+    note: 'No training or matches.',
   },
   {
     no: 39,
@@ -790,22 +793,8 @@ export const schedule = [
     focus: 'Pre-match session — Archbishop Spalding',
     note: 'Added Sunday session ahead of Spalding on Monday.',
   },
-  // Not on the McDonogh athletics page — penciled in to fill the Sep 30 → Oct 9 gap.
-  // Remove the `tentative` flag once it is confirmed and appears on the official page.
-  {
-    no: 65,
-    date: 'Sat, Oct 3',
-    sortDate: '2026-10-03',
-    type: 'match',
-    home: true,
-    tentative: true,
-    opponent: 'Paul VI (Tentative)',
-    time: 'TBD',
-    location: 'TBD',
-    result: '',
-    focus: '',
-    note: 'Paul VI (NJ) — a different school from Paul VI Catholic (VA) on Sep 8.',
-  },
+  // Paul VI (NJ) is parked — they can only play on a weekend, and no weekend in the
+  // Sep 30 → Oct 9 gap is available. Re-add with a weekend sortDate if a date is agreed.
   {
     no: 64,
     date: 'Sat, Nov 7',

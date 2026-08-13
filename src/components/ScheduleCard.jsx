@@ -8,6 +8,7 @@ function dateBox(sortDate) {
 }
 
 export function matchTitle(item) {
+  if (item.type === 'note') return item.title
   if (item.type === 'training') return item.focus || 'Training'
   const prefix = item.home === true ? 'vs. ' : item.home === false ? '@ ' : 'vs. '
   return prefix + item.opponent
@@ -16,10 +17,15 @@ export function matchTitle(item) {
 export default function ScheduleCard({ item, highlight, observance }) {
   const { mon, day } = dateBox(item.sortDate)
   const isTraining = item.type === 'training'
+  const isNote = item.type === 'note'
+  const boxClass = isNote ? 'datebox-note' : isTraining ? 'datebox-training' : 'datebox-match'
 
   return (
-    <a className={`card ${highlight ? `card-${highlight}` : ''}`} href={`#/day/${item.no}`}>
-      <span className={`datebox ${isTraining ? 'datebox-training' : 'datebox-match'}`}>
+    <a
+      className={`card ${isNote ? 'card-note ' : ''}${highlight ? `card-${highlight}` : ''}`}
+      href={`#/day/${item.no}`}
+    >
+      <span className={`datebox ${boxClass}`}>
         <span className="datebox-mon">{mon}</span>
         <span className="datebox-day">{day}</span>
       </span>
@@ -30,7 +36,8 @@ export default function ScheduleCard({ item, highlight, observance }) {
         )}
         <span className="card-title">{matchTitle(item)}</span>
         <span className="card-meta">
-          {item.date} &nbsp;·&nbsp; {item.time}
+          {item.date}
+          {item.time ? <> &nbsp;·&nbsp; {item.time}</> : null}
           {item.location ? <> &nbsp;·&nbsp; {item.location}</> : null}
         </span>
         {observance && <span className="card-obs">{observance.text}</span>}
@@ -38,13 +45,15 @@ export default function ScheduleCard({ item, highlight, observance }) {
 
       <span className="card-tags">
         {item.result && <span className="tag tag-result">{item.result}</span>}
-        {isTraining
-          ? <span className="tag tag-training">Training</span>
-          : <span className="tag tag-match">Match</span>}
+        {isNote
+          ? <span className="tag tag-grey">No Sessions</span>
+          : isTraining
+            ? <span className="tag tag-training">Training</span>
+            : <span className="tag tag-match">Match</span>}
         {item.tentative && <span className="tag tag-tentative">Tentative</span>}
         {item.scrimmage && <span className="tag tag-grey">Scrimmage</span>}
         {item.playoff && <span className="tag tag-orange-soft">Playoffs</span>}
-        {!isTraining && (
+        {!isTraining && !isNote && (
           <span className={`tag ${item.home === false ? 'tag-away' : 'tag-home'}`}>
             {item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral' : 'Home'}
           </span>

@@ -80,9 +80,16 @@ function fold(line) {
 }
 
 function title(item) {
+  if (item.type === 'note') return item.title
   if (item.type === 'training') return item.focus || 'Training'
   const prefix = item.home === true ? 'vs. ' : item.home === false ? '@ ' : 'vs. '
   return prefix + item.opponent
+}
+
+// A 'note' block covers a span of days; endDate is the last day it applies to.
+// DTEND is exclusive, so the writer advances one past it.
+function noteEndDate(item) {
+  return item.endDate || item.sortDate
 }
 
 const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '')
@@ -121,12 +128,17 @@ const lines = [
 for (const item of schedule) {
   const t = parseTime(item.time)
   const isTraining = item.type === 'training'
+  const isNote = item.type === 'note'
 
   lines.push('BEGIN:VEVENT')
   lines.push(`UID:mcdonogh-soccer-${item.no}-${item.sortDate}@mcdonogh-girls-soccer`)
   lines.push(`DTSTAMP:${stamp}`)
 
-  if (t) {
+  if (isNote) {
+    lines.push(`DTSTART;VALUE=DATE:${item.sortDate.replace(/-/g, '')}`)
+    lines.push(`DTEND;VALUE=DATE:${nextDay(noteEndDate(item)).replace(/-/g, '')}`)
+    lines.push('TRANSP:TRANSPARENT')
+  } else if (t) {
     const end = addMinutes(item.sortDate, t.h, t.m, isTraining ? TRAINING_MINUTES : MATCH_MINUTES)
     lines.push(`DTSTART;TZID=America/New_York:${localStamp(item.sortDate, t.h, t.m)}`)
     lines.push(`DTEND;TZID=America/New_York:${localStamp(end.date, end.h, end.m)}`)
@@ -141,7 +153,7 @@ for (const item of schedule) {
 
   const desc = []
   if (isTraining && item.focus) desc.push(`Focus: ${item.focus}`)
-  if (!isTraining) {
+  if (!isTraining && !isNote) {
     if (item.scrimmage) desc.push('Scrimmage')
     if (item.playoff) desc.push('IAAM Playoffs')
     desc.push(item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral site' : 'Home')
@@ -150,7 +162,7 @@ for (const item of schedule) {
   if (item.note) desc.push(item.note)
   if (desc.length) lines.push(`DESCRIPTION:${esc(desc.join('\n'))}`)
 
-  lines.push(`CATEGORIES:${isTraining ? 'Training' : 'Match'}`)
+  lines.push(`CATEGORIES:${isNote ? 'Note' : isTraining ? 'Training' : 'Match'}`)
   lines.push('END:VEVENT')
 }
 

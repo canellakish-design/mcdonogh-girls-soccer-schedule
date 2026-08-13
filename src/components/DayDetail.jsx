@@ -12,6 +12,7 @@ function Fact({ label, value }) {
 
 export default function DayDetail({ item }) {
   const isTraining = item.type === 'training'
+  const isNote = item.type === 'note'
   const homeLabel = item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral site' : 'Home'
 
   return (
@@ -20,15 +21,22 @@ export default function DayDetail({ item }) {
 
       <div className="detail-head">
         <h2 className="detail-name">{matchTitle(item)}</h2>
-        <p className="detail-meta">{item.date} &nbsp;·&nbsp; {item.time}</p>
+        <p className="detail-meta">
+          {item.date}
+          {item.time ? <> &nbsp;·&nbsp; {item.time}</> : null}
+        </p>
         <div className="indicators">
-          {isTraining
-            ? <span className="indicator indicator-training">Training</span>
-            : <span className="indicator indicator-match">Match</span>}
+          {isNote
+            ? <span className="indicator indicator-grey">No Sessions</span>
+            : isTraining
+              ? <span className="indicator indicator-training">Training</span>
+              : <span className="indicator indicator-match">Match</span>}
           {item.tentative && <span className="indicator indicator-tentative">Tentative</span>}
           {item.scrimmage && <span className="indicator indicator-grey">Scrimmage</span>}
           {item.playoff && <span className="indicator indicator-orange">IAAM Playoffs</span>}
-          {!isTraining && <span className="indicator indicator-grey">{homeLabel}</span>}
+          {!isTraining && !isNote && (
+            <span className="indicator indicator-grey">{homeLabel}</span>
+          )}
           {item.result && <span className="indicator indicator-result">{item.result}</span>}
         </div>
       </div>
@@ -37,8 +45,8 @@ export default function DayDetail({ item }) {
         <Fact label="Date" value={item.date} />
         <Fact label="Time" value={item.time} />
         <Fact label="Location" value={item.location} />
-        {!isTraining && <Fact label="Opponent" value={item.opponent} />}
-        {!isTraining && <Fact label="Result" value={item.result || '—'} />}
+        {!isTraining && !isNote && <Fact label="Opponent" value={item.opponent} />}
+        {!isTraining && !isNote && <Fact label="Result" value={item.result || '—'} />}
         {item.focus && <Fact label="Focus" value={item.focus} />}
       </dl>
 

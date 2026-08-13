@@ -110,6 +110,10 @@ a { color: inherit; }
 .card:hover { border-color: var(--mc-orange); box-shadow: 0 3px 12px rgba(0,0,0,0.06); }
 .card:active { transform: translateY(1px); }
 
+/* a block of days with no session reads quieter than a real card */
+.card-note { background: var(--panel); }
+.card-note .card-title { color: var(--slate); }
+
 /* today / next highlight */
 .card-today { border-color: var(--mc-orange); box-shadow: 0 0 0 2px var(--orange-bg); }
 .card-next { border-color: #d9dbdf; }
@@ -131,6 +135,9 @@ a { color: inherit; }
 }
 .datebox-match { background: var(--orange-bg); }
 .datebox-training { background: var(--blue-bg); }
+.datebox-note { background: var(--grey-bg); }
+.datebox-note .datebox-mon,
+.datebox-note .datebox-day { color: var(--grey); }
 .datebox-mon { font-size: 10px; font-weight: 800; letter-spacing: 0.5px; }
 .datebox-day { font-size: 19px; font-weight: 800; margin-top: 2px; }
 .datebox-match .datebox-mon { color: var(--mc-orange-dark); }
