@@ -72,24 +72,45 @@ export function isOnCampus(location) {
 // own `kit`; otherwise it falls back to the default for that type.
 // Set `match` once you know what they wear for games.
 // ---------------------------------------------------------------------
-// Colours are what the icons are filled with. `label` is the readable
-// version used for the tooltip and for screen readers.
-export const DEFAULT_KIT = {
-  training: {
-    shirt: { color: '#ffffff', label: 'White shirt' },
-    shorts: { color: '#1a1a1a', label: 'Black shorts' },
-    socks: { color: '#1a1a1a', label: 'Black socks' },
-  },
-  match: {
-    shirt: { color: '#ffffff', label: 'White shirt' },
-    shorts: { color: '#1a1a1a', label: 'Black shorts' },
-    socks: { color: '#1a1a1a', label: 'Black socks' },
-  },
+export const KIT_COLORS = {
+  grey: { color: '#9aa1aa', name: 'Grey' },
+  white: { color: '#ffffff', name: 'White' },
+  black: { color: '#1a1a1a', name: 'Black' },
+  blue: { color: '#1f4fa3', name: 'Blue' },
+}
+
+// Training gear by day of week: [shirt, shorts, socks].
+// 0 = Sunday through 6 = Saturday.
+export const TRAINING_KIT_BY_DAY = {
+  0: ['black', 'black', 'black'],
+  1: ['grey', 'white', 'white'],
+  2: ['black', 'black', 'black'],
+  3: ['white', 'blue', 'white'],
+  4: ['grey', 'white', 'white'],
+  5: ['white', 'blue', 'white'],
+  6: ['black', 'black', 'black'],
+}
+
+function buildKit([shirt, shorts, socks]) {
+  const part = (key, item) => ({
+    color: KIT_COLORS[key].color,
+    label: `${KIT_COLORS[key].name} ${item}`,
+  })
+  return {
+    shirt: part(shirt, 'shirt'),
+    shorts: part(shorts, 'shorts'),
+    socks: part(socks, 'socks'),
+  }
 }
 
 export function kitFor(item) {
   if (item.type === 'note') return null
-  return item.kit || DEFAULT_KIT[item.type] || null
+  if (item.kit) return Array.isArray(item.kit) ? buildKit(item.kit) : item.kit
+  // Match kit is not set yet, so only training days carry icons.
+  if (item.type !== 'training') return null
+  const [y, m, d] = item.sortDate.split('-').map(Number)
+  const weekday = new Date(y, m - 1, d).getDay()
+  return buildKit(TRAINING_KIT_BY_DAY[weekday])
 }
 
 // ---------------------------------------------------------------------
