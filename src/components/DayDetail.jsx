@@ -1,6 +1,6 @@
 import { matchTitle, meetNote } from './ScheduleCard.jsx'
 import KitIcons from './KitIcons.jsx'
-import { clearance, directionsUrl, venueAddress, isOnCampus, kitFor } from '../data/schedule.js'
+import { clearance, directionsUrl, venueAddress, venueMap, kitFor } from '../data/schedule.js'
 
 function Fact({ label, value }) {
   if (!value) return null
@@ -78,12 +78,19 @@ export default function DayDetail({ item }) {
         </div>
       )}
 
-      {isOnCampus(item.location) && (
+      {venueMap(item.location) && (
         <figure className="campus-map">
-          <a href="/campus-map.png" target="_blank" rel="noopener noreferrer">
-            <img src="/campus-map.png" alt="McDonogh campus map with Field 16 marked" />
+          <a href={venueMap(item.location).href} target="_blank" rel="noopener noreferrer">
+            <img
+              src={venueMap(item.location).src}
+              alt={venueMap(item.location).caption || `Map of ${item.location}`}
+            />
           </a>
-          <figcaption>McDonogh campus — the arrow marks Field 16. Tap to enlarge.</figcaption>
+          <figcaption>
+            {venueMap(item.location).onCampus
+              ? `${venueMap(item.location).caption} Tap to enlarge.`
+              : 'Tap the map for directions in Google Maps.'}
+          </figcaption>
         </figure>
       )}
 

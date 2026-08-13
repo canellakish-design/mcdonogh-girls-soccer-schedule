@@ -40,14 +40,42 @@ export const TEAM = {
 const MCDONOGH = '8600 McDonogh Road, Owings Mills, MD 21117'
 
 export const VENUES = {
-  'McDonogh — Field 16': { onCampus: true, address: MCDONOGH },
-  'McDonogh — Dixon Field (Turf)': { onCampus: true, address: MCDONOGH },
-  'Seminary Park — Turf Field': { address: 'Seminary Park, Lutherville-Timonium, MD' },
-  'Mercy High School': { address: '1300 E Northern Parkway, Baltimore, MD 21239' },
-  'Liberty High School': { address: 'Liberty High School, Eldersburg, MD 21784' },
-  'Our Lady of Good Counsel H.S.': { address: '17301 Old Vic Blvd, Olney, MD 20832' },
-  'Notre Dame Prep': { address: '815 Hampton Lane, Baltimore, MD 21286' },
-  'Roland Park Country School': { address: '5204 Roland Avenue, Baltimore, MD 21210' },
+  'McDonogh — Field 16': {
+    onCampus: true,
+    address: MCDONOGH,
+    map: '/campus-map.png',
+    mapCaption: 'McDonogh campus — the arrow marks Field 16.',
+  },
+  'McDonogh — Dixon Field (Turf)': {
+    onCampus: true,
+    address: MCDONOGH,
+    map: '/campus-map-dixon.png',
+    mapCaption: 'McDonogh campus — the arrow marks Dixon Turf Field.',
+  },
+  'Seminary Park — Turf Field': {
+    address: 'Seminary Park, Lutherville-Timonium, MD 21093',
+    map: '/venues/seminary-park.png',
+  },
+  'Mercy High School': {
+    address: '1300 E Northern Parkway, Baltimore, MD 21239',
+    map: '/venues/mercy.png',
+  },
+  'Liberty High School': {
+    address: 'Liberty High School, Eldersburg, MD 21784',
+    map: '/venues/liberty.png',
+  },
+  'Our Lady of Good Counsel H.S.': {
+    address: '17301 Old Vic Blvd, Olney, MD 20832',
+    map: '/venues/good-counsel.png',
+  },
+  'Notre Dame Prep': {
+    address: '815 Hampton Lane, Baltimore, MD 21286',
+    map: '/venues/notre-dame.png',
+  },
+  'Roland Park Country School': {
+    address: '5204 Roland Avenue, Baltimore, MD 21210',
+    map: '/venues/roland-park.png',
+  },
 }
 
 // Google Maps directions from wherever the viewer is. No API key needed.
@@ -65,6 +93,21 @@ export function venueAddress(location) {
 export function isOnCampus(location) {
   const v = VENUES[location]
   return !!(v && v.onCampus)
+}
+
+// The map image for a venue, plus its caption. Campus days get the campus
+// map with an arrow to the right field.
+export function venueMap(location) {
+  const v = VENUES[location]
+  if (!v || !v.map) return null
+  return {
+    src: v.map,
+    caption: v.mapCaption || '',
+    onCampus: !!v.onCampus,
+    // Campus maps open full size to read the field label; away maps hand
+    // straight off to Google Maps directions.
+    href: v.onCampus ? v.map : directionsUrl(location),
+  }
 }
 
 // ---------------------------------------------------------------------
