@@ -79,12 +79,7 @@ export const rules = [
   {
     title: 'Training room is for injuries only',
     body:
-      'Only go to the training room if you are injured. If you go, you are still expected at practice on time — the training room is not an excuse to be late.',
-  },
-  {
-    title: 'Free 4th period? Go to training room then',
-    body:
-      'If you have 4th period free and you need the training room, go during 4th period.',
+      'The training room is not an excuse for being late. If you have 4th period free, go to the training room then.',
   },
 ]
 
