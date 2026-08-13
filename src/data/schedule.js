@@ -275,10 +275,10 @@ export const schedule = [
     date: 'Mon, Sep 7',
     sortDate: '2026-09-07',
     type: 'training',
-    time: '4:00 PM',
+    time: '5:30 PM',
     location: 'McDonogh — Campus Fields',
     focus: 'Training',
-    note: '',
+    note: 'Labor Day — later start, no classes.',
   },
   {
     no: 19,
