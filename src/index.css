@@ -338,6 +338,26 @@ a { color: inherit; }
 /* ---------- Responsive ---------- */
 @media (max-width: 560px) {
   .masthead h1 { font-size: 24px; }
+  .crest { width: 44px; }
+  .container { padding: 20px 14px 48px; }
+
+  /* Tags drop to their own row so the text column gets the full width
+     instead of being squeezed to ~140px and wrapping three times. */
+  .card { flex-wrap: wrap; align-items: flex-start; padding: 12px 13px; }
+  .datebox { width: 42px; height: 42px; }
+  /* Tags drop to their own row so the text column keeps the full width
+     rather than being squeezed to ~140px and wrapping three times. */
+  .card-main { flex: 1 1 185px; min-width: 0; }
   .card-title { font-size: 15px; }
-  .card-tags { max-width: 120px; }
+  .card-tags {
+    flex: 1 0 100%;
+    max-width: none;
+    justify-content: flex-start;
+    row-gap: 5px;
+    padding-left: 56px;
+  }
+  .card-chevron { display: none; }
+
+  .toolbar { flex-wrap: wrap; gap: 8px; }
+  .facts { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
 }

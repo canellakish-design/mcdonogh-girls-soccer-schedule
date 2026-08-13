@@ -72,8 +72,10 @@ export default function DayDetail({ item }) {
 
       {isOnCampus(item.location) && (
         <figure className="campus-map">
-          <img src="/campus-map.png" alt="McDonogh campus map with the field marked" />
-          <figcaption>McDonogh campus — the arrow marks Field 16.</figcaption>
+          <a href="/campus-map.png" target="_blank" rel="noopener noreferrer">
+            <img src="/campus-map.png" alt="McDonogh campus map with Field 16 marked" />
+          </a>
+          <figcaption>McDonogh campus — the arrow marks Field 16. Tap to enlarge.</figcaption>
         </figure>
       )}
 
