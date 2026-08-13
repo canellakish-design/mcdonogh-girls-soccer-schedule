@@ -65,13 +65,30 @@ a { color: inherit; }
 /* ---------- Team rules (quiet list above the schedule) ---------- */
 .rules { margin: 0 0 20px; }
 .rules-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
   margin: 0 0 6px;
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
   font-size: 10.5px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1.3px;
   color: var(--muted);
+  font-family: inherit;
 }
+.rules-head:hover { color: var(--mc-orange-dark); }
+.caret {
+  width: 6px; height: 6px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.18s ease;
+}
+.caret-open { transform: rotate(45deg); }
 .rules-list {
   margin: 0;
   padding: 0 0 0 17px;

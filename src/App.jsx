@@ -55,6 +55,7 @@ function todayISO() {
 function ListView() {
   const [filter, setFilter] = useState('all')
   const [showPast, setShowPast] = useState(false)
+  const [showRules, setShowRules] = useState(true)
   const today = todayISO()
 
   // Holiday notes ride inside the card for that date.
@@ -77,14 +78,23 @@ function ListView() {
     <main className="container">
       {rules.length > 0 && (
         <section className="rules">
-          <h2 className="rules-head">Team Rules</h2>
-          <ul className="rules-list">
-            {rules.map((r) => (
-              <li key={r.title}>
-                <strong>{r.title}.</strong> {r.body}
-              </li>
-            ))}
-          </ul>
+          <button
+            className="rules-head"
+            onClick={() => setShowRules((v) => !v)}
+            aria-expanded={showRules}
+          >
+            <span className={`caret ${showRules ? 'caret-open' : ''}`} aria-hidden="true" />
+            Team Rules
+          </button>
+          {showRules && (
+            <ul className="rules-list">
+              {rules.map((r) => (
+                <li key={r.title}>
+                  <strong>{r.title}.</strong> {r.body}
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
       )}
 
