@@ -1,4 +1,5 @@
-import { matchTitle } from './ScheduleCard.jsx'
+import { matchTitle, meetNote } from './ScheduleCard.jsx'
+import { clearance, directionsUrl, venueAddress, isOnCampus } from '../data/schedule.js'
 
 function Fact({ label, value }) {
   if (!value) return null
@@ -45,12 +46,49 @@ export default function DayDetail({ item }) {
         <Fact label="Date" value={item.date} />
         <Fact label="Time" value={item.time} />
         <Fact label="Location" value={item.location} />
+        <Fact label="Dismissal" value={item.dismissal} />
         {!isTraining && !isNote && <Fact label="Opponent" value={item.opponent} />}
         {!isTraining && !isNote && <Fact label="Result" value={item.result || '—'} />}
         {item.focus && <Fact label="Focus" value={item.focus} />}
       </dl>
 
       {item.note && <p className="detail-note">{item.note}</p>}
+
+      {meetNote(item) && <p className="detail-note detail-meet">{meetNote(item)}</p>}
+
+      {venueAddress(item.location) && (
+        <div className="venue">
+          <p className="venue-address">{venueAddress(item.location)}</p>
+          <a
+            className="venue-btn"
+            href={directionsUrl(item.location)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get directions
+          </a>
+        </div>
+      )}
+
+      {isOnCampus(item.location) && (
+        <figure className="campus-map">
+          <img src="/campus-map.png" alt="McDonogh campus map with the field marked" />
+          <figcaption>McDonogh campus — the arrow marks Field 16.</figcaption>
+        </figure>
+      )}
+
+      {item.clearance && (
+        <section className="clearance">
+          <h3>{clearance.title}</h3>
+          <p>{clearance.intro}</p>
+          <ol>
+            {clearance.items.map((t) => (
+              <li key={t}>{t}</li>
+            ))}
+          </ol>
+          <p>{clearance.outro}</p>
+        </section>
+      )}
     </div>
   )
 }
