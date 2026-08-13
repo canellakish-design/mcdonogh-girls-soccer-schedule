@@ -38,7 +38,7 @@ export const TEAM = {
 export const rules = [
   {
     title: 'Be on time for training',
-    body: 'Be ready to go at the start time, not arriving at it. Check the card for that day’s time.',
+    body: 'Be ready to go at the start time, not arriving at it.',
   },
   {
     title: 'Training room is for injuries only',
