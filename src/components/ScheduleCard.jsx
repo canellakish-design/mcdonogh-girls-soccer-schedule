@@ -7,14 +7,17 @@ function dateBox(sortDate) {
   return { mon: months[parseInt(m, 10)] || '', day: String(parseInt(d, 10)) }
 }
 
-// Home matches: team talk in the Board Room. 3:30 PM is the standard slot;
-// a day can override it with `teamTalk` when kickoff makes 3:30 impossible.
+// Home matches: team talk before kickoff. Board Room at 3:30 PM is the
+// standard; a day can override the time with `teamTalk` and the room with
+// `teamTalkRoom`.
 const DEFAULT_TEAM_TALK = '3:30 PM'
+const DEFAULT_TEAM_TALK_ROOM = 'Board Room'
 
 export function meetNote(item) {
   if (item.type !== 'match' || item.home !== true) return null
   const at = item.teamTalk || DEFAULT_TEAM_TALK
-  return `Team talk in the Board Room at ${at}.`
+  const room = item.teamTalkRoom || DEFAULT_TEAM_TALK_ROOM
+  return `Team talk in the ${room} at ${at}.`
 }
 
 export function matchTitle(item) {

@@ -189,6 +189,7 @@ export const schedule = [
     opponent: 'Orange–White Scrimmage',
     time: '7:00 PM',
     teamTalk: '6:00 PM',
+    teamTalkRoom: 'Alumni Room',
     location: 'McDonogh — Dixon Field (Turf)',
     result: '',
     focus: '',
