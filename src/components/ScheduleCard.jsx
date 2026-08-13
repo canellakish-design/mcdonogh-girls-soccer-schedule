@@ -46,7 +46,7 @@ export default function ScheduleCard({ item, highlight, observance }) {
       <span className="card-tags">
         {item.result && <span className="tag tag-result">{item.result}</span>}
         {isNote
-          ? <span className="tag tag-grey">No Sessions</span>
+          ? <span className="tag tag-yellow">No Sessions</span>
           : isTraining
             ? <span className="tag tag-training">Training</span>
             : <span className="tag tag-match">Match</span>}

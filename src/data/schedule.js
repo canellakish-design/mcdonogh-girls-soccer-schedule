@@ -493,13 +493,31 @@ export const schedule = [
     focus: 'Training',
     note: '',
   },
-  // type: 'note' marks a block of days with no session — shown as a card but
-  // carrying no time, badge, or calendar duration.
+  // type: 'note' marks a day with no session — a card carrying no time or badge.
   {
     no: 38,
-    date: 'Fri, Oct 2 – Sun, Oct 4',
+    date: 'Fri, Oct 2',
     sortDate: '2026-10-02',
-    endDate: '2026-10-04',
+    type: 'note',
+    title: 'College Visit Weekend',
+    time: '',
+    location: '',
+    note: 'No training or matches.',
+  },
+  {
+    no: 67,
+    date: 'Sat, Oct 3',
+    sortDate: '2026-10-03',
+    type: 'note',
+    title: 'College Visit Weekend',
+    time: '',
+    location: '',
+    note: 'No training or matches.',
+  },
+  {
+    no: 68,
+    date: 'Sun, Oct 4',
+    sortDate: '2026-10-04',
     type: 'note',
     title: 'College Visit Weekend',
     time: '',

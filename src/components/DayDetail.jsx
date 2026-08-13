@@ -27,7 +27,7 @@ export default function DayDetail({ item }) {
         </p>
         <div className="indicators">
           {isNote
-            ? <span className="indicator indicator-grey">No Sessions</span>
+            ? <span className="indicator indicator-yellow">No Sessions</span>
             : isTraining
               ? <span className="indicator indicator-training">Training</span>
               : <span className="indicator indicator-match">Match</span>}
