@@ -53,6 +53,9 @@ export default function ScheduleCard({ item, highlight, observance }) {
           {item.time ? <> &nbsp;·&nbsp; {item.time}</> : null}
           {item.location ? <> &nbsp;·&nbsp; {item.location}</> : null}
         </span>
+        {item.dismissal && (
+          <span className="card-dismissal">Dismissal {item.dismissal}</span>
+        )}
         {item.note && <span className="card-note-line">{item.note}</span>}
         {observance && <span className="card-obs">{observance.text}</span>}
       </span>

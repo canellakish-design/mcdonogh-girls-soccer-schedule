@@ -182,6 +182,21 @@ a { color: inherit; }
   margin-left: 2px;
 }
 
+/* dismissal reads as a time, so give it the same weight as the meta line */
+.card-dismissal {
+  margin-top: 3px;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: var(--blue-bg);
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-variant-numeric: tabular-nums;
+}
+
 /* per-day note (kit, bus, context) — small print under the card meta */
 .card-note-line {
   margin-top: 3px;
