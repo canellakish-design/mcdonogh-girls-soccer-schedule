@@ -40,7 +40,7 @@ function Subscribe() {
   ]
 
   return (
-    <section className="subscribe">
+    <section className="subscribe" id="subscribe">
       <h2 className="subscribe-head">Add to your calendar</h2>
       <div className="subscribe-btns">
         {feeds.map((f) => (
@@ -138,6 +138,18 @@ function ListView() {
           )}
         </section>
       )}
+
+      <a
+        className="subscribe-hint"
+        href="#subscribe"
+        onClick={(e) => {
+          e.preventDefault()
+          document.getElementById('subscribe')?.scrollIntoView({ behavior: 'smooth' })
+        }}
+      >
+        To subscribe to this calendar, scroll to the bottom
+        <span className="subscribe-hint-arrow" aria-hidden="true" />
+      </a>
 
       <div className="toolbar">
         <div className="segmented" role="tablist" aria-label="Filter schedule">

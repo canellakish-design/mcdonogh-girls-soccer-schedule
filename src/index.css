@@ -271,6 +271,30 @@ a { color: inherit; }
   font-style: italic;
 }
 
+/* Pointer at the top of the list to the subscribe panel at the bottom */
+.subscribe-hint {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 14px;
+  padding: 9px 12px;
+  border: 1px dashed var(--mc-orange);
+  border-radius: 8px;
+  background: var(--orange-bg);
+  color: var(--mc-orange-dark);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.subscribe-hint:hover { background: #fbe3d6; }
+.subscribe-hint-arrow {
+  width: 7px; height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -3px;
+}
+
 /* ---------- Subscribe ---------- */
 .subscribe {
   margin-top: 28px;
