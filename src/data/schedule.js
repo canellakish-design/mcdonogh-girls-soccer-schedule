@@ -103,10 +103,13 @@ function buildKit([shirt, shorts, socks]) {
   }
 }
 
+// Match days have no fixed kit — the captains pick it.
+export const MATCH_KIT_TEXT = 'Captain’s choice'
+
 export function kitFor(item) {
   if (item.type === 'note') return null
   if (item.kit) return Array.isArray(item.kit) ? buildKit(item.kit) : item.kit
-  // Match kit is not set yet, so only training days carry icons.
+  if (item.type === 'match') return { text: MATCH_KIT_TEXT }
   if (item.type !== 'training') return null
   const [y, m, d] = item.sortDate.split('-').map(Number)
   const weekday = new Date(y, m - 1, d).getDay()

@@ -81,6 +81,8 @@ function Socks({ color }) {
 
 export default function KitIcons({ kit }) {
   if (!kit) return null
+  // Days with no fixed colours just state who decides.
+  if (kit.text) return <p className="kit-text">{kit.text}</p>
   const parts = [
     ['shirt', Shirt, kit.shirt],
     ['shorts', Shorts, kit.shorts],

@@ -230,6 +230,12 @@ a { color: inherit; }
   color: var(--ink);
   white-space: nowrap;
 }
+.kit-text {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
 
 /* dismissal reads as a time, so give it the same weight as the meta line */
 .card-dismissal {
