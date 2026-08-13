@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { TEAM, schedule } from './data/schedule.js'
+import { TEAM, schedule, observances, rules } from './data/schedule.js'
 import ScheduleCard from './components/ScheduleCard.jsx'
 import DayDetail from './components/DayDetail.jsx'
 
@@ -57,6 +57,12 @@ function ListView() {
   const [showPast, setShowPast] = useState(false)
   const today = todayISO()
 
+  // Holiday notes ride inside the card for that date.
+  const obsByDate = useMemo(
+    () => new Map(observances.map((o) => [o.sortDate, o])),
+    [],
+  )
+
   const { upcoming, past } = useMemo(() => {
     const rows = schedule
       .filter((d) => filter === 'all' || d.type === filter)
@@ -69,12 +75,18 @@ function ListView() {
 
   return (
     <main className="container">
-      <section className="intro">
-        <p>
-          Every training day and match for the season. Today’s date sits at the top; completed
-          days move below. Tap any card for time, location, opponent, and notes.
-        </p>
-      </section>
+      {rules.length > 0 && (
+        <section className="rules">
+          <h2 className="rules-head">Team Rules</h2>
+          <ul className="rules-list">
+            {rules.map((r) => (
+              <li key={r.title}>
+                <strong>{r.title}.</strong> {r.body}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <div className="toolbar">
         <div className="segmented" role="tablist" aria-label="Filter schedule">
@@ -96,6 +108,7 @@ function ListView() {
           <ScheduleCard
             key={item.no}
             item={item}
+            observance={obsByDate.get(item.sortDate)}
             highlight={i === 0 ? (item.sortDate === today ? 'today' : 'next') : null}
           />
         ))}
@@ -110,7 +123,11 @@ function ListView() {
           {showPast && (
             <div className="list list-past">
               {past.map((item) => (
-                <ScheduleCard key={item.no} item={item} />
+                <ScheduleCard
+                  key={item.no}
+                  item={item}
+                  observance={obsByDate.get(item.sortDate)}
+                />
               ))}
             </div>
           )}

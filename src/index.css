@@ -58,7 +58,30 @@ a { color: inherit; }
 
 /* ---------- Layout ---------- */
 .container { max-width: 780px; margin: 0 auto; padding: 26px 20px 60px; }
-.intro p { margin: 0 0 22px; color: var(--slate); font-size: 15.5px; line-height: 1.6; }
+
+/* ---------- Team rules (quiet list above the schedule) ---------- */
+.rules { margin: 0 0 20px; }
+.rules-head {
+  margin: 0 0 6px;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  color: var(--muted);
+}
+.rules-list {
+  margin: 0;
+  padding: 0 0 0 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.rules-list li {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--slate);
+}
+.rules-list strong { color: var(--ink); font-weight: 700; }
 
 .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
 .segmented { display: inline-flex; background: var(--grey-bg); border-radius: 9px; padding: 3px; gap: 2px; }
@@ -128,12 +151,28 @@ a { color: inherit; }
 .tag-home { background: var(--green-bg); color: var(--green); }
 .tag-away { background: #f0eafb; color: #5a3aa8; }
 .tag-result { background: var(--mc-black); color: #fff; }
+/* Dashed border = penciled in, not on the official schedule yet. */
+.tag-tentative {
+  background: #fff8e6;
+  color: #8a6100;
+  border: 1px dashed #d9b45a;
+  padding: 2px 6px;
+}
 .card-chevron {
   width: 8px; height: 8px;
   border-right: 2px solid var(--muted);
   border-top: 2px solid var(--muted);
   transform: rotate(45deg);
   margin-left: 2px;
+}
+
+/* ---------- Holiday note, small print inside a card ---------- */
+.card-obs {
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--muted);
+  font-style: italic;
 }
 
 /* ---------- Completed (past) ---------- */
@@ -172,6 +211,7 @@ a { color: inherit; }
 .indicator-grey { background: var(--grey-bg); color: var(--grey); }
 .indicator-orange { background: #fbe3d6; color: var(--mc-orange-dark); }
 .indicator-result { background: var(--mc-black); color: #fff; }
+.indicator-tentative { background: #fff8e6; color: #8a6100; border: 1px dashed #d9b45a; }
 
 .facts {
   margin: 20px 0 0;

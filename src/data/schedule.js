@@ -31,6 +31,56 @@ export const TEAM = {
   coaches: 'Harry Canellakis · Mary Beth Todd',
 }
 
+// ---------------------------------------------------------------------
+// TEAM RULES — shown at the top of the schedule. These apply all season
+// and are not tied to any one date. Add or edit freely.
+// ---------------------------------------------------------------------
+export const rules = [
+  {
+    title: 'Training starts at 4:00',
+    body: 'Be ready to go at 4:00, not arriving at 4:00.',
+  },
+  {
+    title: 'Training room is for injuries only',
+    body:
+      'Only go to the training room if you are injured. If you go, you are still expected at practice on time — the training room is not an excuse to be late.',
+  },
+  {
+    title: 'Free 4th period? Go then',
+    body:
+      'If you have 4th period free and you need the training room, go during 4th period.',
+  },
+]
+
+// ---------------------------------------------------------------------
+// OBSERVANCES — small print inside the card for that date. Each is keyed to
+// a day that actually has a card, so multi-day holidays are folded into the
+// nearest session rather than floating on their own. Jewish holidays begin
+// at sundown the evening before.
+// ---------------------------------------------------------------------
+export const observances = [
+  {
+    sortDate: '2026-09-11',
+    text: 'Erev Rosh Hashanah — begins at sundown. Rosh Hashanah runs Sep 12–13.',
+  },
+  {
+    sortDate: '2026-09-21',
+    text: 'Yom Kippur — through sundown. Kol Nidre began sundown Sep 20.',
+  },
+  {
+    sortDate: '2026-09-25',
+    text: 'Erev Sukkot — begins at sundown. Sukkot runs through Oct 2.',
+  },
+  {
+    sortDate: '2026-10-03',
+    text: 'Shemini Atzeret. Simchat Torah follows Oct 4.',
+  },
+  {
+    sortDate: '2026-11-06',
+    text: 'Diwali — Nov 6–10, main day Sunday Nov 8.',
+  },
+]
+
 export const schedule = [
   {
     no: 1,
@@ -286,19 +336,17 @@ export const schedule = [
     focus: 'Training',
     note: '',
   },
+  // The TBA scrimmage that was here has been dropped. Per the standing rule,
+  // a weekday without a match is a training day.
   {
     no: 24,
     date: 'Tue, Sep 15',
     sortDate: '2026-09-15',
-    type: 'match',
-    home: true,
-    scrimmage: true,
-    opponent: 'TBA',
-    time: '4:15 PM',
-    location: 'McDonogh',
-    result: '',
-    focus: '',
-    note: 'Opponent TBA.',
+    type: 'training',
+    time: '4:00 PM',
+    location: 'McDonogh — Campus Fields',
+    focus: 'Training',
+    note: '',
   },
   {
     no: 25,
@@ -730,6 +778,33 @@ export const schedule = [
     location: 'McDonogh — Campus Fields',
     focus: 'Training',
     note: '',
+  },
+  // Added session — weekends are otherwise off.
+  {
+    no: 66,
+    date: 'Sun, Oct 25',
+    sortDate: '2026-10-25',
+    type: 'training',
+    time: '4:00 PM',
+    location: 'McDonogh — Campus Fields',
+    focus: 'Pre-match session — Archbishop Spalding',
+    note: 'Added Sunday session ahead of Spalding on Monday.',
+  },
+  // Not on the McDonogh athletics page — penciled in to fill the Sep 30 → Oct 9 gap.
+  // Remove the `tentative` flag once it is confirmed and appears on the official page.
+  {
+    no: 65,
+    date: 'Sat, Oct 3',
+    sortDate: '2026-10-03',
+    type: 'match',
+    home: true,
+    tentative: true,
+    opponent: 'Paul VI (Tentative)',
+    time: 'TBD',
+    location: 'TBD',
+    result: '',
+    focus: '',
+    note: 'Paul VI (NJ) — a different school from Paul VI Catholic (VA) on Sep 8.',
   },
   {
     no: 64,

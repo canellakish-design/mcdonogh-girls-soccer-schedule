@@ -13,7 +13,7 @@ export function matchTitle(item) {
   return prefix + item.opponent
 }
 
-export default function ScheduleCard({ item, highlight }) {
+export default function ScheduleCard({ item, highlight, observance }) {
   const { mon, day } = dateBox(item.sortDate)
   const isTraining = item.type === 'training'
 
@@ -33,6 +33,7 @@ export default function ScheduleCard({ item, highlight }) {
           {item.date} &nbsp;·&nbsp; {item.time}
           {item.location ? <> &nbsp;·&nbsp; {item.location}</> : null}
         </span>
+        {observance && <span className="card-obs">{observance.text}</span>}
       </span>
 
       <span className="card-tags">
@@ -40,6 +41,7 @@ export default function ScheduleCard({ item, highlight }) {
         {isTraining
           ? <span className="tag tag-training">Training</span>
           : <span className="tag tag-match">Match</span>}
+        {item.tentative && <span className="tag tag-tentative">Tentative</span>}
         {item.scrimmage && <span className="tag tag-grey">Scrimmage</span>}
         {item.playoff && <span className="tag tag-orange-soft">Playoffs</span>}
         {!isTraining && (

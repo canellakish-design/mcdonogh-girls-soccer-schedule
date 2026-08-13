@@ -6,6 +6,8 @@
   "description": "McDonogh School Girls Varsity Soccer — Team Schedule",
   "scripts": {
     "dev": "vite",
+    "build:ics": "node scripts/build-ics.mjs",
+    "prebuild": "npm run build:ics",
     "build": "vite build",
     "preview": "vite preview"
   },

@@ -25,6 +25,7 @@ export default function DayDetail({ item }) {
           {isTraining
             ? <span className="indicator indicator-training">Training</span>
             : <span className="indicator indicator-match">Match</span>}
+          {item.tentative && <span className="indicator indicator-tentative">Tentative</span>}
           {item.scrimmage && <span className="indicator indicator-grey">Scrimmage</span>}
           {item.playoff && <span className="indicator indicator-orange">IAAM Playoffs</span>}
           {!isTraining && <span className="indicator indicator-grey">{homeLabel}</span>}
