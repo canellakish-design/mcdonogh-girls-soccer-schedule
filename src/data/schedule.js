@@ -165,7 +165,6 @@ export const schedule = [
     location: 'McDonogh — Field 16',
     clearance: true,
     focus: 'Tryouts — Day 1',
-    kit: 'Plain white shirt and black shorts',
     note: '',
   },
   {
@@ -177,7 +176,6 @@ export const schedule = [
     location: 'McDonogh — Field 16',
     clearance: true,
     focus: 'Tryouts — Day 2',
-    kit: 'Plain white shirt and black shorts',
     note: '',
   },
   {
@@ -189,7 +187,6 @@ export const schedule = [
     location: 'McDonogh — Field 16',
     clearance: true,
     focus: 'Tryouts — Day 3',
-    kit: 'Plain white shirt and black shorts',
     note: '',
   },
   {
