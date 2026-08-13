@@ -182,6 +182,16 @@ a { color: inherit; }
   margin-left: 2px;
 }
 
+/* per-day note (kit, bus, context) — small print under the card meta */
+.card-note-line {
+  margin-top: 3px;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--slate);
+  font-weight: 600;
+}
+.card-note .card-note-line { color: var(--yellow-ink); font-weight: 500; }
+
 /* ---------- Holiday note, small print inside a card ---------- */
 .card-obs {
   margin-top: 3px;

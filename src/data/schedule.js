@@ -90,7 +90,7 @@ export const schedule = [
     time: '9:00 AM',
     location: 'McDonogh — Campus Fields',
     focus: 'Tryouts — Day 1',
-    note: '',
+    note: 'Wear a plain white shirt and black shorts.',
   },
   {
     no: 2,
@@ -100,7 +100,7 @@ export const schedule = [
     time: '9:00 AM',
     location: 'McDonogh — Campus Fields',
     focus: 'Tryouts — Day 2',
-    note: '',
+    note: 'Wear a plain white shirt and black shorts.',
   },
   {
     no: 3,
@@ -110,7 +110,7 @@ export const schedule = [
     time: '9:00 AM',
     location: 'McDonogh — Campus Fields',
     focus: 'Tryouts — Day 3',
-    note: '',
+    note: 'Wear a plain white shirt and black shorts.',
   },
   {
     no: 4,
@@ -502,7 +502,7 @@ export const schedule = [
     title: 'College Visit Weekend',
     time: '',
     location: '',
-    note: 'No training or matches.',
+    note: '',
   },
   {
     no: 67,
@@ -512,7 +512,7 @@ export const schedule = [
     title: 'College Visit Weekend',
     time: '',
     location: '',
-    note: 'No training or matches.',
+    note: '',
   },
   {
     no: 68,
@@ -522,7 +522,7 @@ export const schedule = [
     title: 'College Visit Weekend',
     time: '',
     location: '',
-    note: 'No training or matches.',
+    note: '',
   },
   {
     no: 39,
@@ -809,7 +809,7 @@ export const schedule = [
     time: '4:00 PM',
     location: 'McDonogh — Campus Fields',
     focus: 'Pre-match session — Archbishop Spalding',
-    note: 'Added Sunday session ahead of Spalding on Monday.',
+    note: 'Ahead of Spalding on Monday.',
   },
   // Paul VI (NJ) is parked — they can only play on a weekend, and no weekend in the
   // Sep 30 → Oct 9 gap is available. Re-add with a weekend sortDate if a date is agreed.
