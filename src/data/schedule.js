@@ -425,7 +425,7 @@ export const schedule = [
     opponent: 'St. Paul\'s School for Girls',
     time: '3:30 PM',
     teamTalk: '2:45 PM',
-    dismissal: '2:30 PM',
+    dismissal: '2:00 PM',
     location: 'McDonogh — Field 16',
     result: '',
     focus: '',
