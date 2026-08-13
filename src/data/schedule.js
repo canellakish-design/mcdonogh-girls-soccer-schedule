@@ -389,7 +389,7 @@ export const schedule = [
     home: 'neutral',
     opponent: 'Agnes Irwin School',
     time: '4:00 PM',
-    location: 'Mercy High School',
+    location: 'Mercy High School — Turf Field',
     result: '',
     focus: '',
     note: '',
