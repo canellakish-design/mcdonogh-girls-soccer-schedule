@@ -1,5 +1,5 @@
 import { matchTitle, meetNote } from './ScheduleCard.jsx'
-import { clearance, directionsUrl, venueAddress, isOnCampus } from '../data/schedule.js'
+import { clearance, directionsUrl, venueAddress, isOnCampus, kitFor } from '../data/schedule.js'
 
 function Fact({ label, value }) {
   if (!value) return null
@@ -52,10 +52,10 @@ export default function DayDetail({ item }) {
         {item.focus && <Fact label="Focus" value={item.focus} />}
       </dl>
 
-      {item.kit && (
+      {kitFor(item) && (
         <p className="detail-kit">
           <span className="detail-kit-label">Kit</span>
-          {item.kit}
+          {kitFor(item)}
         </p>
       )}
 

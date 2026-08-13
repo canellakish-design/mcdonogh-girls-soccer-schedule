@@ -68,6 +68,22 @@ export function isOnCampus(location) {
 }
 
 // ---------------------------------------------------------------------
+// KIT — shown in a grey box on every day. A day can override it with its
+// own `kit`; otherwise it falls back to the default for that type.
+// Set `match` once you know what they wear for games.
+// ---------------------------------------------------------------------
+export const DEFAULT_KIT = {
+  training: 'Plain white shirt and black shorts',
+  match: 'Plain white shirt and black shorts',
+}
+
+export function kitFor(item) {
+  if (item.kit) return item.kit
+  if (item.type === 'note') return null
+  return DEFAULT_KIT[item.type] || null
+}
+
+// ---------------------------------------------------------------------
 // TEAM RULES — shown at the top of the schedule. These apply all season
 // and are not tied to any one date. Add or edit freely.
 // ---------------------------------------------------------------------
