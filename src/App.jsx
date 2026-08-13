@@ -30,6 +30,47 @@ function Masthead() {
   )
 }
 
+// webcal:// opens straight into the phone's calendar app; the https link is
+// the fallback for desktop and for anyone who wants to paste it manually.
+function Subscribe() {
+  const host = typeof window !== 'undefined' ? window.location.host : ''
+  const feeds = [
+    { file: 'mcdonogh-soccer.ics', label: 'Full schedule', hint: 'Training days and matches' },
+    { file: 'mcdonogh-matches.ics', label: 'Matches only', hint: 'Games, no training' },
+  ]
+
+  return (
+    <section className="subscribe">
+      <h2 className="subscribe-head">Add to your calendar</h2>
+      <div className="subscribe-btns">
+        {feeds.map((f) => (
+          <a key={f.file} className="subscribe-btn" href={`webcal://${host}/${f.file}`}>
+            <span className="subscribe-btn-label">{f.label}</span>
+            <span className="subscribe-btn-hint">{f.hint}</span>
+          </a>
+        ))}
+      </div>
+      <p className="subscribe-note">
+        Subscribing keeps the calendar up to date on its own. If the buttons don’t open your
+        calendar, copy the link and use <strong>Add calendar → From URL</strong> in Google
+        Calendar, or <strong>Add Subscribed Calendar</strong> on iPhone:
+      </p>
+      <ul className="subscribe-urls">
+        {feeds.map((f) => (
+          <li key={f.file}>
+            <span className="subscribe-url-label">{f.label}</span>
+            <code>{`https://${host}/${f.file}`}</code>
+          </li>
+        ))}
+      </ul>
+      <p className="subscribe-note fine">
+        Calendar apps refresh subscriptions on their own schedule, often several hours behind.
+        Check this page for same-day changes.
+      </p>
+    </section>
+  )
+}
+
 function Footer() {
   return (
     <footer className="site-footer">
@@ -124,6 +165,8 @@ function ListView() {
         ))}
         {upcoming.length === 0 && <p className="empty">Season complete — see completed days below.</p>}
       </div>
+
+      <Subscribe />
 
       {past.length > 0 && (
         <div className="past-block">

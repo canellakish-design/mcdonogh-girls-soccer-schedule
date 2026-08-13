@@ -271,6 +271,70 @@ a { color: inherit; }
   font-style: italic;
 }
 
+/* ---------- Subscribe ---------- */
+.subscribe {
+  margin-top: 28px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+.subscribe-head {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  color: var(--muted);
+}
+.subscribe-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.subscribe-btn {
+  flex: 1 1 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px;
+  border-radius: 9px;
+  background: var(--mc-orange);
+  color: #fff;
+  text-decoration: none;
+}
+.subscribe-btn:hover { background: var(--mc-orange-dark); }
+.subscribe-btn-label { font-size: 15px; font-weight: 800; }
+.subscribe-btn-hint { font-size: 12px; opacity: 0.9; }
+
+.subscribe-note {
+  margin: 14px 0 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--slate);
+}
+.subscribe-urls {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.subscribe-urls li { display: flex; flex-direction: column; gap: 2px; }
+.subscribe-url-label {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--muted);
+}
+.subscribe-urls code {
+  font-size: 12px;
+  word-break: break-all;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
 /* ---------- Completed (past) ---------- */
 .past-block { margin-top: 22px; }
 .past-toggle {
