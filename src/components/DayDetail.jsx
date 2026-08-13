@@ -55,14 +55,8 @@ export default function DayDetail({ item }) {
 
       {kitFor(item) && (
         <div className="detail-kit">
-          <span className="detail-kit-label">Kit</span>
-          <KitIcons kit={kitFor(item)} size="lg" />
-          <span className="detail-kit-text">
-            {[kitFor(item).shirt, kitFor(item).shorts, kitFor(item).socks]
-              .filter(Boolean)
-              .map((v) => v.label)
-              .join(' · ')}
-          </span>
+          <h3 className="detail-kit-label">Kit</h3>
+          <KitIcons kit={kitFor(item)} />
         </div>
       )}
 

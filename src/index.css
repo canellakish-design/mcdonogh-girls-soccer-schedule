@@ -199,36 +199,36 @@ a { color: inherit; }
   margin-left: 2px;
 }
 
-/* ---------- Kit icons (shirt / shorts / socks) ---------- */
-.card-left {
-  flex: 0 0 auto;
+/* ---------- Kit icons (detail view only) ---------- */
+.kit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.kit-row {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
 }
-.kit-stack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  padding: 4px 5px;
-  border-radius: 7px;
-  background: var(--grey-bg);
+.kit-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid var(--line);
 }
-.kit-item { display: block; line-height: 0; }
-.kit-svg { display: block; width: 17px; height: 17px; }
-.kit-lg .kit-svg { width: 30px; height: 30px; }
-.kit-lg { gap: 3px; padding: 7px 9px; }
-
-.sr-only {
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+.kit-svg { display: block; width: 38px; height: 38px; }
+.kit-name {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink);
   white-space: nowrap;
-  border: 0;
 }
 
 /* dismissal reads as a time, so give it the same weight as the meta line */
@@ -329,25 +329,20 @@ a { color: inherit; }
 }
 
 .detail-kit {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin: 20px 0 0;
-  padding: 13px 15px;
-  border-radius: 9px;
+  margin: 22px 0 0;
+  padding: 15px 16px;
+  border-radius: 10px;
   background: var(--panel);
   border: 1px solid var(--line);
 }
 .detail-kit-label {
-  flex: 0 0 auto;
+  margin: 0 0 12px;
   font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.9px;
   color: var(--muted);
 }
-.detail-kit-text { font-size: 14px; font-weight: 600; color: var(--ink); }
-.detail-kit .kit-stack { background: transparent; padding: 0; flex-direction: row; gap: 8px; }
 
 /* ---------- Venue, map, clearance (detail view) ---------- */
 .detail-meet { border-left-color: var(--blue); }

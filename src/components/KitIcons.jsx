@@ -79,7 +79,7 @@ function Socks({ color }) {
   )
 }
 
-export default function KitIcons({ kit, size = 'sm' }) {
+export default function KitIcons({ kit }) {
   if (!kit) return null
   const parts = [
     ['shirt', Shirt, kit.shirt],
@@ -88,16 +88,16 @@ export default function KitIcons({ kit, size = 'sm' }) {
   ].filter(([, , v]) => v)
   if (!parts.length) return null
 
-  const label = parts.map(([, , v]) => v.label).join(', ')
-
   return (
-    <span className={`kit-stack kit-${size}`} title={label}>
+    <ul className="kit-list">
       {parts.map(([key, Icon, v]) => (
-        <span key={key} className="kit-item">
-          <Icon color={v.color} />
-        </span>
+        <li key={key} className="kit-row">
+          <span className="kit-icon">
+            <Icon color={v.color} />
+          </span>
+          <span className="kit-name">{v.label}</span>
+        </li>
       ))}
-      <span className="sr-only">Kit: {label}</span>
-    </span>
+    </ul>
   )
 }
