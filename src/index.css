@@ -199,29 +199,36 @@ a { color: inherit; }
   margin-left: 2px;
 }
 
-/* kit is the thing a player must act on before arriving — make it loud */
-.card-kit {
-  display: inline-flex;
+/* ---------- Kit icons (shirt / shorts / socks) ---------- */
+.card-left {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 7px;
-  align-self: flex-start;
-  margin-top: 6px;
-  padding: 5px 10px 5px 6px;
-  border-radius: 7px;
-  background: #4a4f57;
-  color: #fff;
-  font-size: 12.5px;
-  font-weight: 700;
-  line-height: 1.3;
 }
-.card-kit-label {
-  font-size: 10px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  background: rgba(255, 255, 255, 0.24);
-  padding: 2px 6px;
-  border-radius: 4px;
+.kit-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 5px;
+  border-radius: 7px;
+  background: var(--grey-bg);
+}
+.kit-item { display: block; line-height: 0; }
+.kit-svg { display: block; width: 17px; height: 17px; }
+.kit-lg .kit-svg { width: 30px; height: 30px; }
+.kit-lg { gap: 3px; padding: 7px 9px; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* dismissal reads as a time, so give it the same weight as the meta line */
@@ -324,14 +331,12 @@ a { color: inherit; }
 .detail-kit {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
   margin: 20px 0 0;
   padding: 13px 15px;
   border-radius: 9px;
-  background: #4a4f57;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
+  background: var(--panel);
+  border: 1px solid var(--line);
 }
 .detail-kit-label {
   flex: 0 0 auto;
@@ -339,10 +344,10 @@ a { color: inherit; }
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.9px;
-  background: rgba(255, 255, 255, 0.24);
-  padding: 3px 8px;
-  border-radius: 5px;
+  color: var(--muted);
 }
+.detail-kit-text { font-size: 14px; font-weight: 600; color: var(--ink); }
+.detail-kit .kit-stack { background: transparent; padding: 0; flex-direction: row; gap: 8px; }
 
 /* ---------- Venue, map, clearance (detail view) ---------- */
 .detail-meet { border-left-color: var(--blue); }

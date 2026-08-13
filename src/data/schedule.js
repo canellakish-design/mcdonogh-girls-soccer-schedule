@@ -72,15 +72,24 @@ export function isOnCampus(location) {
 // own `kit`; otherwise it falls back to the default for that type.
 // Set `match` once you know what they wear for games.
 // ---------------------------------------------------------------------
+// Colours are what the icons are filled with. `label` is the readable
+// version used for the tooltip and for screen readers.
 export const DEFAULT_KIT = {
-  training: 'Plain white shirt and black shorts',
-  match: 'Plain white shirt and black shorts',
+  training: {
+    shirt: { color: '#ffffff', label: 'White shirt' },
+    shorts: { color: '#1a1a1a', label: 'Black shorts' },
+    socks: { color: '#1a1a1a', label: 'Black socks' },
+  },
+  match: {
+    shirt: { color: '#ffffff', label: 'White shirt' },
+    shorts: { color: '#1a1a1a', label: 'Black shorts' },
+    socks: { color: '#1a1a1a', label: 'Black socks' },
+  },
 }
 
 export function kitFor(item) {
-  if (item.kit) return item.kit
   if (item.type === 'note') return null
-  return DEFAULT_KIT[item.type] || null
+  return item.kit || DEFAULT_KIT[item.type] || null
 }
 
 // ---------------------------------------------------------------------

@@ -1,4 +1,5 @@
 import { matchTitle, meetNote } from './ScheduleCard.jsx'
+import KitIcons from './KitIcons.jsx'
 import { clearance, directionsUrl, venueAddress, isOnCampus, kitFor } from '../data/schedule.js'
 
 function Fact({ label, value }) {
@@ -53,10 +54,16 @@ export default function DayDetail({ item }) {
       </dl>
 
       {kitFor(item) && (
-        <p className="detail-kit">
+        <div className="detail-kit">
           <span className="detail-kit-label">Kit</span>
-          {kitFor(item)}
-        </p>
+          <KitIcons kit={kitFor(item)} size="lg" />
+          <span className="detail-kit-text">
+            {[kitFor(item).shirt, kitFor(item).shorts, kitFor(item).socks]
+              .filter(Boolean)
+              .map((v) => v.label)
+              .join(' · ')}
+          </span>
+        </div>
       )}
 
       {item.note && <p className="detail-note">{item.note}</p>}

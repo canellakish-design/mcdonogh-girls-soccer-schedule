@@ -8,6 +8,7 @@ function dateBox(sortDate) {
 }
 
 import { kitFor } from '../data/schedule.js'
+import KitIcons from './KitIcons.jsx'
 
 // Home matches: team talk before kickoff. Board Room at 3:30 PM is the
 // standard; a day can override the time with `teamTalk` and the room with
@@ -40,9 +41,12 @@ export default function ScheduleCard({ item, highlight, observance }) {
       className={`card ${isNote ? 'card-note ' : ''}${highlight ? `card-${highlight}` : ''}`}
       href={`#/day/${item.no}`}
     >
-      <span className={`datebox ${boxClass}`}>
-        <span className="datebox-mon">{mon}</span>
-        <span className="datebox-day">{day}</span>
+      <span className="card-left">
+        <span className={`datebox ${boxClass}`}>
+          <span className="datebox-mon">{mon}</span>
+          <span className="datebox-day">{day}</span>
+        </span>
+        <KitIcons kit={kitFor(item)} />
       </span>
 
       <span className="card-main">
@@ -55,12 +59,6 @@ export default function ScheduleCard({ item, highlight, observance }) {
           {item.time ? <> &nbsp;·&nbsp; {item.time}</> : null}
           {item.location ? <> &nbsp;·&nbsp; {item.location}</> : null}
         </span>
-        {kitFor(item) && (
-          <span className="card-kit">
-            <span className="card-kit-label">Kit</span>
-            {kitFor(item)}
-          </span>
-        )}
         {item.dismissal && (
           <span className="card-dismissal">Dismissal {item.dismissal}</span>
         )}
