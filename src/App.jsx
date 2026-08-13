@@ -84,7 +84,7 @@ function ListView() {
             aria-expanded={showRules}
           >
             <span className={`caret ${showRules ? 'caret-open' : ''}`} aria-hidden="true" />
-            Team Rules
+            Training Time Rules
           </button>
           {showRules && (
             <ul className="rules-list">
