@@ -130,6 +130,13 @@ a { color: inherit; }
 .card:hover { border-color: var(--mc-orange); box-shadow: 0 3px 12px rgba(0,0,0,0.06); }
 .card:active { transform: translateY(1px); }
 
+/* match days sit on a light orange ground so games read at a glance */
+.card-match {
+  background: #fdf1ea;
+  border-color: #f0cdb8;
+}
+.card-match:hover { border-color: var(--mc-orange); }
+
 /* days with no session — highlighted yellow so they stand out from sessions */
 .card-note {
   background: var(--yellow-bg);

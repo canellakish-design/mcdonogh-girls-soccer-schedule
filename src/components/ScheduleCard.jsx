@@ -36,7 +36,9 @@ export default function ScheduleCard({ item, highlight, observance }) {
 
   return (
     <a
-      className={`card ${isNote ? 'card-note ' : ''}${highlight ? `card-${highlight}` : ''}`}
+      className={`card ${isNote ? 'card-note ' : ''}${item.type === 'match' ? 'card-match ' : ''}${
+        highlight ? `card-${highlight}` : ''
+      }`}
       href={`#/day/${item.no}`}
     >
       <span className={`datebox ${boxClass}`}>
