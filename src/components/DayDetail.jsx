@@ -52,6 +52,13 @@ export default function DayDetail({ item }) {
         {item.focus && <Fact label="Focus" value={item.focus} />}
       </dl>
 
+      {item.kit && (
+        <p className="detail-kit">
+          <span className="detail-kit-label">Kit</span>
+          {item.kit}
+        </p>
+      )}
+
       {item.note && <p className="detail-note">{item.note}</p>}
 
       {meetNote(item) && <p className="detail-note detail-meet">{meetNote(item)}</p>}

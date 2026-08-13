@@ -53,6 +53,12 @@ export default function ScheduleCard({ item, highlight, observance }) {
           {item.time ? <> &nbsp;·&nbsp; {item.time}</> : null}
           {item.location ? <> &nbsp;·&nbsp; {item.location}</> : null}
         </span>
+        {item.kit && (
+          <span className="card-kit">
+            <span className="card-kit-label">Kit</span>
+            {item.kit}
+          </span>
+        )}
         {item.dismissal && (
           <span className="card-dismissal">Dismissal {item.dismissal}</span>
         )}
