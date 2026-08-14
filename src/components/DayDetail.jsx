@@ -25,7 +25,7 @@ export default function DayDetail({ item }) {
         <h2 className="detail-name">{matchTitle(item)}</h2>
         <p className="detail-meta">
           {item.date}
-          {item.time ? <> &nbsp;·&nbsp; {item.time}</> : null}
+          {item.time ? <> &nbsp;·&nbsp; <strong className="detail-time">{item.time}</strong></> : null}
         </p>
         <div className="indicators">
           {isNote
@@ -48,7 +48,8 @@ export default function DayDetail({ item }) {
         <Fact label="Time" value={item.time} />
         <Fact label="Location" value={item.location} />
         <Fact label="Dismissal" value={item.dismissal} />
-        {!isTraining && !isNote && <Fact label="Opponent" value={item.opponent} />}
+        {/* A day with its own `title` already names itself — no Opponent row. */}
+        {!isTraining && !isNote && !item.title && <Fact label="Opponent" value={item.opponent} />}
         {!isTraining && !isNote && <Fact label="Result" value={item.result || '—'} />}
         {item.focus && <Fact label="Focus" value={item.focus} />}
       </dl>

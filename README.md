@@ -13,7 +13,8 @@ The match schedule mirrors the official McDonogh Athletics page:
 ## Season rules baked into the data
 
 - Week 1 runs **Sat Aug 15 → Fri Aug 21**. Tryouts Aug 15–17 at **9:00 AM**.
-  Training that week is 9:00 AM; the Aug 19 Orange–White scrimmage is **7:00 PM**.
+  Training that week is 9:00 AM, except **Thu Aug 20 at 12:00 PM**;
+  the Aug 19 Orange v. White match is **7:00 PM**.
 - **Aug 22–23 off** (Sat/Sun). Training resumes **Mon Aug 24**.
 - From Aug 24 on: **weekday training at 4:00 PM**; matches keep their listed times.
   Weekends are off unless there is a match.

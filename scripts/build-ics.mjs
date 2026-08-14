@@ -81,7 +81,8 @@ function fold(line) {
 }
 
 function title(item) {
-  if (item.type === 'note') return item.title
+  // `title` wins outright — for days whose label is not "vs. <opponent>".
+  if (item.title) return item.title
   if (item.type === 'training') return item.focus || 'Training'
   const prefix = item.home === true ? 'vs. ' : item.home === false ? '@ ' : 'vs. '
   return prefix + item.opponent

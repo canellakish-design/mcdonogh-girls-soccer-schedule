@@ -180,6 +180,18 @@ a { color: inherit; }
 .card-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .card-title { font-weight: 800; font-size: 16px; letter-spacing: -0.2px; }
 .card-meta { color: var(--slate); font-size: 13px; }
+/* Start time carries more weight than the rest of the meta line — it is the
+   thing players are scanning the card for. */
+.card-time {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 5px;
+  background: var(--grey-bg);
+  color: var(--mc-black);
+  font-weight: 800;
+  font-size: 14.5px;
+  font-variant-numeric: tabular-nums;
+}
 
 .card-tags { flex: 0 0 auto; display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 6px; max-width: 190px; }
 .tag { font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 7px; border-radius: 5px; white-space: nowrap; }
@@ -390,6 +402,7 @@ a { color: inherit; }
 .detail-head { margin-bottom: 6px; }
 .detail-name { margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.3px; }
 .detail-meta { margin: 5px 0 0; color: var(--slate); font-size: 15px; }
+.detail-time { color: var(--ink); font-weight: 800; font-size: 17px; font-variant-numeric: tabular-nums; }
 .detail-head .indicators { margin-top: 12px; }
 
 .indicators { display: flex; flex-wrap: wrap; gap: 6px; }
