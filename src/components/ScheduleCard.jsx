@@ -52,10 +52,11 @@ export default function ScheduleCard({ item, highlight, observance }) {
           <span className="card-flag">{highlight === 'today' ? 'Today' : 'Next up'}</span>
         )}
         <span className="card-title">{matchTitle(item)}</span>
+        {/* No date here — the box on the left already carries it. */}
         <span className="card-meta">
-          {item.date}
-          {item.time ? <> &nbsp;·&nbsp; <strong className="card-time">{item.time}</strong></> : null}
-          {item.location ? <> &nbsp;·&nbsp; {item.location}</> : null}
+          {item.time && <strong className="card-time">{item.time}</strong>}
+          {item.time && item.location ? <> &nbsp;·&nbsp; </> : null}
+          {item.location}
         </span>
         {item.dismissal && (
           <span className="card-dismissal">Dismissal {item.dismissal}</span>
