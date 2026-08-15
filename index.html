@@ -17,6 +17,24 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Netlify registers a form only if it can see it in the HTML at deploy
+         time, and this app renders after that. This hidden copy is what it
+         detects; the real form is src/components/CheckInForm.jsx and posts
+         to this name. Field names here must match that component exactly. -->
+    <form name="tryout-check-in" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="tryout-check-in" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="Name" />
+      <input type="text" name="Year" />
+      <input type="text" name="Years at McDonogh" />
+      <input type="text" name="Primary position" />
+      <input type="text" name="Secondary position" />
+      <input type="email" name="Parent email 1" />
+      <input type="email" name="Parent email 2" />
+      <input type="text" name="McDonogh email access" />
+    </form>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
