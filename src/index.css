@@ -494,6 +494,40 @@ a { color: inherit; }
   color: var(--muted);
 }
 
+/* ---------- Tryout check-in QR ---------- */
+.checkin {
+  margin-top: 22px;
+  padding: 16px 18px 18px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--mc-orange);
+  border-radius: 0 10px 10px 0;
+  background: #fff;
+  text-align: center;
+}
+.checkin h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--mc-orange-dark);
+}
+.checkin p { margin: 0 0 14px; color: var(--slate); font-size: 14px; }
+/* Fixed box so the code prints and scans at a reliable size on any phone. */
+.checkin-qr { display: inline-block; width: 210px; max-width: 100%; line-height: 0; }
+.checkin-qr img { width: 100%; height: auto; display: block; }
+.checkin-btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: var(--mc-orange);
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  text-decoration: none;
+}
+
 .clearance {
   margin-top: 22px;
   padding: 16px 18px;

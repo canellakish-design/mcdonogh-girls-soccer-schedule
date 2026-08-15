@@ -1,6 +1,6 @@
 import { matchTitle, meetNote } from './ScheduleCard.jsx'
 import KitIcons from './KitIcons.jsx'
-import { clearance, directionsUrl, venueAddress, venueMap, kitFor } from '../data/schedule.js'
+import { checkIn, clearance, directionsUrl, venueAddress, venueMap, kitFor } from '../data/schedule.js'
 
 function Fact({ label, value }) {
   if (!value) return null
@@ -93,6 +93,30 @@ export default function DayDetail({ item }) {
               : 'Tap the map for directions in Google Maps.'}
           </figcaption>
         </figure>
+      )}
+
+      {/* Hidden until the Google Form URL is filled in, so the QR is never dead. */}
+      {item.checkIn && checkIn.url && (
+        <section className="checkin">
+          <h3>{checkIn.title}</h3>
+          <p>{checkIn.intro}</p>
+          <a
+            className="checkin-qr"
+            href={checkIn.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={checkIn.qr} alt={`QR code linking to the ${checkIn.title} form`} />
+          </a>
+          <a
+            className="checkin-btn"
+            href={checkIn.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open the check-in form
+          </a>
+        </section>
       )}
 
       {item.clearance && (

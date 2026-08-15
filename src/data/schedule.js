@@ -177,6 +177,24 @@ export const rules = [
 ]
 
 // ---------------------------------------------------------------------
+// TRYOUT CHECK-IN — the QR block on any day with `checkIn: true`.
+//
+// Paste the live Google Form URL into `url`, then run `npm run build:qr`
+// (or just `npm run build`) to regenerate public/tryout-checkin-qr.svg.
+// While `url` is empty the whole block stays hidden, so nothing on the
+// site points at a QR code that goes nowhere.
+//
+// The form is created by scripts/create-checkin-form.gs — run it once in
+// Apps Script and it prints the URL to paste here.
+// ---------------------------------------------------------------------
+export const checkIn = {
+  url: '',
+  title: 'Tryout Check-In',
+  intro: 'Scan once at your first tryout. One submission per player.',
+  qr: '/tryout-checkin-qr.svg',
+}
+
+// ---------------------------------------------------------------------
 // CLEARANCE — attached to any day with `clearance: true` (the tryout days).
 // Stated factually: what is required, where to check, what happens if it
 // is incomplete.
@@ -232,6 +250,7 @@ export const schedule = [
     time: '9:00 AM',
     location: 'McDonogh — Field 16',
     clearance: true,
+    checkIn: true,
     kit: ['white', 'black', 'black'],
     focus: 'Tryouts — Day 1',
     note: '',
@@ -244,6 +263,7 @@ export const schedule = [
     time: '9:00 AM',
     location: 'McDonogh — Field 16',
     clearance: true,
+    checkIn: true,
     kit: ['white', 'black', 'black'],
     focus: 'Tryouts — Day 2',
     note: '',
@@ -256,6 +276,7 @@ export const schedule = [
     time: '9:00 AM',
     location: 'McDonogh — Field 16',
     clearance: true,
+    checkIn: true,
     kit: ['white', 'black', 'black'],
     focus: 'Tryouts — Day 3',
     note: '',
