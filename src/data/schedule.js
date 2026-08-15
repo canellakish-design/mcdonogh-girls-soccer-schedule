@@ -179,16 +179,17 @@ export const rules = [
 // ---------------------------------------------------------------------
 // TRYOUT CHECK-IN — the QR block on any day with `checkIn: true`.
 //
-// Paste the live Google Form URL into `url`, then run `npm run build:qr`
-// (or just `npm run build`) to regenerate public/tryout-checkin-qr.svg.
-// While `url` is empty the whole block stays hidden, so nothing on the
-// site points at a QR code that goes nowhere.
+// `url` is what the QR encodes, so it has to be the absolute public URL —
+// a phone scanning the code has no page to resolve a relative path from.
+// Change it and `npm run build` redraws public/tryout-checkin-qr.svg.
+// While it is empty the build writes no QR and the block does not render,
+// so the site never shows a code that scans nowhere.
 //
-// The form is created by scripts/create-checkin-form.gs — run it once in
-// Apps Script and it prints the URL to paste here.
+// The form itself is src/components/CheckInForm.jsx, posting to Netlify
+// Forms. Submissions appear under Forms > tryout-check-in in Netlify.
 // ---------------------------------------------------------------------
 export const checkIn = {
-  url: '',
+  url: 'https://mcdonoghgirlssoccercalendar.netlify.app/#/check-in',
   title: 'Tryout Check-In',
   intro: 'Scan once at your first tryout. One submission per player.',
   qr: '/tryout-checkin-qr.svg',

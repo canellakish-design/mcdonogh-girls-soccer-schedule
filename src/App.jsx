@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { TEAM, schedule, observances, rules } from './data/schedule.js'
 import ScheduleCard from './components/ScheduleCard.jsx'
 import DayDetail from './components/DayDetail.jsx'
+import CheckInForm from './components/CheckInForm.jsx'
 
 function useHashRoute() {
   const [hash, setHash] = useState(() => window.location.hash)
@@ -206,6 +207,7 @@ export default function App() {
   const hash = useHashRoute()
   const match = hash.match(/#\/day\/(\d+)/)
   const current = match ? schedule.find((d) => String(d.no) === match[1]) : null
+  const isCheckIn = hash.startsWith('#/check-in')
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -214,7 +216,11 @@ export default function App() {
   return (
     <div className="page">
       <Masthead />
-      {current ? (
+      {isCheckIn ? (
+        <main className="container">
+          <CheckInForm />
+        </main>
+      ) : current ? (
         <main className="container">
           <DayDetail item={current} />
         </main>
