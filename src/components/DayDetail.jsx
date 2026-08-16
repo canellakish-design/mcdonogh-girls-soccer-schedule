@@ -33,6 +33,7 @@ export default function DayDetail({ item }) {
             : isTraining
               ? <span className="indicator indicator-training">Training</span>
               : <span className="indicator indicator-match">Match</span>}
+          {item.cancelled && <span className="indicator indicator-cancelled">Cancelled</span>}
           {item.tentative && <span className="indicator indicator-tentative">Tentative</span>}
           {item.scrimmage && <span className="indicator indicator-grey">Scrimmage</span>}
           {item.playoff && <span className="indicator indicator-orange">IAAM Playoffs</span>}
@@ -54,7 +55,8 @@ export default function DayDetail({ item }) {
         {item.focus && <Fact label="Focus" value={item.focus} />}
       </dl>
 
-      {kitFor(item) && (
+      {/* No session, so no kit to turn up in. */}
+      {!item.cancelled && kitFor(item) && (
         <div className="detail-kit">
           <h3 className="detail-kit-label">Kit</h3>
           <KitIcons kit={kitFor(item)} />

@@ -257,8 +257,15 @@ export const schedule = [
     location: 'McDonogh — Field 16',
     clearance: true,
     kit: ['white', 'black', 'black'],
+    cancelled: true,
     focus: 'Tryouts — Day 3',
-    note: '',
+    note:
+      'Field 16 is closed because of rain. Selection still goes ahead: 22–23 players ' +
+      'will be picked for the first training session on Aug 18 and the Orange v. White ' +
+      'match on Aug 19, 7:00 PM on the turf. Players will get a phone call from the ' +
+      'coaching staff on the number they gave at registration — reply to the email if ' +
+      'you want a different number used. All returning players are through and will ' +
+      'not be called.',
   },
   {
     no: 4,

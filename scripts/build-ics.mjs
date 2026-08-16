@@ -81,11 +81,14 @@ function fold(line) {
 }
 
 function title(item) {
+  // Cancelled days keep their name but say so first, since the summary is
+  // all a subscriber sees in a month view.
+  const prefix = item.cancelled ? 'CANCELLED — ' : ''
   // `title` wins outright — for days whose label is not "vs. <opponent>".
-  if (item.title) return item.title
-  if (item.type === 'training') return item.focus || 'Training'
-  const prefix = item.home === true ? 'vs. ' : item.home === false ? '@ ' : 'vs. '
-  return prefix + item.opponent
+  if (item.title) return prefix + item.title
+  if (item.type === 'training') return prefix + (item.focus || 'Training')
+  const side = item.home === true ? 'vs. ' : item.home === false ? '@ ' : 'vs. '
+  return prefix + side + item.opponent
 }
 
 // A 'note' block covers a span of days; endDate is the last day it applies to.
@@ -189,6 +192,8 @@ function buildFeed(feed) {
     if (item.note) desc.push(item.note)
     if (desc.length) lines.push(`DESCRIPTION:${esc(desc.join('\n'))}`)
 
+    // STATUS:CANCELLED is what calendar apps read to grey out an event.
+    if (item.cancelled) lines.push('STATUS:CANCELLED')
     lines.push(`CATEGORIES:${isNote ? 'Note' : isTraining ? 'Training' : 'Match'}`)
     lines.push('END:VEVENT')
   }

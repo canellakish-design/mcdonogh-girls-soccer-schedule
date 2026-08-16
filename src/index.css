@@ -146,6 +146,12 @@ a { color: inherit; }
 .card-note .card-title { color: var(--yellow-ink); }
 .card-note .card-meta { color: var(--yellow-ink); }
 
+/* Cancelled session — struck through so it reads as "not happening" at a
+   glance, but the card stays put with its note explaining why. */
+.card-cancelled { background: var(--panel); border-color: var(--line); }
+.card-cancelled .card-title { text-decoration: line-through; color: var(--muted); }
+.card-cancelled .card-time { background: var(--line-soft); color: var(--muted); }
+
 /* today / next highlight */
 .card-today { border-color: var(--mc-orange); box-shadow: 0 0 0 2px var(--orange-bg); }
 .card-next { border-color: #d9dbdf; }
@@ -203,6 +209,7 @@ a { color: inherit; }
 .tag-home { background: var(--green-bg); color: var(--green); }
 .tag-away { background: #f0eafb; color: #5a3aa8; }
 .tag-result { background: var(--mc-black); color: #fff; }
+.tag-cancelled { background: #fdecea; color: #a8271a; }
 /* Dashed border = penciled in, not on the official schedule yet. */
 .tag-tentative {
   background: #fff8e6;
@@ -416,6 +423,7 @@ a { color: inherit; }
 .indicator-orange { background: #fbe3d6; color: var(--mc-orange-dark); }
 .indicator-result { background: var(--mc-black); color: #fff; }
 .indicator-tentative { background: #fff8e6; color: #8a6100; border: 1px dashed #d9b45a; }
+.indicator-cancelled { background: #fdecea; color: #a8271a; }
 .indicator-yellow { background: #fbe9a8; color: var(--yellow-ink); }
 
 .facts {

@@ -38,8 +38,8 @@ export default function ScheduleCard({ item, highlight, observance }) {
   return (
     <a
       className={`card ${isNote ? 'card-note ' : ''}${item.type === 'match' ? 'card-match ' : ''}${
-        highlight ? `card-${highlight}` : ''
-      }`}
+        item.cancelled ? 'card-cancelled ' : ''
+      }${highlight ? `card-${highlight}` : ''}`}
       href={`#/day/${item.no}`}
     >
       <span className={`datebox ${boxClass}`}>
@@ -72,6 +72,7 @@ export default function ScheduleCard({ item, highlight, observance }) {
           : isTraining
             ? <span className="tag tag-training">Training</span>
             : <span className="tag tag-match">Match</span>}
+        {item.cancelled && <span className="tag tag-cancelled">Cancelled</span>}
         {item.tentative && <span className="tag tag-tentative">Tentative</span>}
         {item.scrimmage && <span className="tag tag-grey">Scrimmage</span>}
         {item.playoff && <span className="tag tag-orange-soft">Playoffs</span>}
