@@ -7,8 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build:ics": "node scripts/build-ics.mjs",
-    "build:qr": "node scripts/build-qr.mjs",
-    "prebuild": "npm run build:ics && npm run build:qr",
+    "prebuild": "npm run build:ics",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -18,7 +17,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.3",
-    "qrcode": "^1.5.4",
     "vite": "^8.1.1"
   }
 }

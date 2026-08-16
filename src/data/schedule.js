@@ -177,25 +177,6 @@ export const rules = [
 ]
 
 // ---------------------------------------------------------------------
-// TRYOUT CHECK-IN — the QR block on any day with `checkIn: true`.
-//
-// `url` is what the QR encodes, so it has to be the absolute public URL —
-// a phone scanning the code has no page to resolve a relative path from.
-// Change it and `npm run build` redraws public/tryout-checkin-qr.svg.
-// While it is empty the build writes no QR and the block does not render,
-// so the site never shows a code that scans nowhere.
-//
-// The form itself is src/components/CheckInForm.jsx, posting to Netlify
-// Forms. Submissions appear under Forms > tryout-check-in in Netlify.
-// ---------------------------------------------------------------------
-export const checkIn = {
-  url: 'https://mcdonoghgirlssoccercalendar.netlify.app/#/check-in',
-  title: 'Tryout Check-In',
-  intro: 'Scan once at your first tryout. One submission per player.',
-  qr: '/tryout-checkin-qr.svg',
-}
-
-// ---------------------------------------------------------------------
 // CLEARANCE — attached to any day with `clearance: true` (the tryout days).
 // Stated factually: what is required, where to check, what happens if it
 // is incomplete.
@@ -251,7 +232,6 @@ export const schedule = [
     time: '9:00 AM',
     location: 'McDonogh — Field 16',
     clearance: true,
-    checkIn: true,
     kit: ['white', 'black', 'black'],
     focus: 'Tryouts — Day 1',
     note: '',
@@ -262,9 +242,8 @@ export const schedule = [
     sortDate: '2026-08-16',
     type: 'training',
     time: '9:00 AM',
-    location: 'McDonogh — Field 16',
+    location: 'McDonogh — Dixon Field (Turf)',
     clearance: true,
-    checkIn: true,
     kit: ['white', 'black', 'black'],
     focus: 'Tryouts — Day 2',
     note: '',
@@ -277,7 +256,6 @@ export const schedule = [
     time: '9:00 AM',
     location: 'McDonogh — Field 16',
     clearance: true,
-    checkIn: true,
     kit: ['white', 'black', 'black'],
     focus: 'Tryouts — Day 3',
     note: '',
