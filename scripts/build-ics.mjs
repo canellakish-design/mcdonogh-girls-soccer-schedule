@@ -190,6 +190,7 @@ function buildFeed(feed) {
       if (item.result) desc.push(`Result: ${item.result}`)
     }
     if (item.note) desc.push(item.note)
+    for (const r of item.resources || []) desc.push(`${r.label}: ${r.url}`)
     if (desc.length) lines.push(`DESCRIPTION:${esc(desc.join('\n'))}`)
 
     // STATUS:CANCELLED is what calendar apps read to grey out an event.

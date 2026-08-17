@@ -65,6 +65,20 @@ export default function DayDetail({ item }) {
 
       {item.note && <p className="detail-note">{item.note}</p>}
 
+      {/* Links attached to a day — the Yo-Yo description and recording, say. */}
+      {item.resources?.length > 0 && (
+        <ul className="resources">
+          {item.resources.map((r) => (
+            <li key={r.url}>
+              <a href={r.url} target="_blank" rel="noopener noreferrer">
+                {r.label}
+              </a>
+              {r.hint && <span className="resource-hint">{r.hint}</span>}
+            </li>
+          ))}
+        </ul>
+      )}
+
       {meetNote(item) && <p className="detail-note detail-meet">{meetNote(item)}</p>}
 
       {venueAddress(item.location) && (

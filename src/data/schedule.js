@@ -275,7 +275,19 @@ export const schedule = [
     time: '9:00 AM',
     location: 'McDonogh — Field 16',
     focus: 'Training',
-    note: '',
+    note: 'We are running the Yo-Yo test.',
+    resources: [
+      {
+        label: 'How the Yo-Yo test works',
+        url: 'https://www.theyoyotest.com/',
+        hint: 'Description only — do not buy anything from the site.',
+      },
+      {
+        label: 'Yo-Yo test recording',
+        url: 'https://drive.google.com/file/d/1AFVyMUyEkN3FmpApFKUPpXsGxQvIampX/view',
+        hint: 'This is the recording we run to.',
+      },
+    ],
   },
   {
     no: 5,

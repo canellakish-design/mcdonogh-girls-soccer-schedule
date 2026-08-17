@@ -502,6 +502,19 @@ a { color: inherit; }
   color: var(--muted);
 }
 
+/* ---------- Per-day links ---------- */
+.resources { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.resources li {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--mc-orange);
+  border-radius: 0 9px 9px 0;
+  background: #fff;
+}
+.resources a { font-weight: 800; font-size: 15px; color: var(--mc-orange-dark); text-decoration: none; }
+.resources a:hover { text-decoration: underline; }
+.resource-hint { display: block; margin-top: 3px; font-size: 12.5px; color: var(--muted); }
+
 .clearance {
   margin-top: 22px;
   padding: 16px 18px;

@@ -1,7 +1,7 @@
 # McDonogh Girls Varsity Soccer — Team Schedule
 
 A standalone public site showing every training day and match of the season as a card.
-Same format as the Maryland United parent travel guide: a card list, tap a card for detail.
+A card list; tap a card for detail.
 
 ## Source of truth
 
