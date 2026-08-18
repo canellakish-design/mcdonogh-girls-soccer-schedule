@@ -1,5 +1,6 @@
 import { matchTitle, meetNote } from './ScheduleCard.jsx'
 import KitIcons from './KitIcons.jsx'
+import Formation from './Formation.jsx'
 import { clearance, directionsUrl, venueAddress, venueMap, kitFor } from '../data/schedule.js'
 
 function Fact({ label, value }) {
@@ -80,6 +81,8 @@ export default function DayDetail({ item }) {
       )}
 
       {meetNote(item) && <p className="detail-note detail-meet">{meetNote(item)}</p>}
+
+      {item.formations && <Formation formations={item.formations} />}
 
       {venueAddress(item.location) && (
         <div className="venue">

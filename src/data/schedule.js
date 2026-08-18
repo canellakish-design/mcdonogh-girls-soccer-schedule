@@ -305,6 +305,18 @@ export const schedule = [
     result: '',
     focus: '',
     note: 'Intra-squad.',
+    formations: [
+      {
+        name: 'Orange',
+        kit: ['orange', 'white', 'white'],
+        formation: '4-3-3',
+      },
+      {
+        name: 'White',
+        kit: ['white', 'black', 'black'],
+        formation: '4-3-3',
+      },
+    ],
   },
   {
     no: 6,
