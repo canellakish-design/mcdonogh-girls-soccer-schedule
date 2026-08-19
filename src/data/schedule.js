@@ -121,6 +121,7 @@ export const KIT_COLORS = {
   white: { color: '#ffffff', name: 'White' },
   black: { color: '#1a1a1a', name: 'Black' },
   blue: { color: '#1f4fa3', name: 'Blue' },
+  orange: { color: '#e8541e', name: 'Orange' },
 }
 
 // Training gear by day of week: [shirt, shorts, socks].
@@ -135,7 +136,7 @@ export const TRAINING_KIT_BY_DAY = {
   6: ['black', 'black', 'black'],
 }
 
-function buildKit([shirt, shorts, socks]) {
+export function buildKit([shirt, shorts, socks]) {
   const part = (key, item) => ({
     color: KIT_COLORS[key].color,
     label: `${KIT_COLORS[key].name} ${item}`,
@@ -305,19 +306,10 @@ export const schedule = [
     result: '',
     focus: '',
     note: 'Intra-squad.',
-    formations: [
-      {
-        name: 'Orange',
-        kit: ['orange', 'white', 'white'],
-        formation: '4-3-3',
-        meetingLocation: 'Cage',
-      },
-      {
-        name: 'White',
-        kit: ['white', 'black', 'black'],
-        formation: '4-3-3',
-        meetingLocation: 'Alumni Room',
-      },
+    // Intra-squad: two sides, each with its own kit and meeting room.
+    teams: [
+      { name: 'Team Orange', kit: ['orange', 'white', 'white'], meetIn: 'the Cage' },
+      { name: 'Team White', kit: ['white', 'black', 'black'], meetIn: 'the Alumni Room' },
     ],
   },
   {
