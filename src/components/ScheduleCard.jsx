@@ -75,6 +75,11 @@ export default function ScheduleCard({ item, highlight, observance }) {
             ? <span className="tag tag-training">Training</span>
             : <span className="tag tag-match">Match</span>}
         {item.cancelled && <span className="tag tag-cancelled">Cancelled</span>}
+        {item.practicePoints && !item.cancelled && (
+          <span className="tag tag-points">
+            {item.practicePoints.available} Pts
+          </span>
+        )}
         {item.tentative && <span className="tag tag-tentative">Tentative</span>}
         {item.scrimmage && <span className="tag tag-grey">Scrimmage</span>}
         {item.playoff && <span className="tag tag-orange-soft">Playoffs</span>}

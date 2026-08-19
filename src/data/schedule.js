@@ -196,6 +196,25 @@ export const clearance = {
 }
 
 // ---------------------------------------------------------------------
+// PRACTICE POINTS — a running tally kept all season. The ways to earn are
+// fixed and live here; a day opts in with its own `practicePoints` block
+// saying what is on offer that session:
+//
+//   practicePoints: { available: 3, format: '3 × 25-minute matches',
+//                     first: true }   // `first` flags the season opener
+// ---------------------------------------------------------------------
+export const practicePoints = {
+  title: 'Practice Points',
+  intro: 'Points are tracked all season and the running tally is kept on this site.',
+  earn: [
+    { pts: '2 pts', for: 'Win' },
+    { pts: '1 pt', for: 'Goal' },
+    { pts: '1 pt', for: 'Assist' },
+    { pts: '1 pt', for: 'Shutout', note: '2 pts for defenders and goalkeepers' },
+  ],
+}
+
+// ---------------------------------------------------------------------
 // OBSERVANCES — small print inside the card for that date. Each is keyed to
 // a day that actually has a card, so multi-day holidays are folded into the
 // nearest session rather than floating on their own. Jewish holidays begin
@@ -306,6 +325,11 @@ export const schedule = [
     result: '',
     focus: '',
     note: 'Intra-squad.',
+    practicePoints: {
+      first: true,
+      available: 3,
+      format: '3 × 25-minute matches',
+    },
     // Intra-squad: two sides, each with its own kit, meeting room and squad.
     teams: [
       {

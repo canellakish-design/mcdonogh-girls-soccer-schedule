@@ -195,6 +195,14 @@ function buildFeed(feed) {
       }
       if (item.result) desc.push(`Result: ${item.result}`)
     }
+    if (item.practicePoints && !item.cancelled) {
+      const p = item.practicePoints
+      desc.push(
+        `${p.first ? 'First practice points of the season. ' : ''}` +
+          `${p.format ? p.format + ' — ' : ''}${p.available} practice points available. ` +
+          '2 pts win, 1 pt goal, 1 pt assist, 1 pt shutout (2 pts defenders and goalkeepers).',
+      )
+    }
     if (item.note) desc.push(item.note)
     for (const r of item.resources || []) desc.push(`${r.label}: ${r.url}`)
     if (desc.length) lines.push(`DESCRIPTION:${esc(desc.join('\n'))}`)
