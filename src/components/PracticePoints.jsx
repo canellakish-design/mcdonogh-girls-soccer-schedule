@@ -13,13 +13,11 @@ export default function PracticePoints({ day }) {
         {day.first && <span className="points-first">First opportunity</span>}
       </h3>
 
+      {/* No total is quoted — there is no cap on a night's haul. */}
       <p className="points-lead">
         {day.first ? 'This is the first chance to earn practice points this season. ' : ''}
-        {day.format ? `${day.format} — ` : ''}
-        <strong>
-          {day.available} practice point{day.available === 1 ? '' : 's'} available
-        </strong>
-        .
+        {day.format && <strong>{day.format}</strong>}
+        {day.format ? '. Points are earned as below.' : 'Points are earned as below.'}
       </p>
 
       <ul className="points-earn">
