@@ -143,9 +143,9 @@ function ListView() {
       )}
 
       <a className="points-link" href="#/points">
-        <span className="points-link-label">Practice Points</span>
+        <span className="points-link-label">Practice Points (Player Only)</span>
         <span className="points-link-hint">
-          {unlocked ? 'Running tally, per player' : 'Players only — team code required'}
+          {unlocked ? 'Running tally, per player' : 'Team code required'}
         </span>
       </a>
 
