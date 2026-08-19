@@ -210,10 +210,12 @@ export const PLAYERS_CODE = 'eagles2026'
 // ---------------------------------------------------------------------
 // PRACTICE POINTS — a running tally kept all season. The ways to earn are
 // fixed and live here; a day opts in with its own `practicePoints` block
-// saying what is on offer that session:
+// describing that session:
 //
-//   practicePoints: { available: 3, format: '3 × 25-minute matches',
-//                     first: true }   // `first` flags the season opener
+//   practicePoints: { format: '3 × 25-minute matches', first: true }
+//
+// `first` flags the season opener. Deliberately no total: there is no cap,
+// since a player can keep scoring.
 // ---------------------------------------------------------------------
 export const practicePoints = {
   title: 'Practice Points',
@@ -400,7 +402,6 @@ export const schedule = [
     note: 'Intra-squad.',
     practicePoints: {
       first: true,
-      available: 3,
       format: '3 × 25-minute matches',
     },
     // Intra-squad: two sides, each with its own kit, meeting room and squad.
