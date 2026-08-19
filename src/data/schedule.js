@@ -314,7 +314,7 @@ export const schedule = [
         meetIn: 'the Cage',
         players: [
           'Parker', 'Broom', 'Alyssa', 'Isabel', 'Lina', 'Amber',
-          'Maya', 'Zoey', 'Lily', 'Ari', 'Scarlet', 'Cassie',
+          'Maya', 'Zoey', 'Lily', 'Ari', 'Scarlett', 'Cassie',
         ],
       },
       {
@@ -322,7 +322,7 @@ export const schedule = [
         kit: ['white', 'black', 'black'],
         meetIn: 'the Alumni Room',
         players: [
-          'Chisamore', 'V', 'Samara', 'Alex', 'Riley', 'Aubry',
+          'Chisamore', 'Virginia', 'Samara', 'Alex', 'Riley', 'Aubrey',
           'Fiona', 'Grace', 'Paula', 'Soly', 'Layla', 'Kate',
         ],
       },
