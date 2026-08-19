@@ -2,6 +2,8 @@ import { useState, useEffect, useMemo } from 'react'
 import { TEAM, schedule, observances, rules } from './data/schedule.js'
 import ScheduleCard from './components/ScheduleCard.jsx'
 import DayDetail from './components/DayDetail.jsx'
+import Standings from './components/Standings.jsx'
+import { PlayerAccessProvider, usePlayerAccess } from './playerAccess.jsx'
 
 function useHashRoute() {
   const [hash, setHash] = useState(() => window.location.hash)
@@ -94,6 +96,7 @@ function todayISO() {
 }
 
 function ListView() {
+  const { unlocked } = usePlayerAccess()
   const [filter, setFilter] = useState('all')
   const [showPast, setShowPast] = useState(false)
   const [showRules, setShowRules] = useState(true)
@@ -138,6 +141,13 @@ function ListView() {
           )}
         </section>
       )}
+
+      <a className="points-link" href="#/points">
+        <span className="points-link-label">Practice Points</span>
+        <span className="points-link-hint">
+          {unlocked ? 'Running tally, per player' : 'Players only — team code required'}
+        </span>
+      </a>
 
       <a
         className="subscribe-hint"
@@ -206,22 +216,27 @@ export default function App() {
   const hash = useHashRoute()
   const match = hash.match(/#\/day\/(\d+)/)
   const current = match ? schedule.find((d) => String(d.no) === match[1]) : null
+  const onPoints = /#\/points\b/.test(hash)
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [hash])
 
   return (
-    <div className="page">
-      <Masthead />
-      {current ? (
-        <main className="container">
-          <DayDetail item={current} />
-        </main>
-      ) : (
-        <ListView />
-      )}
-      <Footer />
-    </div>
+    <PlayerAccessProvider>
+      <div className="page">
+        <Masthead />
+        {onPoints ? (
+          <Standings />
+        ) : current ? (
+          <main className="container">
+            <DayDetail item={current} />
+          </main>
+        ) : (
+          <ListView />
+        )}
+        <Footer />
+      </div>
+    </PlayerAccessProvider>
   )
 }

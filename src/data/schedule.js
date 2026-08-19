@@ -196,6 +196,18 @@ export const clearance = {
 }
 
 // ---------------------------------------------------------------------
+// PLAYERS' CODE — the shared code that reveals the players-only parts of
+// the site (practice points and the standings). Change it here and every
+// phone is locked out until the new one is entered; case and spaces are
+// ignored, so 'Eagles 2026' and 'eagles2026' both work.
+//
+// This keeps practice points out of a parent's casual view. It is NOT
+// security: the page is public and anyone who reads the site's source can
+// find what is behind the code. Do not put anything genuinely private here.
+// ---------------------------------------------------------------------
+export const PLAYERS_CODE = 'eagles2026'
+
+// ---------------------------------------------------------------------
 // PRACTICE POINTS — a running tally kept all season. The ways to earn are
 // fixed and live here; a day opts in with its own `practicePoints` block
 // saying what is on offer that session:
@@ -212,6 +224,67 @@ export const practicePoints = {
     { pts: '1 pt', for: 'Assist' },
     { pts: '1 pt', for: 'Shutout', note: '2 pts for defenders and goalkeepers' },
   ],
+}
+
+// ---------------------------------------------------------------------
+// PRACTICE POINTS LOG — what each player actually earned, session by
+// session. Record what HAPPENED, not the total: the points are worked out
+// from the rules above, so changing a rule reprices the whole season and
+// nothing has to be re-added by hand.
+//
+//   { player: 'Parker', wins: 2, goals: 1, assists: 0, shutouts: 1, back: true }
+//
+// `back: true` marks a defender or goalkeeper, who takes 2 for a shutout
+// instead of 1. Omit any field that is zero. Add a session by appending a
+// block; the standings page picks it up on its own.
+// ---------------------------------------------------------------------
+export const pointsLog = [
+  // {
+  //   sortDate: '2026-08-19',
+  //   session: 'Orange v. White',
+  //   tally: [
+  //     { player: 'Parker', wins: 2, goals: 1 },
+  //   ],
+  // },
+]
+
+// One player's haul from one session, priced by the rules above.
+export function pointsFor(e) {
+  return (
+    (e.wins || 0) * 2 +
+    (e.goals || 0) +
+    (e.assists || 0) +
+    (e.shutouts || 0) * (e.back ? 2 : 1)
+  )
+}
+
+// Season standings, highest first. Ties break alphabetically so the order is
+// stable rather than dependent on who happens to be entered first.
+export function standings() {
+  const byPlayer = new Map()
+  for (const session of pointsLog) {
+    for (const e of session.tally || []) {
+      const row = byPlayer.get(e.player) || {
+        player: e.player,
+        pts: 0,
+        wins: 0,
+        goals: 0,
+        assists: 0,
+        shutouts: 0,
+        sessions: 0,
+      }
+      row.pts += pointsFor(e)
+      row.wins += e.wins || 0
+      row.goals += e.goals || 0
+      row.assists += e.assists || 0
+      row.shutouts += e.shutouts || 0
+      row.sessions += 1
+      byPlayer.set(e.player, row)
+    }
+  }
+  return [...byPlayer.values()].sort(
+    (a, b) => b.pts - a.pts || a.player.localeCompare(b.player),
+  )
 }
 
 // ---------------------------------------------------------------------

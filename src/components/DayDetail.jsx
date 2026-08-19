@@ -2,6 +2,8 @@ import { matchTitle, meetNote } from './ScheduleCard.jsx'
 import KitIcons from './KitIcons.jsx'
 import Teams from './Teams.jsx'
 import PracticePoints from './PracticePoints.jsx'
+import PlayerGate from './PlayerGate.jsx'
+import { usePlayerAccess } from '../playerAccess.jsx'
 import { clearance, directionsUrl, venueAddress, venueMap, kitFor } from '../data/schedule.js'
 
 function Fact({ label, value }) {
@@ -15,6 +17,7 @@ function Fact({ label, value }) {
 }
 
 export default function DayDetail({ item }) {
+  const { unlocked } = usePlayerAccess()
   const isTraining = item.type === 'training'
   const isNote = item.type === 'note'
   const homeLabel = item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral site' : 'Home'
@@ -69,7 +72,12 @@ export default function DayDetail({ item }) {
             </div>
           )}
 
-      {!item.cancelled && <PracticePoints day={item.practicePoints} />}
+      {/* Practice points are squad business — parents see the gate instead. */}
+      {!item.cancelled && item.practicePoints && (
+        unlocked
+          ? <PracticePoints day={item.practicePoints} />
+          : <PlayerGate what="Practice points for this session" />
+      )}
 
       {item.note && <p className="detail-note">{item.note}</p>}
 

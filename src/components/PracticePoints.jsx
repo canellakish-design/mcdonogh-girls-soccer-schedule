@@ -34,7 +34,9 @@ export default function PracticePoints({ day }) {
         ))}
       </ul>
 
-      <p className="points-outro">{practicePoints.intro}</p>
+      <p className="points-outro">
+        {practicePoints.intro} <a href="#/points">See the standings</a>.
+      </p>
     </section>
   )
 }

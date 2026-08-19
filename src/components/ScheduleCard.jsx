@@ -1,5 +1,7 @@
 // One row in the schedule list. Left = date box; middle = matchup/focus; right = tags.
 
+import { usePlayerAccess } from '../playerAccess.jsx'
+
 function dateBox(sortDate) {
   // sortDate is 'YYYY-MM-DD' — render as month abbrev + day, no timezone parsing.
   const [, m, d] = sortDate.split('-')
@@ -32,6 +34,7 @@ export function matchTitle(item) {
 }
 
 export default function ScheduleCard({ item, highlight, observance }) {
+  const { unlocked } = usePlayerAccess()
   const { mon, day } = dateBox(item.sortDate)
   const isTraining = item.type === 'training'
   const isNote = item.type === 'note'
@@ -75,7 +78,7 @@ export default function ScheduleCard({ item, highlight, observance }) {
             ? <span className="tag tag-training">Training</span>
             : <span className="tag tag-match">Match</span>}
         {item.cancelled && <span className="tag tag-cancelled">Cancelled</span>}
-        {item.practicePoints && !item.cancelled && (
+        {item.practicePoints && !item.cancelled && unlocked && (
           <span className="tag tag-points">
             {item.practicePoints.available} Pts
           </span>
