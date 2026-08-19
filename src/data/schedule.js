@@ -306,10 +306,26 @@ export const schedule = [
     result: '',
     focus: '',
     note: 'Intra-squad.',
-    // Intra-squad: two sides, each with its own kit and meeting room.
+    // Intra-squad: two sides, each with its own kit, meeting room and squad.
     teams: [
-      { name: 'Team Orange', kit: ['orange', 'white', 'white'], meetIn: 'the Cage' },
-      { name: 'Team White', kit: ['white', 'black', 'black'], meetIn: 'the Alumni Room' },
+      {
+        name: 'Team Orange',
+        kit: ['orange', 'white', 'white'],
+        meetIn: 'the Cage',
+        players: [
+          'Parker', 'Broom', 'Alyssa', 'Isabel', 'Lina', 'Amber',
+          'Maya', 'Zoey', 'Lily', 'Ari', 'Scarlet', 'Cassie',
+        ],
+      },
+      {
+        name: 'Team White',
+        kit: ['white', 'black', 'black'],
+        meetIn: 'the Alumni Room',
+        players: [
+          'Chisamore', 'V', 'Samara', 'Alex', 'Riley', 'Aubry',
+          'Fiona', 'Grace', 'Paula', 'Soly', 'Layla', 'Kate',
+        ],
+      },
     ],
   },
   {
