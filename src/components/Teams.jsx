@@ -11,8 +11,20 @@ export default function Teams({ teams, at }) {
     <div className="teams">
       {teams.map((team) => (
         <section key={team.name} className="team">
-          <h3 className="team-name">{team.name}</h3>
+          <h3 className="team-name">
+            {team.name}
+            {team.players?.length ? (
+              <span className="team-count">{team.players.length}</span>
+            ) : null}
+          </h3>
           <KitIcons kit={buildKit(team.kit)} />
+          {team.players?.length > 0 && (
+            <ul className="team-players">
+              {team.players.map((p) => (
+                <li key={p}>{p}</li>
+              ))}
+            </ul>
+          )}
           {team.meetIn && (
             <p className="team-meet">
               Meets in {team.meetIn}
