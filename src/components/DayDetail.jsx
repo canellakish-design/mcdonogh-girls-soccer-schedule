@@ -1,6 +1,7 @@
 import { matchTitle, meetNote } from './ScheduleCard.jsx'
 import KitIcons from './KitIcons.jsx'
 import Teams from './Teams.jsx'
+import PracticePoints from './PracticePoints.jsx'
 import { clearance, directionsUrl, venueAddress, venueMap, kitFor } from '../data/schedule.js'
 
 function Fact({ label, value }) {
@@ -67,6 +68,8 @@ export default function DayDetail({ item }) {
               <KitIcons kit={kitFor(item)} />
             </div>
           )}
+
+      {!item.cancelled && <PracticePoints day={item.practicePoints} />}
 
       {item.note && <p className="detail-note">{item.note}</p>}
 
