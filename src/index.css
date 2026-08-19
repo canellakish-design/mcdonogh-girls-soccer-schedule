@@ -536,73 +536,37 @@ a { color: inherit; }
 .clearance ol { margin: 0 0 12px; padding-left: 20px; display: flex; flex-direction: column; gap: 5px; }
 .clearance li { font-size: 13.5px; line-height: 1.5; color: var(--ink); }
 
-.formations-container {
+/* ---------- Split-squad sides (Orange v. White) ---------- */
+.teams {
   margin-top: 22px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 12px;
+}
+@media (max-width: 560px) {
+  .teams { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 600px) {
-  .formations-container { grid-template-columns: 1fr; }
-}
-
-.formation-panel {
-  padding: 16px;
+.team {
+  padding: 15px 16px;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: var(--panel);
 }
-
-.formation-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 12px;
-}
-
-.formation-header h4 {
-  margin: 0 0 4px;
-  font-size: 16px;
+.team-name {
+  margin: 0 0 12px;
+  font-size: 11px;
   font-weight: 800;
-  color: var(--ink);
-}
-
-.meeting-location {
-  margin: 0;
-  font-size: 13px;
-  color: var(--slate);
-}
-
-.formation-type {
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--slate);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  flex-shrink: 0;
-  margin-left: 12px;
+  letter-spacing: 0.9px;
+  color: var(--muted);
 }
-
-.formation-field {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 100 / 140;
-  margin-bottom: 12px;
-}
-
-.formation-kit {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-}
-
-.kit-item {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--ink);
-  border-radius: 4px;
+.team-meet {
+  margin: 12px 0 0;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+  font-size: 13.5px;
+  color: var(--slate);
 }
 
 .empty { color: var(--muted); text-align: center; padding: 24px; }

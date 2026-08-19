@@ -1,6 +1,6 @@
 import { matchTitle, meetNote } from './ScheduleCard.jsx'
 import KitIcons from './KitIcons.jsx'
-import Formation from './Formation.jsx'
+import Teams from './Teams.jsx'
 import { clearance, directionsUrl, venueAddress, venueMap, kitFor } from '../data/schedule.js'
 
 function Fact({ label, value }) {
@@ -56,13 +56,17 @@ export default function DayDetail({ item }) {
         {item.focus && <Fact label="Focus" value={item.focus} />}
       </dl>
 
-      {/* No session, so no kit to turn up in. */}
-      {!item.cancelled && kitFor(item) && (
-        <div className="detail-kit">
-          <h3 className="detail-kit-label">Kit</h3>
-          <KitIcons kit={kitFor(item)} />
-        </div>
-      )}
+      {/* Split-squad days carry their kit per side, so the single Kit box
+          would only repeat "Captain's choice" above it. */}
+      {item.teams
+        ? <Teams teams={item.teams} at={item.teamTalk} />
+        /* No session, so no kit to turn up in. */
+        : !item.cancelled && kitFor(item) && (
+            <div className="detail-kit">
+              <h3 className="detail-kit-label">Kit</h3>
+              <KitIcons kit={kitFor(item)} />
+            </div>
+          )}
 
       {item.note && <p className="detail-note">{item.note}</p>}
 
@@ -81,8 +85,6 @@ export default function DayDetail({ item }) {
       )}
 
       {meetNote(item) && <p className="detail-note detail-meet">{meetNote(item)}</p>}
-
-      {item.formations && <Formation formations={item.formations} />}
 
       {venueAddress(item.location) && (
         <div className="venue">

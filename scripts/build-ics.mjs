@@ -184,7 +184,13 @@ function buildFeed(feed) {
       if (item.playoff) desc.push('IAAM Playoffs')
       desc.push(item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral site' : 'Home')
       if (item.dismissal) desc.push(`Dismissal: ${item.dismissal}`)
-      if (item.teamTalk) {
+      // Split-squad days meet by side, so they replace the single team talk.
+      if (item.teams) {
+        for (const t of item.teams) {
+          const at = item.teamTalk ? ` at ${item.teamTalk}` : ''
+          desc.push(`${t.name} (${t.kit.join('/')}) meets in ${t.meetIn}${at}`)
+        }
+      } else if (item.teamTalk) {
         desc.push(`Team talk: ${item.teamTalk} in the ${item.teamTalkRoom || 'Board Room'}`)
       }
       if (item.result) desc.push(`Result: ${item.result}`)

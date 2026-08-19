@@ -16,6 +16,8 @@ const DEFAULT_TEAM_TALK_ROOM = 'Board Room'
 
 export function meetNote(item) {
   if (item.type !== 'match' || item.home !== true) return null
+  // Split-squad days: each side has its own room, listed on its own panel.
+  if (item.teams) return null
   const at = item.teamTalk || DEFAULT_TEAM_TALK
   const room = item.teamTalkRoom || DEFAULT_TEAM_TALK_ROOM
   return `Team talk in the ${room} at ${at}.`
