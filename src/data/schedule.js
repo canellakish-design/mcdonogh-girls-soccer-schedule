@@ -310,11 +310,13 @@ export const schedule = [
         name: 'Orange',
         kit: ['orange', 'white', 'white'],
         formation: '4-3-3',
+        meetingLocation: 'Cage',
       },
       {
         name: 'White',
         kit: ['white', 'black', 'black'],
         formation: '4-3-3',
+        meetingLocation: 'Alumni Room',
       },
     ],
   },

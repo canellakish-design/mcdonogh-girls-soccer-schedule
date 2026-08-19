@@ -16,7 +16,10 @@ export default function Formation({ formations }) {
       {formations.map((team, idx) => (
         <div key={idx} className="formation-panel">
           <div className="formation-header">
-            <h4>{team.name}</h4>
+            <div>
+              <h4>{team.name}</h4>
+              {team.meetingLocation && <p className="meeting-location">Meet in {team.meetingLocation}</p>}
+            </div>
             <span className="formation-type">{team.formation}</span>
           </div>
           <svg viewBox="0 0 100 140" className="formation-field">
