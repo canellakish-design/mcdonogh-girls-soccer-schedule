@@ -86,8 +86,6 @@ export default function DayDetail({ item }) {
 
       {meetNote(item) && <p className="detail-note detail-meet">{meetNote(item)}</p>}
 
-      {item.formations && <Formation formations={item.formations} />}
-
       {venueAddress(item.location) && (
         <div className="venue">
           <p className="venue-address">{venueAddress(item.location)}</p>

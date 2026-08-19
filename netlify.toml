@@ -7,14 +7,16 @@
   to = "/index.html"
   status = 200
 
-# Always revalidate the HTML so visitors get the newest build (which points
-# at freshly-hashed JS/CSS). Hashed assets can still cache long-term.
+# Never serve the HTML from cache — it is what points at the freshly-hashed
+# JS/CSS, and a stale copy pins phones to an old build. Safari in particular
+# treats no-cache loosely on a home-screen page. Hashed assets under /assets
+# are immutable, so they can still cache long-term.
 [[headers]]
   for = "/index.html"
   [headers.values]
-    Cache-Control = "no-cache"
+    Cache-Control = "no-store, must-revalidate"
 
 [[headers]]
   for = "/"
   [headers.values]
-    Cache-Control = "no-cache"
+    Cache-Control = "no-store, must-revalidate"
