@@ -252,7 +252,7 @@ export const pointsLog = [
       { player: 'Anne Broome', wins: 3, shutouts: 3, back: true },
       { player: 'Amber', wins: 3, shutouts: 3, back: true },
       { player: 'Maya', wins: 3, shutouts: 3, back: true },
-      { player: 'Zoey', wins: 3, shutouts: 3, goals: 2 },
+      { player: 'Zoe', wins: 3, shutouts: 3, goals: 2 },
       { player: 'Lily', wins: 3, shutouts: 3, goals: 1 },
       { player: 'Alyssa', wins: 3, shutouts: 3 },
       { player: 'Isabel', wins: 3, shutouts: 3 },
@@ -426,7 +426,7 @@ export const schedule = [
         meetIn: 'the Cage',
         players: [
           'Parker', 'Anne Broome', 'Alyssa', 'Isabel', 'Lina', 'Amber',
-          'Maya', 'Zoey', 'Lily', 'Ari', 'Scarlett', 'Cassie',
+          'Maya', 'Zoe', 'Lily', 'Ari', 'Scarlett', 'Cassie',
         ],
       },
       {
