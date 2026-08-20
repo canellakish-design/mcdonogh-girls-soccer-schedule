@@ -251,6 +251,12 @@ export const practicePoints = {
 // `back: true` marks a defender or goalkeeper, who takes 2 for a shutout
 // instead of 1. Omit any field that is zero. Add a session by appending a
 // block; the standings page picks it up on its own.
+//
+// `bonus` covers anything the four standing rules do not — a point awarded
+// on the day for something worth rewarding. Always say what it was for, so
+// the table can be read back months later:
+//
+//   { player: 'Grace', bonus: 1, bonusFor: 'Bang bang' }
 // ---------------------------------------------------------------------
 export const pointsLog = [
   {
@@ -277,15 +283,18 @@ export const pointsLog = [
     session: 'Training — Orange v. Grey',
     note:
       'Orange won the 8 v 8 4–0 and both 3 v 3 transition games. Grey won Over the ' +
-      'River. Cassie in goal for Orange, with Kaitlyn, Parker and Aubrey at the back.',
+      'River. Cassie in goal for Orange, with Kaitlyn, Parker and Aubrey at the back. ' +
+      'Bang bang for Isabelle and Grace, Zoe and Maya, and Zoe and Isabelle.',
     tally: [
       // Orange: three wins, and the clean sheet from the 8 v 8.
       { player: 'Cassie', wins: 3, shutouts: 1, back: true },
       { player: 'Kaitlyn', wins: 3, shutouts: 1, back: true },
       { player: 'Parker', wins: 3, shutouts: 1, back: true },
       { player: 'Aubrey', wins: 3, shutouts: 1, back: true },
-      { player: 'Zoe', wins: 3, shutouts: 1, goals: 2 },
-      { player: 'Isabelle', wins: 3, shutouts: 1, goals: 1 },
+      // Bang bang: back-to-back goals, a point each to both scorers.
+      // Three of them — Isabelle with Grace, Zoe with Maya, Zoe with Isabelle.
+      { player: 'Zoe', wins: 3, shutouts: 1, goals: 2, bonus: 2, bonusFor: 'Bang bang ×2' },
+      { player: 'Isabelle', wins: 3, shutouts: 1, goals: 1, bonus: 2, bonusFor: 'Bang bang ×2' },
       { player: 'Lily', wins: 3, shutouts: 1, goals: 1 },
       { player: 'Alex', wins: 3, shutouts: 1 },
       { player: 'Kate', wins: 3, shutouts: 1 },
@@ -296,8 +305,8 @@ export const pointsLog = [
       { player: 'Alyssa', wins: 1 },
       { player: 'Amber', wins: 1 },
       { player: 'Ari', wins: 1 },
-      { player: 'Grace', wins: 1 },
-      { player: 'Maya', wins: 1 },
+      { player: 'Grace', wins: 1, bonus: 1, bonusFor: 'Bang bang' },
+      { player: 'Maya', wins: 1, bonus: 1, bonusFor: 'Bang bang' },
     ],
   },
 ]
@@ -308,7 +317,8 @@ export function pointsFor(e) {
     (e.wins || 0) * 2 +
     (e.goals || 0) +
     (e.assists || 0) +
-    (e.shutouts || 0) * (e.back ? 2 : 1)
+    (e.shutouts || 0) * (e.back ? 2 : 1) +
+    (e.bonus || 0)
   )
 }
 
@@ -325,6 +335,7 @@ export function standings() {
         goals: 0,
         assists: 0,
         shutouts: 0,
+        bonus: 0,
         sessions: 0,
       }
       row.pts += pointsFor(e)
@@ -332,6 +343,7 @@ export function standings() {
       row.goals += e.goals || 0
       row.assists += e.assists || 0
       row.shutouts += e.shutouts || 0
+      row.bonus += e.bonus || 0
       row.sessions += 1
       byPlayer.set(e.player, row)
     }

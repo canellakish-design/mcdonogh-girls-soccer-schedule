@@ -15,6 +15,8 @@ export default function Standings() {
   const { unlocked, lock } = usePlayerAccess()
   const rows = standings()
   const sessions = pointsLog.length
+  // The bonus column only earns its width once something has been awarded.
+  const anyBonus = rows.some((r) => r.bonus > 0)
 
   if (!unlocked) {
     return (
@@ -62,6 +64,9 @@ export default function Standings() {
               <th className="num" scope="col"><abbr title="Goals">G</abbr></th>
               <th className="num" scope="col"><abbr title="Assists">A</abbr></th>
               <th className="num" scope="col"><abbr title="Shutouts">SO</abbr></th>
+              {anyBonus && (
+                <th className="num" scope="col"><abbr title="Bonus points">B</abbr></th>
+              )}
               <th className="num col-pts" scope="col">Pts</th>
             </tr>
           </thead>
@@ -76,6 +81,7 @@ export default function Standings() {
                 <td className="num">{r.goals || '—'}</td>
                 <td className="num">{r.assists || '—'}</td>
                 <td className="num">{r.shutouts || '—'}</td>
+                {anyBonus && <td className="num">{r.bonus || '—'}</td>}
                 <td className="num col-pts">{r.pts}</td>
               </tr>
             ))}
