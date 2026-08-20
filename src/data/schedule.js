@@ -196,6 +196,18 @@ export const clearance = {
 }
 
 // ---------------------------------------------------------------------
+// CHANGED DAYS — when a session moves, say so on the day rather than just
+// editing the number. Subscribed calendars can lag a day behind (Google
+// refreshes external feeds on its own schedule), so the banner is what
+// tells someone the time they remember is out of date.
+//
+//   changed: [{ field: 'Time', from: '12:00 PM', to: '11:00 AM' }]
+//
+// Add a second entry if the venue moved too. Clear the array once the day
+// has passed and the change no longer needs flagging.
+// ---------------------------------------------------------------------
+
+// ---------------------------------------------------------------------
 // PLAYERS' CODE — the shared code that reveals the players-only parts of
 // the site (practice points and the standings). Change it here and every
 // phone is locked out until the new one is entered; case and spaces are
@@ -448,7 +460,8 @@ export const schedule = [
     time: '11:00 AM',
     location: 'McDonogh — Field 16',
     focus: 'Training',
-    note: 'Moved to 11:00 AM.',
+    note: '',
+    changed: [{ field: 'Time', from: '12:00 PM', to: '11:00 AM' }],
   },
   {
     no: 7,

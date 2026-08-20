@@ -206,6 +206,7 @@ a { color: inherit; }
 .tag-grey { background: var(--grey-bg); color: var(--grey); }
 .tag-orange-soft { background: #fbe3d6; color: var(--mc-orange-dark); }
 .tag-points { background: var(--mc-orange); color: #fff; }
+.tag-changed { background: var(--yellow-bg); color: var(--yellow-ink); }
 .tag-yellow { background: #fbe9a8; color: var(--yellow-ink); }
 .tag-home { background: var(--green-bg); color: var(--green); }
 .tag-away { background: #f0eafb; color: #5a3aa8; }
@@ -667,6 +668,33 @@ a { color: inherit; }
   font-size: 12.5px;
   color: var(--slate);
   line-height: 1.5;
+}
+
+/* ---------- Changed-session notice ---------- */
+.change {
+  margin: 14px 0 4px;
+  padding: 13px 16px;
+  border: 1px solid var(--yellow-line);
+  border-left: 4px solid var(--yellow-line);
+  border-radius: 0 10px 10px 0;
+  background: var(--yellow-bg);
+}
+.change-title {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  color: var(--yellow-ink);
+}
+.change-list { margin: 0; padding: 0; list-style: none; }
+.change-list li { font-size: 14.5px; line-height: 1.5; color: var(--ink); }
+.change-list strong { font-weight: 800; }
+.change-fine {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--slate);
 }
 
 /* ---------- Players-only gate ---------- */
