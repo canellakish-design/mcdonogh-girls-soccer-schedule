@@ -563,13 +563,15 @@ export const schedule = [
     result: '',
     focus: '',
     // Named rather than built from a colour, since the top is the training
-    // top, and the socks are the players' own rather than an issued pair.
+    // top and the socks are the plain ones, not the usual match pair.
     kit: {
       shirt: { color: KIT_COLORS.black.color, label: 'Black training top' },
       shorts: { color: KIT_COLORS.black.color, label: 'Black shorts' },
-      socks: { color: KIT_COLORS.black.color, label: 'Own plain black socks' },
+      socks: { color: KIT_COLORS.black.color, label: 'Plain black socks — bring your own' },
     },
-    note: 'Bring the black training top and your own plain black socks. The new black shorts will be issued to you.',
+    note:
+      'Everyone bring plain black socks — they are not being issued. ' +
+      'Bring the black training top too. The new black shorts will be issued to you.',
   },
   {
     no: 8,
