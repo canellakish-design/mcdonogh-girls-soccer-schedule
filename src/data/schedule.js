@@ -232,11 +232,34 @@ export const PLAYERS_CODE = 'eagles2026'
 export const practicePoints = {
   title: 'Practice Points',
   intro: 'Points are tracked all season and the running tally is kept on this site.',
+  // Every category says what it means. A player should be able to read this
+  // and know exactly how to earn, without asking a coach.
   earn: [
-    { pts: '2 pts', for: 'Win' },
-    { pts: '1 pt', for: 'Goal' },
-    { pts: '1 pt', for: 'Assist' },
-    { pts: '1 pt', for: 'Shutout', note: '2 pts for defenders and goalkeepers' },
+    {
+      pts: '2 pts',
+      for: 'Win',
+      note: 'Every player on the winning side, every match.',
+    },
+    {
+      pts: '1 pt',
+      for: 'Goal',
+      note: 'To whoever scores it.',
+    },
+    {
+      pts: '1 pt',
+      for: 'Assist',
+      note: 'The pass that sets up the goal.',
+    },
+    {
+      pts: '1 pt',
+      for: 'Shutout',
+      note: 'Your side concedes nothing. 2 pts if you played at the back or in goal.',
+    },
+    {
+      pts: '1 pt',
+      for: 'Bang bang',
+      note: 'Two goals back to back. A point to each of the two scorers.',
+    },
   ],
 }
 
@@ -293,8 +316,8 @@ export const pointsLog = [
       { player: 'Aubrey', wins: 3, shutouts: 1, back: true },
       // Bang bang: back-to-back goals, a point each to both scorers.
       // Three of them — Isabelle with Grace, Zoe with Maya, Zoe with Isabelle.
-      { player: 'Zoe', wins: 3, shutouts: 1, goals: 2, bonus: 2, bonusFor: 'Bang bang ×2' },
-      { player: 'Isabelle', wins: 3, shutouts: 1, goals: 1, bonus: 2, bonusFor: 'Bang bang ×2' },
+      { player: 'Zoe', wins: 3, shutouts: 1, goals: 2, bangBangs: 2 },
+      { player: 'Isabelle', wins: 3, shutouts: 1, goals: 1, bangBangs: 2 },
       { player: 'Lily', wins: 3, shutouts: 1, goals: 1 },
       { player: 'Alex', wins: 3, shutouts: 1 },
       { player: 'Kate', wins: 3, shutouts: 1 },
@@ -305,8 +328,8 @@ export const pointsLog = [
       { player: 'Alyssa', wins: 1 },
       { player: 'Amber', wins: 1 },
       { player: 'Ari', wins: 1 },
-      { player: 'Grace', wins: 1, bonus: 1, bonusFor: 'Bang bang' },
-      { player: 'Maya', wins: 1, bonus: 1, bonusFor: 'Bang bang' },
+      { player: 'Grace', wins: 1, goals: 1, bangBangs: 1 },
+      { player: 'Maya', wins: 1, bangBangs: 1 },
     ],
   },
 ]
@@ -315,6 +338,7 @@ export const pointsLog = [
 export function pointsFor(e) {
   return (
     (e.wins || 0) * 2 +
+    (e.bangBangs || 0) +
     (e.goals || 0) +
     (e.assists || 0) +
     (e.shutouts || 0) * (e.back ? 2 : 1) +
@@ -332,6 +356,7 @@ export function standings() {
         player: e.player,
         pts: 0,
         wins: 0,
+        bangBangs: 0,
         goals: 0,
         assists: 0,
         shutouts: 0,
@@ -340,6 +365,7 @@ export function standings() {
       }
       row.pts += pointsFor(e)
       row.wins += e.wins || 0
+      row.bangBangs += e.bangBangs || 0
       row.goals += e.goals || 0
       row.assists += e.assists || 0
       row.shutouts += e.shutouts || 0
