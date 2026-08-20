@@ -562,7 +562,14 @@ export const schedule = [
     location: 'Seminary Park — Turf Field',
     result: '',
     focus: '',
-    note: '',
+    // Named rather than built from a colour, since the top is the training
+    // top and the socks are the plain ones, not the usual match pair.
+    kit: {
+      shirt: { color: KIT_COLORS.black.color, label: 'Black training top' },
+      shorts: { color: KIT_COLORS.black.color, label: 'Black shorts' },
+      socks: { color: KIT_COLORS.black.color, label: 'Plain black socks' },
+    },
+    note: 'Bring the black training top. The new black shorts and plain black socks will be issued to you.',
   },
   {
     no: 8,
