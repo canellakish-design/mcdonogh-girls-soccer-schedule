@@ -183,6 +183,7 @@ function buildFeed(feed) {
       if (item.scrimmage) desc.push('Scrimmage')
       if (item.playoff) desc.push('IAAM Playoffs')
       desc.push(item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral site' : 'Home')
+      if (item.arrive) desc.push(`Arrive: ${item.arrive}`)
       if (item.dismissal) desc.push(`Dismissal: ${item.dismissal}`)
       // Split-squad days meet by side, so they replace the single team talk.
       if (item.teams) {

@@ -559,6 +559,7 @@ export const schedule = [
     scrimmage: true,
     opponent: 'Dulaney High School',
     time: '3:00 PM',
+    arrive: '2:00 PM',
     location: 'Seminary Park — Turf Field',
     result: '',
     focus: '',

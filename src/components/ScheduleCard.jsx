@@ -17,12 +17,21 @@ const DEFAULT_TEAM_TALK = '3:30 PM'
 const DEFAULT_TEAM_TALK_ROOM = 'Board Room'
 
 export function meetNote(item) {
-  if (item.type !== 'match' || item.home !== true) return null
+  if (item.type === 'note') return null
+  const parts = []
+
+  // `arrive` is set per day and applies wherever we are playing — the team
+  // talk below is a home fixture's own arrangement.
+  if (item.arrive) parts.push(`Arrive at ${item.arrive}.`)
+
   // Split-squad days: each side has its own room, listed on its own panel.
-  if (item.teams) return null
-  const at = item.teamTalk || DEFAULT_TEAM_TALK
-  const room = item.teamTalkRoom || DEFAULT_TEAM_TALK_ROOM
-  return `Team talk in the ${room} at ${at}.`
+  if (item.type === 'match' && item.home === true && !item.teams) {
+    const at = item.teamTalk || DEFAULT_TEAM_TALK
+    const room = item.teamTalkRoom || DEFAULT_TEAM_TALK_ROOM
+    parts.push(`Team talk in the ${room} at ${at}.`)
+  }
+
+  return parts.length ? parts.join(' ') : null
 }
 
 export function matchTitle(item) {
