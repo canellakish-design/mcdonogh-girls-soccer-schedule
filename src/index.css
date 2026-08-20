@@ -793,9 +793,11 @@ a { color: inherit; }
   flex-direction: column;
   gap: 6px;
 }
-.standings-log li { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; }
-.log-session { color: var(--ink); }
+.standings-log li { display: flex; flex-direction: column; gap: 3px; font-size: 13px; }
+.log-line { display: flex; justify-content: space-between; gap: 12px; }
+.log-session { color: var(--ink); font-weight: 700; }
 .log-date { color: var(--muted); font-variant-numeric: tabular-nums; }
+.log-note { font-size: 12.5px; color: var(--slate); line-height: 1.45; }
 
 .sr-only {
   position: absolute;
