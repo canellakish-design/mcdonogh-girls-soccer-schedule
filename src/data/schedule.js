@@ -307,22 +307,23 @@ export const pointsLog = [
     sortDate: '2026-08-20',
     session: 'Training — Orange v. Grey',
     note:
-      'Orange won the 8 v 8 4–0 and both 3 v 3 transition games. Grey won Over the ' +
-      'River. Cassie in goal for Orange, with Kaitlyn, Parker and Aubrey at the back. ' +
+      'Orange won both 8 v 8 games, 4–0 and 1–0, and both 3 v 3 transition games. ' +
+      'Grey won Over the River. Cassie in goal for Orange, with Kaitlyn, Parker and ' +
+      'Aubrey at the back. ' +
       'Bang bang for Isabelle and Grace, Zoe and Maya, and Zoe and Isabelle.',
     tally: [
-      // Orange: three wins, and the clean sheet from the 8 v 8.
-      { player: 'Cassie', wins: 3, shutouts: 1, back: true },
-      { player: 'Kaitlyn', wins: 3, shutouts: 1, back: true },
-      { player: 'Parker', wins: 3, shutouts: 1, back: true },
-      { player: 'Aubrey', wins: 3, shutouts: 1, back: true },
+      // Orange: four wins, and a clean sheet in each 8 v 8.
+      { player: 'Cassie', wins: 4, shutouts: 2, back: true },
+      { player: 'Kaitlyn', wins: 4, shutouts: 2, back: true },
+      { player: 'Parker', wins: 4, shutouts: 2, back: true },
+      { player: 'Aubrey', wins: 4, shutouts: 2, back: true },
       // Bang bang: back-to-back goals, a point each to both scorers.
       // Three of them — Isabelle with Grace, Zoe with Maya, Zoe with Isabelle.
-      { player: 'Zoe', wins: 3, shutouts: 1, goals: 2, bangBangs: 2 },
-      { player: 'Isabelle', wins: 3, shutouts: 1, goals: 1, bangBangs: 2 },
-      { player: 'Lily', wins: 3, shutouts: 1, goals: 1 },
-      { player: 'Alex', wins: 3, shutouts: 1 },
-      { player: 'Kate', wins: 3, shutouts: 1 },
+      { player: 'Zoe', wins: 4, shutouts: 2, goals: 2, bangBangs: 2 },
+      { player: 'Isabelle', wins: 4, shutouts: 2, goals: 2, bangBangs: 2 },
+      { player: 'Lily', wins: 4, shutouts: 2, goals: 1 },
+      { player: 'Alex', wins: 4, shutouts: 2 },
+      { player: 'Kate', wins: 4, shutouts: 2 },
       // Grey: Over the River.
       { player: 'Anna', wins: 1 },
       { player: 'Virginia', wins: 1 },
