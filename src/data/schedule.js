@@ -258,7 +258,9 @@ export const practicePoints = {
     {
       pts: '1 pt',
       for: 'Bang bang',
-      note: 'Two goals back to back. A point to each of the two scorers.',
+      note:
+        'Two goals back to back. A point to each of the two scorers — a bang bang '  +
+        'counts as its own thing, not as goals on top.',
     },
   ],
 }
@@ -328,7 +330,7 @@ export const pointsLog = [
       { player: 'Alyssa', wins: 1 },
       { player: 'Amber', wins: 1 },
       { player: 'Ari', wins: 1 },
-      { player: 'Grace', wins: 1, goals: 1, bangBangs: 1 },
+      { player: 'Grace', wins: 1, bangBangs: 1 },
       { player: 'Maya', wins: 1, bangBangs: 1 },
     ],
   },
