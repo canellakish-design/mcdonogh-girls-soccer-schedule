@@ -576,6 +576,9 @@ a { color: inherit; }
   font-variant-numeric: tabular-nums;
 }
 
+/* No kit panel above means no rule to divide from. */
+.team-name + .team-players { margin-top: 0; padding-top: 0; border-top: 0; }
+
 /* Two columns so a twelve-name squad stays a glance, not a scroll. */
 .team-players {
   list-style: none;

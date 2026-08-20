@@ -19,6 +19,7 @@ function Fact({ label, value }) {
 
 export default function DayDetail({ item }) {
   const { unlocked } = usePlayerAccess()
+  const teamsCarryKit = item.teams?.length > 0 && item.teams.every((t) => t.kit)
   const isTraining = item.type === 'training'
   const isNote = item.type === 'note'
   const homeLabel = item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral site' : 'Home'
@@ -63,17 +64,17 @@ export default function DayDetail({ item }) {
         {item.focus && <Fact label="Focus" value={item.focus} />}
       </dl>
 
-      {/* Split-squad days carry their kit per side, so the single Kit box
-          would only repeat "Captain's choice" above it. */}
-      {item.teams
-        ? <Teams teams={item.teams} at={item.teamTalk} />
-        /* No session, so no kit to turn up in. */
-        : !item.cancelled && kitFor(item) && (
-            <div className="detail-kit">
-              <h3 className="detail-kit-label">Kit</h3>
-              <KitIcons kit={kitFor(item)} />
-            </div>
-          )}
+      {/* The single Kit box drops out only when each side brings its own —
+          otherwise it would just repeat what the panels already say. A
+          training day where both sides wear the day's kit keeps it. */}
+      {!item.cancelled && !teamsCarryKit && kitFor(item) && (
+        <div className="detail-kit">
+          <h3 className="detail-kit-label">Kit</h3>
+          <KitIcons kit={kitFor(item)} />
+        </div>
+      )}
+
+      {!item.cancelled && <Teams teams={item.teams} at={item.teamTalk} />}
 
       {/* Practice points are squad business — parents see the gate instead. */}
       {!item.cancelled && item.practicePoints && (

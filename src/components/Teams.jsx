@@ -1,5 +1,6 @@
-// Intra-squad days split the squad into sides. Each side gets the same kit
-// panel the rest of the site uses, plus the room it meets in.
+// Intra-squad days split the squad into sides. A side can carry the same kit
+// panel the rest of the site uses and the room it meets in; a training day
+// that just needs two lists can leave both off.
 
 import KitIcons from './KitIcons.jsx'
 import { buildKit } from '../data/schedule.js'
@@ -17,7 +18,7 @@ export default function Teams({ teams, at }) {
               <span className="team-count">{team.players.length}</span>
             ) : null}
           </h3>
-          <KitIcons kit={buildKit(team.kit)} />
+          {team.kit && <KitIcons kit={buildKit(team.kit)} />}
           {team.players?.length > 0 && (
             <ul className="team-players">
               {team.players.map((p) => (

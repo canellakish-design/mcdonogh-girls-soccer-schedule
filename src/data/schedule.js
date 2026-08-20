@@ -261,7 +261,7 @@ export const pointsLog = [
     // defenders take 2 a shutout instead of 1.
     tally: [
       { player: 'Parker', wins: 3, shutouts: 3, back: true },
-      { player: 'Anna Broome', wins: 3, shutouts: 3, back: true },
+      { player: 'Anna', wins: 3, shutouts: 3, back: true },
       { player: 'Amber', wins: 3, shutouts: 3, back: true },
       { player: 'Maya', wins: 3, shutouts: 3, back: true },
       { player: 'Zoe', wins: 3, shutouts: 3, goals: 2 },
@@ -437,7 +437,7 @@ export const schedule = [
         kit: ['orange', 'white', 'white'],
         meetIn: 'the Cage',
         players: [
-          'Parker', 'Anna Broome', 'Alyssa', 'Isabelle', 'Lina', 'Amber',
+          'Parker', 'Anna', 'Alyssa', 'Isabelle', 'Lina', 'Amber',
           'Maya', 'Zoe', 'Lily', 'Ari', 'Scarlett', 'Cassie',
         ],
       },
@@ -446,8 +446,8 @@ export const schedule = [
         kit: ['white', 'black', 'black'],
         meetIn: 'the Alumni Room',
         players: [
-          'Chisamore', 'Virginia', 'Samara', 'Alex', 'Riley', 'Aubrey',
-          'Fiona', 'Grace', 'Paula', 'Soly', 'Layla', 'Kate',
+          'Kaitlyn', 'Virginia', 'Samara', 'Alex', 'Riley', 'Aubrey',
+          'Fiona', 'Grace', 'Paula', 'Sofy', 'Layla', 'Kate',
         ],
       },
     ],
@@ -462,6 +462,17 @@ export const schedule = [
     focus: 'Training',
     note: '',
     changed: [{ field: 'Time', from: '12:00 PM', to: '11:00 AM' }],
+    // No kit per side — both wear the day's training kit, shown above.
+    teams: [
+      {
+        name: 'Team 1',
+        players: ['Kaitlyn', 'Parker', 'Isabelle', 'Alex', 'Zoe', 'Aubrey', 'Lily', 'Kate'],
+      },
+      {
+        name: 'Team 2',
+        players: ['Anna', 'Virginia', 'Samara', 'Alyssa', 'Amber', 'Ari', 'Grace', 'Maya', 'Cassie'],
+      },
+    ],
   },
   {
     no: 7,
