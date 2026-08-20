@@ -166,7 +166,7 @@ a { color: inherit; }
 /* date box */
 .datebox {
   flex: 0 0 auto;
-  width: 46px; height: 46px;
+  width: 46px; height: 54px;
   border-radius: 10px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   line-height: 1;
@@ -178,10 +178,22 @@ a { color: inherit; }
 .datebox-note .datebox-day { color: var(--yellow-ink); }
 .datebox-mon { font-size: 10px; font-weight: 800; letter-spacing: 0.5px; }
 .datebox-day { font-size: 19px; font-weight: 800; margin-top: 2px; }
+/* Quieter than the date itself — it answers "which day of the week is that?"
+   without competing with the number. */
+.datebox-dow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 3px;
+  opacity: 0.72;
+}
 .datebox-match .datebox-mon { color: var(--mc-orange-dark); }
 .datebox-match .datebox-day { color: var(--mc-orange-dark); }
+.datebox-match .datebox-dow { color: var(--mc-orange-dark); }
 .datebox-training .datebox-mon { color: var(--blue); }
 .datebox-training .datebox-day { color: var(--blue); }
+.datebox-training .datebox-dow { color: var(--blue); }
+.datebox-note .datebox-dow { color: var(--yellow-ink); }
 
 .card-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .card-title { font-weight: 800; font-size: 16px; letter-spacing: -0.2px; }
@@ -917,7 +929,7 @@ a { color: inherit; }
   /* Tags drop to their own row so the text column gets the full width
      instead of being squeezed to ~140px and wrapping three times. */
   .card { flex-wrap: wrap; align-items: flex-start; padding: 12px 13px; }
-  .datebox { width: 42px; height: 42px; }
+  .datebox { width: 42px; height: 50px; }
   /* Tags drop to their own row so the text column keeps the full width
      rather than being squeezed to ~140px and wrapping three times. */
   .card-main { flex: 1 1 185px; min-width: 0; }
