@@ -5,6 +5,15 @@ import { practicePoints, pointsLog, standings } from '../data/schedule.js'
 import PlayerGate from './PlayerGate.jsx'
 import { usePlayerAccess } from '../playerAccess.jsx'
 
+// Ties the plain-English key back to the column letters in the table.
+const KEY_ABBR = {
+  Win: 'W',
+  Goal: 'G',
+  Assist: 'A',
+  Shutout: 'SO',
+  'Bang bang': 'BB',
+}
+
 function Rank({ i, pts, prev }) {
   // Players level on points share a rank rather than being ordered arbitrarily.
   const tied = prev !== null && prev === pts
@@ -64,6 +73,7 @@ export default function Standings() {
               <th className="num" scope="col"><abbr title="Goals">G</abbr></th>
               <th className="num" scope="col"><abbr title="Assists">A</abbr></th>
               <th className="num" scope="col"><abbr title="Shutouts">SO</abbr></th>
+              <th className="num" scope="col"><abbr title="Bang bangs">BB</abbr></th>
               {anyBonus && (
                 <th className="num" scope="col"><abbr title="Bonus points">B</abbr></th>
               )}
@@ -81,6 +91,7 @@ export default function Standings() {
                 <td className="num">{r.goals || '—'}</td>
                 <td className="num">{r.assists || '—'}</td>
                 <td className="num">{r.shutouts || '—'}</td>
+                <td className="num">{r.bangBangs || '—'}</td>
                 {anyBonus && <td className="num">{r.bonus || '—'}</td>}
                 <td className="num col-pts">{r.pts}</td>
               </tr>
@@ -88,6 +99,26 @@ export default function Standings() {
           </tbody>
         </table>
       )}
+
+      {/* The column letters mean nothing on a phone, where there is nothing
+          to hover. Spell every category out, with what it takes to earn it. */}
+      <section className="key">
+        <h3 className="key-title">How points are earned</h3>
+        <ul className="key-list">
+          {practicePoints.earn.map((e) => (
+            <li key={e.for}>
+              <span className="key-pts">{e.pts}</span>
+              <span className="key-body">
+                <span className="key-for">
+                  {e.for}
+                  {KEY_ABBR[e.for] && <em className="key-abbr">{KEY_ABBR[e.for]}</em>}
+                </span>
+                {e.note && <span className="key-note">{e.note}</span>}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       {sessions > 0 && (
         <ol className="standings-log">

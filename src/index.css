@@ -815,6 +815,61 @@ a { color: inherit; }
   color: var(--slate);
 }
 
+/* ---------- Points key ---------- */
+.key {
+  margin-top: 22px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--mc-orange);
+  border-radius: 0 10px 10px 0;
+  background: var(--orange-bg);
+}
+.key-title {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  color: var(--mc-orange-dark);
+}
+.key-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.key-list li { display: flex; gap: 11px; align-items: baseline; }
+.key-pts {
+  flex: 0 0 auto;
+  min-width: 44px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--mc-orange-dark);
+  font-variant-numeric: tabular-nums;
+}
+.key-body { min-width: 0; }
+.key-for { font-size: 14.5px; font-weight: 700; color: var(--ink); }
+.key-abbr {
+  margin-left: 7px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(232, 84, 30, 0.14);
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--mc-orange-dark);
+}
+.key-note {
+  display: block;
+  margin-top: 3px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--slate);
+}
+
 .standings-log {
   list-style: none;
   margin: 20px 0 0;
