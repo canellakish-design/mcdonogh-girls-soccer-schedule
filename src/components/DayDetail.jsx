@@ -3,6 +3,7 @@ import KitIcons from './KitIcons.jsx'
 import Teams from './Teams.jsx'
 import PracticePoints from './PracticePoints.jsx'
 import PlayerGate from './PlayerGate.jsx'
+import ChangeNotice from './ChangeNotice.jsx'
 import { usePlayerAccess } from '../playerAccess.jsx'
 import { clearance, directionsUrl, venueAddress, venueMap, kitFor } from '../data/schedule.js'
 
@@ -48,6 +49,8 @@ export default function DayDetail({ item }) {
           {item.result && <span className="indicator indicator-result">{item.result}</span>}
         </div>
       </div>
+
+      {!item.cancelled && <ChangeNotice changed={item.changed} />}
 
       <dl className="facts">
         <Fact label="Date" value={item.date} />

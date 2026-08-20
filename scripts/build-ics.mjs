@@ -195,6 +195,11 @@ function buildFeed(feed) {
       }
       if (item.result) desc.push(`Result: ${item.result}`)
     }
+    // Say what moved. A subscriber whose app has only just caught up needs
+    // to know the time they had in mind is the old one.
+    for (const c of item.changed || []) {
+      if (!item.cancelled) desc.push(`CHANGED — ${c.field} was ${c.from}, now ${c.to}.`)
+    }
     // Practice points are deliberately absent: the feeds are public and
     // parents subscribe to them. That detail lives behind the players' code
     // on the site instead.
