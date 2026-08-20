@@ -56,6 +56,7 @@ export default function DayDetail({ item }) {
       <dl className="facts">
         <Fact label="Date" value={item.date} />
         <Fact label="Time" value={item.time} />
+        <Fact label="Arrive" value={item.arrive} />
         <Fact label="Location" value={item.location} />
         <Fact label="Dismissal" value={item.dismissal} />
         {/* A day with its own `title` already names itself — no Opponent row. */}
