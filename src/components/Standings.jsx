@@ -87,8 +87,11 @@ export default function Standings() {
         <ol className="standings-log">
           {pointsLog.map((s) => (
             <li key={s.sortDate}>
-              <span className="log-session">{s.session}</span>
-              <span className="log-date">{s.sortDate}</span>
+              <span className="log-line">
+                <span className="log-session">{s.session}</span>
+                <span className="log-date">{s.sortDate}</span>
+              </span>
+              {s.note && <span className="log-note">{s.note}</span>}
             </li>
           ))}
         </ol>

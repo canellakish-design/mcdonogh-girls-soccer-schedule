@@ -241,13 +241,27 @@ export const practicePoints = {
 // block; the standings page picks it up on its own.
 // ---------------------------------------------------------------------
 export const pointsLog = [
-  // {
-  //   sortDate: '2026-08-19',
-  //   session: 'Orange v. White',
-  //   tally: [
-  //     { player: 'Parker', wins: 2, goals: 1 },
-  //   ],
-  // },
+  {
+    sortDate: '2026-08-19',
+    session: 'Orange v. White',
+    note: 'Orange won all three matches and kept a clean sheet in each.',
+    // Orange: 3 wins and 3 shutouts for everyone on the side. The four
+    // defenders take 2 a shutout instead of 1.
+    tally: [
+      { player: 'Parker', wins: 3, shutouts: 3, back: true },
+      { player: 'Anne Broome', wins: 3, shutouts: 3, back: true },
+      { player: 'Amber', wins: 3, shutouts: 3, back: true },
+      { player: 'Maya', wins: 3, shutouts: 3, back: true },
+      { player: 'Zoey', wins: 3, shutouts: 3, goals: 2 },
+      { player: 'Lily', wins: 3, shutouts: 3, goals: 1 },
+      { player: 'Alyssa', wins: 3, shutouts: 3 },
+      { player: 'Isabel', wins: 3, shutouts: 3 },
+      { player: 'Lina', wins: 3, shutouts: 3 },
+      { player: 'Ari', wins: 3, shutouts: 3 },
+      { player: 'Scarlett', wins: 3, shutouts: 3 },
+      { player: 'Cassie', wins: 3, shutouts: 3 },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
@@ -411,7 +425,7 @@ export const schedule = [
         kit: ['orange', 'white', 'white'],
         meetIn: 'the Cage',
         players: [
-          'Parker', 'Broom', 'Alyssa', 'Isabel', 'Lina', 'Amber',
+          'Parker', 'Anne Broome', 'Alyssa', 'Isabel', 'Lina', 'Amber',
           'Maya', 'Zoey', 'Lily', 'Ari', 'Scarlett', 'Cassie',
         ],
       },
