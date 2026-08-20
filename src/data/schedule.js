@@ -7,7 +7,7 @@
 //
 // SEASON RULES currently baked in:
 //   • Week 1 runs Sat Aug 15 → Fri Aug 21. Tryouts Aug 15–17, 9:00 AM.
-//     Training that week is 9:00 AM, except Thu Aug 20 at 12:00 PM;
+//     Training that week is 9:00 AM, except Thu Aug 20 at 11:00 AM;
 //     the Aug 19 Orange v. White match is 7:00 PM.
 //   • Aug 22–23 (Sat/Sun) off. Training resumes Mon Aug 24.
 //   • From Aug 24 on: weekday training at 4:00 PM; matches keep their listed times.
@@ -445,10 +445,10 @@ export const schedule = [
     date: 'Thu, Aug 20',
     sortDate: '2026-08-20',
     type: 'training',
-    time: '12:00 PM',
+    time: '11:00 AM',
     location: 'McDonogh — Field 16',
     focus: 'Training',
-    note: '',
+    note: 'Moved to 11:00 AM.',
   },
   {
     no: 7,
