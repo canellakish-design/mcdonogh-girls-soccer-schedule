@@ -267,7 +267,7 @@ export const pointsLog = [
       { player: 'Zoe', wins: 3, shutouts: 3, goals: 2 },
       { player: 'Lily', wins: 3, shutouts: 3, goals: 1 },
       { player: 'Alyssa', wins: 3, shutouts: 3 },
-      { player: 'Isabel', wins: 3, shutouts: 3 },
+      { player: 'Isabelle', wins: 3, shutouts: 3 },
       { player: 'Lina', wins: 3, shutouts: 3 },
       { player: 'Ari', wins: 3, shutouts: 3 },
       { player: 'Scarlett', wins: 3, shutouts: 3 },
@@ -437,7 +437,7 @@ export const schedule = [
         kit: ['orange', 'white', 'white'],
         meetIn: 'the Cage',
         players: [
-          'Parker', 'Anne Broome', 'Alyssa', 'Isabel', 'Lina', 'Amber',
+          'Parker', 'Anne Broome', 'Alyssa', 'Isabelle', 'Lina', 'Amber',
           'Maya', 'Zoe', 'Lily', 'Ari', 'Scarlett', 'Cassie',
         ],
       },
