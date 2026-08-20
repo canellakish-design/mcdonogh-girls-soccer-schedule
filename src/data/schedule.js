@@ -309,11 +309,11 @@ export const pointsLog = [
     note:
       'Orange won both 8 v 8 games, 4–0 and 1–0, and both 3 v 3 transition games. ' +
       'Grey won Over the River. Cassie in goal for Orange, with Kaitlyn, Parker and ' +
-      'Aubrey at the back. ' +
+      'Aubrey at the back, and Kate in goal for the other. ' +
       'Bang bang for Isabelle and Grace, Zoe and Maya, and Zoe and Isabelle.',
     tally: [
       // Orange: four wins, and a clean sheet in each 8 v 8.
-      { player: 'Cassie', wins: 4, shutouts: 2, back: true },
+      { player: 'Cassie', wins: 4, shutouts: 2, backShutouts: 1 },
       { player: 'Kaitlyn', wins: 4, shutouts: 2, back: true },
       { player: 'Parker', wins: 4, shutouts: 2, back: true },
       { player: 'Aubrey', wins: 4, shutouts: 2, back: true },
@@ -323,7 +323,7 @@ export const pointsLog = [
       { player: 'Isabelle', wins: 4, shutouts: 2, goals: 2, bangBangs: 2 },
       { player: 'Lily', wins: 4, shutouts: 2, goals: 1 },
       { player: 'Alex', wins: 4, shutouts: 2 },
-      { player: 'Kate', wins: 4, shutouts: 2 },
+      { player: 'Kate', wins: 4, shutouts: 2, backShutouts: 1 },
       // Grey: Over the River.
       { player: 'Anna', wins: 1 },
       { player: 'Virginia', wins: 1 },
@@ -339,12 +339,19 @@ export const pointsLog = [
 
 // One player's haul from one session, priced by the rules above.
 export function pointsFor(e) {
+  // Every clean sheet is worth 1; one earned in goal or at the back is worth
+  // 2, so it scores the extra on top. `back: true` means all of them were;
+  // `backShutouts` says how many, for a keeper who only played some games.
+  const shutouts = e.shutouts || 0
+  const atTheBack = e.backShutouts != null ? e.backShutouts : e.back ? shutouts : 0
+
   return (
     (e.wins || 0) * 2 +
     (e.bangBangs || 0) +
     (e.goals || 0) +
     (e.assists || 0) +
-    (e.shutouts || 0) * (e.back ? 2 : 1) +
+    shutouts +
+    atTheBack +
     (e.bonus || 0)
   )
 }
