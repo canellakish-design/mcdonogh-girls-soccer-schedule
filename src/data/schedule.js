@@ -243,17 +243,21 @@ export const practicePoints = {
     {
       pts: '1 pt',
       for: 'Goal',
-      note: 'To whoever scores it.',
+      note:
+        'To whoever scores it. Goals count in the 9 v 9, 8 v 8 and 7 v 7 ' +
+        'scrimmages — not in small-sided games like 3 v 3.',
     },
     {
       pts: '1 pt',
       for: 'Assist',
-      note: 'The pass that sets up the goal.',
+      note: 'The pass that sets up the goal, in those same scrimmages.',
     },
     {
       pts: '1 pt',
       for: 'Shutout',
-      note: 'Your side concedes nothing. 2 pts if you played at the back or in goal.',
+      note:
+        'Your side concedes nothing across a full scrimmage. 2 pts if you played ' +
+        'at the back or in goal.',
     },
     {
       pts: '1 pt',
@@ -307,32 +311,30 @@ export const pointsLog = [
     sortDate: '2026-08-20',
     session: 'Training — Orange v. Grey',
     note:
-      'Orange won both 8 v 8 games, 4–0 and 1–0, and both 3 v 3 transition games. ' +
-      'Grey won Over the River. Cassie in goal for Orange, with Kaitlyn, Parker and ' +
-      'Aubrey at the back, and Kate in goal for the other. ' +
-      'Bang bang for Isabelle and Grace, Zoe and Maya, and Zoe and Isabelle.',
+      'Orange won both 8 v 8 games, 4–0 and 1–0, and one 3 v 3 transition game. ' +
+      'Grey won the other 3 v 3 and Over the River. No shutouts counted, and the ' +
+      'goals are the 8 v 8 ones. Bang bang for Isabelle and Grace, Zoe and Maya, ' +
+      'and Zoe and Isabelle.',
     tally: [
-      // Orange: four wins, and a clean sheet in each 8 v 8.
-      { player: 'Cassie', wins: 4, shutouts: 2, backShutouts: 1 },
-      { player: 'Kaitlyn', wins: 4, shutouts: 2, back: true },
-      { player: 'Parker', wins: 4, shutouts: 2, back: true },
-      { player: 'Aubrey', wins: 4, shutouts: 2, back: true },
-      // Bang bang: back-to-back goals, a point each to both scorers.
-      // Three of them — Isabelle with Grace, Zoe with Maya, Zoe with Isabelle.
-      { player: 'Zoe', wins: 4, shutouts: 2, goals: 2, bangBangs: 2 },
-      { player: 'Isabelle', wins: 4, shutouts: 2, goals: 2, bangBangs: 2 },
-      { player: 'Lily', wins: 4, shutouts: 2, goals: 1 },
-      { player: 'Alex', wins: 4, shutouts: 2 },
-      { player: 'Kate', wins: 4, shutouts: 2, backShutouts: 1 },
-      // Grey: Over the River.
-      { player: 'Anna', wins: 1 },
-      { player: 'Virginia', wins: 1 },
-      { player: 'Samara', wins: 1 },
-      { player: 'Alyssa', wins: 1 },
-      { player: 'Amber', wins: 1 },
-      { player: 'Ari', wins: 1 },
-      { player: 'Grace', wins: 1, bangBangs: 1 },
-      { player: 'Maya', wins: 1, bangBangs: 1 },
+      // Orange: two 8 v 8s and one 3 v 3.
+      { player: 'Cassie', wins: 3 },
+      { player: 'Kaitlyn', wins: 3 },
+      { player: 'Parker', wins: 3 },
+      { player: 'Aubrey', wins: 3 },
+      { player: 'Zoe', wins: 3, goals: 2, bangBangs: 2 },
+      { player: 'Isabelle', wins: 3, goals: 2, bangBangs: 2 },
+      { player: 'Lily', wins: 3, goals: 1 },
+      { player: 'Alex', wins: 3 },
+      { player: 'Kate', wins: 3 },
+      // Grey: the other 3 v 3, and Over the River.
+      { player: 'Anna', wins: 2 },
+      { player: 'Virginia', wins: 2 },
+      { player: 'Samara', wins: 2 },
+      { player: 'Alyssa', wins: 2 },
+      { player: 'Amber', wins: 2 },
+      { player: 'Ari', wins: 2 },
+      { player: 'Grace', wins: 2, bangBangs: 1 },
+      { player: 'Maya', wins: 2, bangBangs: 1 },
     ],
   },
 ]
