@@ -268,9 +268,7 @@ export const pointsLog = [
       { player: 'Lily', wins: 3, shutouts: 3, goals: 1 },
       { player: 'Alyssa', wins: 3, shutouts: 3 },
       { player: 'Isabelle', wins: 3, shutouts: 3 },
-      { player: 'Lina', wins: 3, shutouts: 3 },
       { player: 'Ari', wins: 3, shutouts: 3 },
-      { player: 'Scarlett', wins: 3, shutouts: 3 },
       { player: 'Cassie', wins: 3, shutouts: 3 },
     ],
   },
@@ -465,8 +463,8 @@ export const schedule = [
         kit: ['orange', 'white', 'white'],
         meetIn: 'the Cage',
         players: [
-          'Parker', 'Anna', 'Alyssa', 'Isabelle', 'Lina', 'Amber',
-          'Maya', 'Zoe', 'Lily', 'Ari', 'Scarlett', 'Cassie',
+          'Parker', 'Anna', 'Alyssa', 'Isabelle', 'Amber',
+          'Maya', 'Zoe', 'Lily', 'Ari', 'Cassie',
         ],
       },
       {
@@ -474,8 +472,8 @@ export const schedule = [
         kit: ['white', 'black', 'black'],
         meetIn: 'the Alumni Room',
         players: [
-          'Kaitlyn', 'Virginia', 'Samara', 'Alex', 'Riley', 'Aubrey',
-          'Fiona', 'Grace', 'Paula', 'Sofy', 'Layla', 'Kate',
+          'Kaitlyn', 'Virginia', 'Samara', 'Alex', 'Aubrey',
+          'Grace', 'Paula', 'Layla', 'Kate',
         ],
       },
     ],
