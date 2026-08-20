@@ -261,7 +261,7 @@ export const pointsLog = [
     // defenders take 2 a shutout instead of 1.
     tally: [
       { player: 'Parker', wins: 3, shutouts: 3, back: true },
-      { player: 'Anne Broome', wins: 3, shutouts: 3, back: true },
+      { player: 'Adrianna Broome', wins: 3, shutouts: 3, back: true },
       { player: 'Amber', wins: 3, shutouts: 3, back: true },
       { player: 'Maya', wins: 3, shutouts: 3, back: true },
       { player: 'Zoe', wins: 3, shutouts: 3, goals: 2 },
@@ -437,7 +437,7 @@ export const schedule = [
         kit: ['orange', 'white', 'white'],
         meetIn: 'the Cage',
         players: [
-          'Parker', 'Anne Broome', 'Alyssa', 'Isabelle', 'Lina', 'Amber',
+          'Parker', 'Adrianna Broome', 'Alyssa', 'Isabelle', 'Lina', 'Amber',
           'Maya', 'Zoe', 'Lily', 'Ari', 'Scarlett', 'Cassie',
         ],
       },
