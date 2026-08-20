@@ -274,6 +274,34 @@ export const pointsLog = [
       { player: 'Cassie', wins: 3, shutouts: 3 },
     ],
   },
+  {
+    sortDate: '2026-08-20',
+    session: 'Training — Orange v. Grey',
+    note:
+      'Orange won the 8 v 8 4–0 and both 3 v 3 transition games. Grey won Over the ' +
+      'River. Cassie in goal for Orange, with Kaitlyn, Parker and Aubrey at the back.',
+    tally: [
+      // Orange: three wins, and the clean sheet from the 8 v 8.
+      { player: 'Cassie', wins: 3, shutouts: 1, back: true },
+      { player: 'Kaitlyn', wins: 3, shutouts: 1, back: true },
+      { player: 'Parker', wins: 3, shutouts: 1, back: true },
+      { player: 'Aubrey', wins: 3, shutouts: 1, back: true },
+      { player: 'Zoe', wins: 3, shutouts: 1, goals: 2 },
+      { player: 'Isabelle', wins: 3, shutouts: 1, goals: 1 },
+      { player: 'Lily', wins: 3, shutouts: 1, goals: 1 },
+      { player: 'Alex', wins: 3, shutouts: 1 },
+      { player: 'Kate', wins: 3, shutouts: 1 },
+      // Grey: Over the River.
+      { player: 'Anna', wins: 1 },
+      { player: 'Virginia', wins: 1 },
+      { player: 'Samara', wins: 1 },
+      { player: 'Alyssa', wins: 1 },
+      { player: 'Amber', wins: 1 },
+      { player: 'Ari', wins: 1 },
+      { player: 'Grace', wins: 1 },
+      { player: 'Maya', wins: 1 },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
@@ -463,14 +491,16 @@ export const schedule = [
     note: '',
     changed: [{ field: 'Time', from: '12:00 PM', to: '11:00 AM' }],
     // No kit per side — both wear the day's training kit, shown above.
+    // Cassie starts on Mary's second list but went in goal for Orange when
+    // the keepers switched.
     teams: [
       {
-        name: 'Team 1',
-        players: ['Kaitlyn', 'Parker', 'Isabelle', 'Alex', 'Zoe', 'Aubrey', 'Lily', 'Kate'],
+        name: 'Orange',
+        players: ['Kaitlyn', 'Parker', 'Isabelle', 'Alex', 'Zoe', 'Aubrey', 'Lily', 'Kate', 'Cassie'],
       },
       {
-        name: 'Team 2',
-        players: ['Anna', 'Virginia', 'Samara', 'Alyssa', 'Amber', 'Ari', 'Grace', 'Maya', 'Cassie'],
+        name: 'Grey',
+        players: ['Anna', 'Virginia', 'Samara', 'Alyssa', 'Amber', 'Ari', 'Grace', 'Maya'],
       },
     ],
   },
