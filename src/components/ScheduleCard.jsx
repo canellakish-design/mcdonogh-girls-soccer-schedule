@@ -3,10 +3,17 @@
 import { usePlayerAccess } from '../playerAccess.jsx'
 
 function dateBox(sortDate) {
-  // sortDate is 'YYYY-MM-DD' — render as month abbrev + day, no timezone parsing.
-  const [, m, d] = sortDate.split('-')
+  // sortDate is 'YYYY-MM-DD' — render as month abbrev + day + weekday.
+  const [y, m, d] = sortDate.split('-').map(Number)
   const months = ['', 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
-  return { mon: months[parseInt(m, 10)] || '', day: String(parseInt(d, 10)) }
+  const weekdays = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
+  // Numeric parts build a local date, so no timezone can shift the weekday
+  // the way parsing the string as UTC would.
+  return {
+    mon: months[m] || '',
+    day: String(d),
+    dow: weekdays[new Date(y, m - 1, d).getDay()],
+  }
 }
 
 
@@ -44,7 +51,7 @@ export function matchTitle(item) {
 
 export default function ScheduleCard({ item, highlight, observance }) {
   const { unlocked } = usePlayerAccess()
-  const { mon, day } = dateBox(item.sortDate)
+  const { mon, day, dow } = dateBox(item.sortDate)
   const isTraining = item.type === 'training'
   const isNote = item.type === 'note'
   const boxClass = isNote ? 'datebox-note' : isTraining ? 'datebox-training' : 'datebox-match'
@@ -59,6 +66,7 @@ export default function ScheduleCard({ item, highlight, observance }) {
       <span className={`datebox ${boxClass}`}>
         <span className="datebox-mon">{mon}</span>
         <span className="datebox-day">{day}</span>
+        <span className="datebox-dow">{dow}</span>
       </span>
 
       <span className="card-main">
