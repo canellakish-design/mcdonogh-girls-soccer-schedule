@@ -53,6 +53,10 @@ export const VENUES = {
     map: '/campus-map-dixon.png',
     mapCaption: 'McDonogh campus — the arrow marks Dixon Turf Field.',
   },
+  'McDonogh — Rollins-Luetkemeyer Athletic Center': {
+    onCampus: true,
+    address: MCDONOGH,
+  },
   'Seminary Park — Turf Field': {
     address: 'Seminary Park, Lutherville-Timonium, MD 21093',
     map: '/venues/seminary-park.png',
@@ -577,6 +581,16 @@ export const schedule = [
       'Bring the black training top too. The new black shorts will be issued to you.',
   },
   {
+    no: 101,
+    date: 'Mon, Aug 24',
+    sortDate: '2026-08-24',
+    type: 'event',
+    title: 'Uniform pickup',
+    time: '3:15 PM',
+    location: 'McDonogh — Rollins-Luetkemeyer Athletic Center',
+    note: 'Meet in the RL Center at 3:15 to collect your uniform, before training.',
+  },
+  {
     no: 8,
     date: 'Mon, Aug 24',
     sortDate: '2026-08-24',
@@ -585,6 +599,17 @@ export const schedule = [
     location: 'McDonogh — Field 16',
     focus: 'Training',
     note: '',
+  },
+  {
+    no: 102,
+    date: 'Tue, Aug 25',
+    sortDate: '2026-08-25',
+    type: 'event',
+    title: 'Media day',
+    time: 'TBA',
+    tentative: true,
+    location: '',
+    note: 'Time and place to be confirmed.',
   },
   {
     no: 9,

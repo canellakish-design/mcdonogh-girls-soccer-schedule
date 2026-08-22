@@ -22,6 +22,10 @@ export default function DayDetail({ item }) {
   const teamsCarryKit = item.teams?.length > 0 && item.teams.every((t) => t.kit)
   const isTraining = item.type === 'training'
   const isNote = item.type === 'note'
+  // Anything that is not a match must not pick up opponent, result or a
+  // home/away label — 'event' days (uniform pickup, media day) included.
+  const isMatch = item.type === 'match'
+  const isEvent = item.type === 'event'
   const homeLabel = item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral site' : 'Home'
 
   return (
@@ -37,16 +41,16 @@ export default function DayDetail({ item }) {
         <div className="indicators">
           {isNote
             ? <span className="indicator indicator-yellow">No Sessions</span>
-            : isTraining
-              ? <span className="indicator indicator-training">Training</span>
-              : <span className="indicator indicator-match">Match</span>}
+            : isEvent
+              ? <span className="indicator indicator-event">Team Event</span>
+              : isTraining
+                ? <span className="indicator indicator-training">Training</span>
+                : <span className="indicator indicator-match">Match</span>}
           {item.cancelled && <span className="indicator indicator-cancelled">Cancelled</span>}
           {item.tentative && <span className="indicator indicator-tentative">Tentative</span>}
           {item.scrimmage && <span className="indicator indicator-grey">Scrimmage</span>}
           {item.playoff && <span className="indicator indicator-orange">IAAM Playoffs</span>}
-          {!isTraining && !isNote && (
-            <span className="indicator indicator-grey">{homeLabel}</span>
-          )}
+          {isMatch && <span className="indicator indicator-grey">{homeLabel}</span>}
           {item.result && <span className="indicator indicator-result">{item.result}</span>}
         </div>
       </div>
@@ -60,8 +64,8 @@ export default function DayDetail({ item }) {
         <Fact label="Location" value={item.location} />
         <Fact label="Dismissal" value={item.dismissal} />
         {/* A day with its own `title` already names itself — no Opponent row. */}
-        {!isTraining && !isNote && !item.title && <Fact label="Opponent" value={item.opponent} />}
-        {!isTraining && !isNote && <Fact label="Result" value={item.result || '—'} />}
+        {isMatch && !item.title && <Fact label="Opponent" value={item.opponent} />}
+        {isMatch && <Fact label="Result" value={item.result || '—'} />}
         {item.focus && <Fact label="Focus" value={item.focus} />}
       </dl>
 
