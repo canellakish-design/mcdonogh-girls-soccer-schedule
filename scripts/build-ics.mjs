@@ -15,6 +15,7 @@ const here = path.dirname(fileURLToPath(import.meta.url))
 // Event lengths, matching the sessions already on his calendar.
 const TRAINING_MINUTES = 90
 const MATCH_MINUTES = 120
+const EVENT_MINUTES = 30
 
 // '4:15 PM' -> { h: 16, m: 15 }. Returns null for 'TBA' and anything unparseable.
 function parseTime(t) {
@@ -154,6 +155,8 @@ function buildFeed(feed) {
     const t = parseTime(item.time)
     const isTraining = item.type === 'training'
     const isNote = item.type === 'note'
+    // Only a real match carries home/away, opponent and result.
+    const isMatch = item.type === 'match'
 
     lines.push('BEGIN:VEVENT')
     // Namespaced so subscribing to both feeds does not collide.
@@ -165,7 +168,9 @@ function buildFeed(feed) {
       lines.push(`DTEND;VALUE=DATE:${nextDay(noteEndDate(item)).replace(/-/g, '')}`)
       lines.push('TRANSP:TRANSPARENT')
     } else if (t) {
-      const end = addMinutes(item.sortDate, t.h, t.m, isTraining ? TRAINING_MINUTES : MATCH_MINUTES)
+      const minutes =
+        item.type === 'event' ? EVENT_MINUTES : isTraining ? TRAINING_MINUTES : MATCH_MINUTES
+      const end = addMinutes(item.sortDate, t.h, t.m, minutes)
       lines.push(`DTSTART;TZID=America/New_York:${localStamp(item.sortDate, t.h, t.m)}`)
       lines.push(`DTEND;TZID=America/New_York:${localStamp(end.date, end.h, end.m)}`)
     } else {
@@ -179,7 +184,7 @@ function buildFeed(feed) {
 
     const desc = []
     if (isTraining && item.focus) desc.push(`Focus: ${item.focus}`)
-    if (!isTraining && !isNote) {
+    if (isMatch) {
       if (item.scrimmage) desc.push('Scrimmage')
       if (item.playoff) desc.push('IAAM Playoffs')
       desc.push(item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral site' : 'Home')
@@ -210,7 +215,11 @@ function buildFeed(feed) {
 
     // STATUS:CANCELLED is what calendar apps read to grey out an event.
     if (item.cancelled) lines.push('STATUS:CANCELLED')
-    lines.push(`CATEGORIES:${isNote ? 'Note' : isTraining ? 'Training' : 'Match'}`)
+    lines.push(
+      `CATEGORIES:${
+        isNote ? 'Note' : item.type === 'event' ? 'Event' : isTraining ? 'Training' : 'Match'
+      }`,
+    )
     lines.push('END:VEVENT')
   }
 

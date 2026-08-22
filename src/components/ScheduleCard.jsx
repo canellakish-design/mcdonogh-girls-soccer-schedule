@@ -44,6 +44,7 @@ export function meetNote(item) {
 export function matchTitle(item) {
   // `title` wins outright — for days whose label is not "vs. <opponent>".
   if (item.title) return item.title
+  if (item.type === 'event') return 'Team event'
   if (item.type === 'training') return item.focus || 'Training'
   const prefix = item.home === true ? 'vs. ' : item.home === false ? '@ ' : 'vs. '
   return prefix + item.opponent
@@ -54,7 +55,15 @@ export default function ScheduleCard({ item, highlight, observance }) {
   const { mon, day, dow } = dateBox(item.sortDate)
   const isTraining = item.type === 'training'
   const isNote = item.type === 'note'
-  const boxClass = isNote ? 'datebox-note' : isTraining ? 'datebox-training' : 'datebox-match'
+  const isMatch = item.type === 'match'
+  const isEvent = item.type === 'event'
+  const boxClass = isNote
+    ? 'datebox-note'
+    : isEvent
+      ? 'datebox-event'
+      : isTraining
+        ? 'datebox-training'
+        : 'datebox-match'
 
   return (
     <a
@@ -91,9 +100,11 @@ export default function ScheduleCard({ item, highlight, observance }) {
         {item.result && <span className="tag tag-result">{item.result}</span>}
         {isNote
           ? <span className="tag tag-yellow">No Sessions</span>
-          : isTraining
-            ? <span className="tag tag-training">Training</span>
-            : <span className="tag tag-match">Match</span>}
+          : isEvent
+            ? <span className="tag tag-event">Team Event</span>
+            : isTraining
+              ? <span className="tag tag-training">Training</span>
+              : <span className="tag tag-match">Match</span>}
         {item.cancelled && <span className="tag tag-cancelled">Cancelled</span>}
         {item.changed?.length > 0 && !item.cancelled && (
           <span className="tag tag-changed">Changed</span>
@@ -104,7 +115,7 @@ export default function ScheduleCard({ item, highlight, observance }) {
         {item.tentative && <span className="tag tag-tentative">Tentative</span>}
         {item.scrimmage && <span className="tag tag-grey">Scrimmage</span>}
         {item.playoff && <span className="tag tag-orange-soft">Playoffs</span>}
-        {!isTraining && !isNote && (
+        {isMatch && (
           <span className={`tag ${item.home === false ? 'tag-away' : 'tag-home'}`}>
             {item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral' : 'Home'}
           </span>
