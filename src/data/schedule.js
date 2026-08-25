@@ -341,6 +341,24 @@ export const pointsLog = [
       { player: 'Maya', wins: 2, bangBangs: 1 },
     ],
   },
+  {
+    sortDate: '2026-08-25',
+    session: 'Training — Black v. Orange',
+    note: 'Orange won the first game. Mary and Viv are injured and did not play.',
+    tally: [
+      { player: 'Kate', wins: 1 },
+      { player: 'Kaitlyn', wins: 1 },
+      { player: 'Grace', wins: 1 },
+      { player: 'Samara', wins: 1 },
+      { player: 'Alyssa', wins: 1 },
+      { player: 'Zoe', wins: 1 },
+      { player: 'Virginia', wins: 1 },
+      { player: 'Lily', wins: 1 },
+      { player: 'Maya', wins: 1 },
+      { player: 'Aubrey', wins: 1 },
+      { player: 'Cassie', wins: 1 },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
@@ -627,6 +645,15 @@ export const schedule = [
       {
         name: 'Black',
         players: ['Parker', 'Ari', 'Alex', 'Isabelle', 'Layla', 'Anna', 'Paula', 'Amber'],
+      },
+      {
+        name: 'Orange',
+        // Everyone not on Black. Mary and Viv are injured, so they are not
+        // on either side and take no points.
+        players: [
+          'Kate', 'Kaitlyn', 'Grace', 'Samara', 'Alyssa', 'Zoe',
+          'Virginia', 'Lily', 'Maya', 'Aubrey', 'Cassie',
+        ],
       },
     ],
   },
