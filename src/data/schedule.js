@@ -616,11 +616,11 @@ export const schedule = [
     date: 'Tue, Aug 25',
     sortDate: '2026-08-25',
     type: 'training',
-    time: '3:00 PM',
+    time: '3:30 PM',
     location: 'McDonogh — Field 16',
     focus: 'Training',
     note: '',
-    changed: [{ field: 'Time', from: '4:00 PM', to: '3:00 PM' }],
+    changed: [{ field: 'Time', from: '4:00 PM', to: '3:30 PM' }],
   },
   {
     no: 10,
