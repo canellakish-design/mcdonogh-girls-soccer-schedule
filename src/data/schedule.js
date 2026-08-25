@@ -669,6 +669,7 @@ export const schedule = [
     location: 'McDonogh — Field 16',
     result: '',
     focus: '',
+    kit: ['black', 'orange', 'black'],
     note: '',
   },
   {
