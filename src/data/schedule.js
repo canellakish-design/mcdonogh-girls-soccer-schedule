@@ -667,6 +667,8 @@ export const schedule = [
     opponent: 'Hereford High School',
     time: '4:15 PM',
     location: 'McDonogh — Field 16',
+    teamTalk: '3:00 PM',
+    teamTalkRoom: 'Mullan Board Room',
     result: '',
     focus: '',
     kit: ['black', 'orange', 'black'],
