@@ -636,9 +636,8 @@ export const schedule = [
     type: 'training',
     time: '3:00 PM',
     location: 'McDonogh — Field 16',
-    cancelled: true,
     focus: 'Training',
-    note: 'Training is cancelled today.',
+    note: '',
     changed: [{ field: 'Time', from: '4:00 PM', to: '3:00 PM' }],
     // No kit per side — Tuesday's training kit is all black anyway, so the
     // side names are the bibs.
@@ -680,10 +679,11 @@ export const schedule = [
     date: 'Thu, Aug 27',
     sortDate: '2026-08-27',
     type: 'training',
+    cancelled: true,
     time: '4:00 PM',
     location: 'McDonogh — Field 16',
     focus: 'Training',
-    note: '',
+    note: 'No training today.',
   },
   {
     no: 12,
