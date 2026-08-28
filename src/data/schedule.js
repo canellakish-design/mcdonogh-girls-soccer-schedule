@@ -343,40 +343,52 @@ export const pointsLog = [
   },
   {
     sortDate: '2026-08-25',
-    session: 'Training — Black v. Orange, then five-team games',
+    session: 'Training — Black v. Orange',
+    note: 'Orange won the first game. Mary and Viv are injured and did not play.',
+    tally: [
+      { player: 'Kate', wins: 1 },
+      { player: 'Kaitlyn', wins: 1 },
+      { player: 'Grace', wins: 1 },
+      { player: 'Samara', wins: 1 },
+      { player: 'Alyssa', wins: 1 },
+      { player: 'Zoe', wins: 1 },
+      { player: 'Virginia', wins: 1 },
+      { player: 'Lily', wins: 1 },
+      { player: 'Maya', wins: 1 },
+      { player: 'Aubrey', wins: 1 },
+      { player: 'Cassie', wins: 1 },
+    ],
+  },
+  {
+    sortDate: '2026-08-28',
+    session: 'Training — five-team games',
     note:
-      'Orange won the first game. Then five small-sided teams, scored a point ' +
-      'a win, a goal and an assist, and every player takes their team total: ' +
-      'Red 15, Blue 11, Orange 10, Yellow 9, non-jerseys 9. Mary and Viv are ' +
-      'injured and did not play.',
-    // The five-team totals are team-wide, so they go in as a bonus with the
-    // side named — they do not decompose into one player's wins and goals.
+      'Five small-sided sides, scored a point a win, a goal and an assist, and ' +
+      'every player takes their side\u2019s total: Red 15, Blue 11, Orange 10, ' +
+      'Yellow 9, non-jerseys 9.',
+    // A side-wide total does not decompose into one player's wins and goals,
+    // so it goes in as a bonus with the side named.
     tally: [
       // Red — 15
       { player: 'Parker', bonus: 15, bonusFor: 'Red' },
-      { player: 'Virginia', wins: 1, bonus: 15, bonusFor: 'Red' },
-      { player: 'Anna', bonus: 15, bonusFor: 'Red' },
-      { player: 'Lily', wins: 1, bonus: 15, bonusFor: 'Red' },
+      { player: 'Virginia', bonus: 15, bonusFor: 'Red' },
+      { player: 'Lily', bonus: 15, bonusFor: 'Red' },
       // Blue — 11
-      { player: 'Kaitlyn', wins: 1, bonus: 11, bonusFor: 'Blue' },
+      { player: 'Kaitlyn', bonus: 11, bonusFor: 'Blue' },
       { player: 'Layla', bonus: 11, bonusFor: 'Blue' },
+      { player: 'Anna', bonus: 11, bonusFor: 'Blue' },
       // Orange — 10
-      { player: 'Zoe', wins: 1, bonus: 10, bonusFor: 'Orange' },
+      { player: 'Zoe', bonus: 10, bonusFor: 'Orange' },
       { player: 'Amber', bonus: 10, bonusFor: 'Orange' },
-      { player: 'Aubrey', wins: 1, bonus: 10, bonusFor: 'Orange' },
+      { player: 'Aubrey', bonus: 10, bonusFor: 'Orange' },
       // Yellow — 9
       { player: 'Isabelle', bonus: 9, bonusFor: 'Yellow' },
-      { player: 'Maya', wins: 1, bonus: 9, bonusFor: 'Yellow' },
+      { player: 'Maya', bonus: 9, bonusFor: 'Yellow' },
       { player: 'Ari', bonus: 9, bonusFor: 'Yellow' },
       // Non-jerseys — 9
-      { player: 'Grace', wins: 1, bonus: 9, bonusFor: 'Non-jerseys' },
+      { player: 'Grace', bonus: 9, bonusFor: 'Non-jerseys' },
       { player: 'Paula', bonus: 9, bonusFor: 'Non-jerseys' },
       { player: 'Alex', bonus: 9, bonusFor: 'Non-jerseys' },
-      // On Orange for the first game, but not on the five-team sheet.
-      { player: 'Kate', wins: 1 },
-      { player: 'Samara', wins: 1 },
-      { player: 'Alyssa', wins: 1 },
-      { player: 'Cassie', wins: 1 },
     ],
   },
 ]
