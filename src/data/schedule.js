@@ -366,7 +366,8 @@ export const pointsLog = [
       'Five small-sided sides, scored a point a win, a goal and an assist, and ' +
       'every player takes their side\u2019s total: Red 15, Blue 11, Orange 10, ' +
       'Yellow 9, non-jerseys 9. Then Over the River, a point a win: White won ' +
-      'twice, Orange once.',
+      'twice, Orange once. Layla and Paula back from injury \u2014 today is ' +
+      'their first session on the board.',
     // Side-wide totals do not decompose into one player's wins and goals, so
     // they go in as a bonus with the sides and counts named.
     tally: [
