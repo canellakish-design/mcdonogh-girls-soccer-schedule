@@ -361,34 +361,30 @@ export const pointsLog = [
   },
   {
     sortDate: '2026-08-28',
-    session: 'Training — five-team games',
+    session: 'Training — five-team games and Over the River',
     note:
       'Five small-sided sides, scored a point a win, a goal and an assist, and ' +
       'every player takes their side\u2019s total: Red 15, Blue 11, Orange 10, ' +
-      'Yellow 9, non-jerseys 9.',
-    // A side-wide total does not decompose into one player's wins and goals,
-    // so it goes in as a bonus with the side named.
+      'Yellow 9, non-jerseys 9. Then Over the River, a point a win: White won ' +
+      'twice, Orange once.',
+    // Side-wide totals do not decompose into one player's wins and goals, so
+    // they go in as a bonus with the sides and counts named.
     tally: [
-      // Red — 15
-      { player: 'Parker', bonus: 15, bonusFor: 'Red' },
-      { player: 'Virginia', bonus: 15, bonusFor: 'Red' },
-      { player: 'Lily', bonus: 15, bonusFor: 'Red' },
-      // Blue — 11
-      { player: 'Kaitlyn', bonus: 11, bonusFor: 'Blue' },
-      { player: 'Layla', bonus: 11, bonusFor: 'Blue' },
-      { player: 'Anna', bonus: 11, bonusFor: 'Blue' },
-      // Orange — 10
-      { player: 'Zoe', bonus: 10, bonusFor: 'Orange' },
-      { player: 'Amber', bonus: 10, bonusFor: 'Orange' },
-      { player: 'Aubrey', bonus: 10, bonusFor: 'Orange' },
-      // Yellow — 9
-      { player: 'Isabelle', bonus: 9, bonusFor: 'Yellow' },
-      { player: 'Maya', bonus: 9, bonusFor: 'Yellow' },
-      { player: 'Ari', bonus: 9, bonusFor: 'Yellow' },
-      // Non-jerseys — 9
-      { player: 'Grace', bonus: 9, bonusFor: 'Non-jerseys' },
-      { player: 'Paula', bonus: 9, bonusFor: 'Non-jerseys' },
-      { player: 'Alex', bonus: 9, bonusFor: 'Non-jerseys' },
+      { player: 'Parker', bonus: 17, bonusFor: 'Red 15, Over the River 2' },
+      { player: 'Virginia', bonus: 16, bonusFor: 'Red 15, Over the River 1' },
+      { player: 'Lily', bonus: 16, bonusFor: 'Red 15, Over the River 1' },
+      { player: 'Kaitlyn', bonus: 13, bonusFor: 'Blue 11, Over the River 2' },
+      { player: 'Layla', bonus: 13, bonusFor: 'Blue 11, Over the River 2' },
+      { player: 'Anna', bonus: 12, bonusFor: 'Blue 11, Over the River 1' },
+      { player: 'Zoe', bonus: 12, bonusFor: 'Orange 10, Over the River 2' },
+      { player: 'Amber', bonus: 12, bonusFor: 'Orange 10, Over the River 2' },
+      { player: 'Aubrey', bonus: 11, bonusFor: 'Orange 10, Over the River 1' },
+      { player: 'Isabelle', bonus: 10, bonusFor: 'Yellow 9, Over the River 1' },
+      { player: 'Maya', bonus: 10, bonusFor: 'Yellow 9, Over the River 1' },
+      { player: 'Ari', bonus: 10, bonusFor: 'Yellow 9, Over the River 1' },
+      { player: 'Grace', bonus: 11, bonusFor: 'Non-jerseys 9, Over the River 2' },
+      { player: 'Paula', bonus: 10, bonusFor: 'Non-jerseys 9, Over the River 1' },
+      { player: 'Alex', bonus: 11, bonusFor: 'Non-jerseys 9, Over the River 2' },
     ],
   },
 ]
