@@ -842,6 +842,7 @@ a { color: inherit; }
   border-radius: 0 10px 10px 0;
   background: var(--orange-bg);
 }
+.key-lead { margin: 0 0 12px; font-size: 13px; line-height: 1.5; color: var(--slate); }
 .key-title {
   margin: 0 0 12px;
   font-size: 11px;
