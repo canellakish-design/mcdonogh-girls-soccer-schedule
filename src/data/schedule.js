@@ -361,30 +361,31 @@ export const pointsLog = [
   },
   {
     sortDate: '2026-08-28',
-    session: 'Training — five-team games',
+    session: 'Training — five-team games and Over the River',
     note:
       'Five small-sided sides, scored a point a win, a goal and an assist, and ' +
       'every player takes their side\u2019s total: Red 15, Blue 11, Orange 10, ' +
-      'Yellow 9, non-jerseys 9. Layla and Paula back from injury \u2014 today is their first session on ' +
+      'Yellow 9, non-jerseys 9. Then Over the River: White won twice, Orange once, ' +
+      'at the usual 2 pts a win. Layla and Paula back from injury \u2014 today is their first session on ' +
       'the board.',
     // Side-wide totals do not decompose into one player's wins and goals, so
     // they go in as a bonus with the sides and counts named.
     tally: [
-      { player: 'Parker', goals: 1, bonus: 15, bonusFor: 'Red 15' },
-      { player: 'Virginia', goals: 1, bonus: 15, bonusFor: 'Red 15' },
-      { player: 'Lily', goals: 1, bonus: 15, bonusFor: 'Red 15' },
-      { player: 'Kaitlyn', goals: 3, bonus: 11, bonusFor: 'Blue 11' },
-      { player: 'Layla', goals: 6, bonus: 11, bonusFor: 'Blue 11' },
-      { player: 'Anna', bonus: 11, bonusFor: 'Blue 11' },
-      { player: 'Zoe', goals: 2, bonus: 10, bonusFor: 'Orange 10' },
-      { player: 'Amber', bonus: 10, bonusFor: 'Orange 10' },
-      { player: 'Aubrey', bonus: 10, bonusFor: 'Orange 10' },
-      { player: 'Isabelle', goals: 3, bonus: 9, bonusFor: 'Yellow 9' },
-      { player: 'Maya', bonus: 9, bonusFor: 'Yellow 9' },
-      { player: 'Ari', bonus: 9, bonusFor: 'Yellow 9' },
-      { player: 'Grace', goals: 3, bonus: 9, bonusFor: 'Non-jerseys 9' },
-      { player: 'Paula', goals: 1, bonus: 9, bonusFor: 'Non-jerseys 9' },
-      { player: 'Alex', bonus: 9, bonusFor: 'Non-jerseys 9' },
+      { player: 'Parker', wins: 2, goals: 1, bonus: 15, bonusFor: 'Red 15' },
+      { player: 'Virginia', wins: 1, goals: 1, bonus: 15, bonusFor: 'Red 15' },
+      { player: 'Lily', wins: 2, goals: 1, bonus: 15, bonusFor: 'Red 15' },
+      { player: 'Kaitlyn', wins: 1, goals: 3, bonus: 11, bonusFor: 'Blue 11' },
+      { player: 'Layla', wins: 2, goals: 6, bonus: 11, bonusFor: 'Blue 11' },
+      { player: 'Anna', wins: 2, bonus: 11, bonusFor: 'Blue 11' },
+      { player: 'Zoe', wins: 2, goals: 2, bonus: 10, bonusFor: 'Orange 10' },
+      { player: 'Amber', wins: 2, bonus: 10, bonusFor: 'Orange 10' },
+      { player: 'Aubrey', wins: 1, bonus: 10, bonusFor: 'Orange 10' },
+      { player: 'Isabelle', wins: 1, goals: 3, bonus: 9, bonusFor: 'Yellow 9' },
+      { player: 'Maya', wins: 2, bonus: 9, bonusFor: 'Yellow 9' },
+      { player: 'Ari', wins: 1, bonus: 9, bonusFor: 'Yellow 9' },
+      { player: 'Grace', wins: 2, goals: 3, bonus: 9, bonusFor: 'Non-jerseys 9' },
+      { player: 'Paula', wins: 1, goals: 1, bonus: 9, bonusFor: 'Non-jerseys 9' },
+      { player: 'Alex', wins: 1, bonus: 9, bonusFor: 'Non-jerseys 9' },
     ],
   },
 ]
