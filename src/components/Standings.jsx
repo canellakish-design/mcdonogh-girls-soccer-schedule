@@ -117,6 +117,24 @@ export default function Standings() {
               </span>
             </li>
           ))}
+          {/* B is the biggest column for most players right now, so it cannot
+              be the one category the key does not explain. */}
+          {anyBonus && (
+            <li>
+              <span className="key-pts">Varies</span>
+              <span className="key-body">
+                <span className="key-for">
+                  Bonus
+                  <em className="key-abbr">B</em>
+                </span>
+                <span className="key-note">
+                  Points from a session scored its own way — a small-sided
+                  tournament, say, where the whole side takes its total. Your
+                  row on the session below says where they came from.
+                </span>
+              </span>
+            </li>
+          )}
         </ul>
       </section>
 
