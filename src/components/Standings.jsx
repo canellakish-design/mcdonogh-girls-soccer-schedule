@@ -26,8 +26,6 @@ export default function Standings() {
   const { unlocked, lock } = usePlayerAccess()
   const rows = standings()
   const sessions = pointsLog.length
-  // The bonus column only earns its width once something has been awarded.
-  const anyBonus = rows.some((r) => r.bonus > 0)
 
   if (!unlocked) {
     return (
@@ -71,13 +69,10 @@ export default function Standings() {
             <tr>
               <th className="col-rank" scope="col"><span className="sr-only">Rank</span></th>
               <th scope="col">Player</th>
-              <th className="num" scope="col"><abbr title="Wins">W</abbr></th>
+              <th className="num" scope="col"><abbr title="Points from wins">W</abbr></th>
               <th className="num" scope="col"><abbr title="Goals and assists">G/A</abbr></th>
               <th className="num" scope="col"><abbr title="Shutouts">SO</abbr></th>
               <th className="num" scope="col"><abbr title="Bang bangs">BB</abbr></th>
-              {anyBonus && (
-                <th className="num" scope="col"><abbr title="Bonus points">B</abbr></th>
-              )}
               <th className="num col-pts" scope="col">Pts</th>
             </tr>
           </thead>
@@ -88,11 +83,10 @@ export default function Standings() {
                   <Rank i={i} pts={r.pts} prev={i > 0 ? rows[i - 1].pts : null} />
                 </td>
                 <th scope="row" className="col-player">{r.player}</th>
-                <td className="num">{r.wins || '—'}</td>
-                <td className="num">{r.goals + r.assists || '—'}</td>
-                <td className="num">{r.shutouts || '—'}</td>
-                <td className="num">{r.bangBangs || '—'}</td>
-                {anyBonus && <td className="num">{r.bonus || '—'}</td>}
+                <td className="num">{r.winPts || '—'}</td>
+                <td className="num">{r.gaPts || '—'}</td>
+                <td className="num">{r.shutoutPts || '—'}</td>
+                <td className="num">{r.bangBangPts || '—'}</td>
                 <td className="num col-pts">{r.pts}</td>
               </tr>
             ))}
@@ -104,6 +98,9 @@ export default function Standings() {
           to hover. Spell every category out, with what it takes to earn it. */}
       <section className="key">
         <h3 className="key-title">How points are earned</h3>
+        <p className="key-lead">
+          Every column is points, not tallies, so your row adds up to your total.
+        </p>
         <ul className="key-list">
           {practicePoints.earn.map((e) => (
             <li key={e.for}>
@@ -117,24 +114,6 @@ export default function Standings() {
               </span>
             </li>
           ))}
-          {/* B is the biggest column for most players right now, so it cannot
-              be the one category the key does not explain. */}
-          {anyBonus && (
-            <li>
-              <span className="key-pts">Varies</span>
-              <span className="key-body">
-                <span className="key-for">
-                  Bonus
-                  <em className="key-abbr">B</em>
-                </span>
-                <span className="key-note">
-                  Points from a session scored its own way — a small-sided
-                  tournament, say, where the whole side takes its total. Your
-                  row on the session below says where they came from.
-                </span>
-              </span>
-            </li>
-          )}
         </ul>
       </section>
 

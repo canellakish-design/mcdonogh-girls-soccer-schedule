@@ -242,7 +242,10 @@ export const practicePoints = {
     {
       pts: '2 pts',
       for: 'Win',
-      note: 'Every player on the winning side, every match.',
+      note:
+        'Every player on the winning side, every match. Where a session is ' +
+        'scored its own way \u2014 a small-sided tournament, say, with the whole ' +
+        'side taking its total \u2014 those points sit here too.',
     },
     {
       pts: '1 pt',
@@ -418,21 +421,24 @@ export function standings() {
       const row = byPlayer.get(e.player) || {
         player: e.player,
         pts: 0,
-        wins: 0,
-        bangBangs: 0,
-        goals: 0,
-        assists: 0,
-        shutouts: 0,
-        bonus: 0,
+        // Points per category, not raw counts, so the columns visibly add up
+        // to the total. A win is 2, a clean sheet 1 or 2, everything else 1.
+        winPts: 0,
+        gaPts: 0,
+        shutoutPts: 0,
+        bangBangPts: 0,
         sessions: 0,
       }
+      const shutouts = e.shutouts || 0
+      const atTheBack = e.backShutouts != null ? e.backShutouts : e.back ? shutouts : 0
+
       row.pts += pointsFor(e)
-      row.wins += e.wins || 0
-      row.bangBangs += e.bangBangs || 0
-      row.goals += e.goals || 0
-      row.assists += e.assists || 0
-      row.shutouts += e.shutouts || 0
-      row.bonus += e.bonus || 0
+      // A side total from a session scored its own way is still points won,
+      // so it sits with the wins rather than in a column of its own.
+      row.winPts += (e.wins || 0) * 2 + (e.bonus || 0)
+      row.gaPts += (e.goals || 0) + (e.assists || 0)
+      row.shutoutPts += shutouts + atTheBack
+      row.bangBangPts += e.bangBangs || 0
       row.sessions += 1
       byPlayer.set(e.player, row)
     }
