@@ -6,10 +6,12 @@ import PlayerGate from './PlayerGate.jsx'
 import { usePlayerAccess } from '../playerAccess.jsx'
 
 // Ties the plain-English key back to the column letters in the table.
+// Goals and assists share a column: both are worth a point, and a player
+// thinks of them as one thing — what she contributed to a goal.
 const KEY_ABBR = {
   Win: 'W',
-  Goal: 'G',
-  Assist: 'A',
+  Goal: 'G/A',
+  Assist: 'G/A',
   Shutout: 'SO',
   'Bang bang': 'BB',
 }
@@ -70,8 +72,7 @@ export default function Standings() {
               <th className="col-rank" scope="col"><span className="sr-only">Rank</span></th>
               <th scope="col">Player</th>
               <th className="num" scope="col"><abbr title="Wins">W</abbr></th>
-              <th className="num" scope="col"><abbr title="Goals">G</abbr></th>
-              <th className="num" scope="col"><abbr title="Assists">A</abbr></th>
+              <th className="num" scope="col"><abbr title="Goals and assists">G/A</abbr></th>
               <th className="num" scope="col"><abbr title="Shutouts">SO</abbr></th>
               <th className="num" scope="col"><abbr title="Bang bangs">BB</abbr></th>
               {anyBonus && (
@@ -88,8 +89,7 @@ export default function Standings() {
                 </td>
                 <th scope="row" className="col-player">{r.player}</th>
                 <td className="num">{r.wins || '—'}</td>
-                <td className="num">{r.goals || '—'}</td>
-                <td className="num">{r.assists || '—'}</td>
+                <td className="num">{r.goals + r.assists || '—'}</td>
                 <td className="num">{r.shutouts || '—'}</td>
                 <td className="num">{r.bangBangs || '—'}</td>
                 {anyBonus && <td className="num">{r.bonus || '—'}</td>}
