@@ -760,9 +760,12 @@ export const schedule = [
     opponent: 'Bishop Denis J. O\'Connell H.S.',
     time: '4:15 PM',
     location: 'McDonogh — Field 16',
+    teamTalk: '3:15 PM',
+    teamTalkRoom: 'Mullan Board Room',
     result: '',
     focus: '',
-    note: '',
+    kit: ['black', 'black', 'black'],
+    note: 'If you are going to the training room, go early.',
   },
   {
     no: 16,
