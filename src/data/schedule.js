@@ -774,8 +774,29 @@ export const schedule = [
     type: 'training',
     time: '4:00 PM',
     location: 'McDonogh — Field 16',
+    cancelled: true,
     focus: 'Training',
-    note: '',
+    note: 'Cancelled because of the heat. A video session on Zoom replaces it at 8:00 PM.',
+  },
+  {
+    no: 103,
+    date: 'Thu, Sep 3',
+    sortDate: '2026-09-03',
+    type: 'event',
+    title: 'Video session',
+    time: '8:00 PM',
+    location: 'Zoom',
+    note: 'Replaces today’s training, which is cancelled because of the heat.',
+    // The room is Harry's personal McDonogh meeting room and the link carries
+    // its own passcode, so it sits behind the team code rather than in the open.
+    resourcesPlayersOnly: true,
+    resources: [
+      {
+        label: 'Join the Zoom',
+        url: 'https://mcdonogh.zoom.us/j/6922573881?pwd=MVBBV3lnUGg1MTBlS1NobUxPekkzZz09',
+        hint: 'Meeting ID 692 257 3881',
+      },
+    ],
   },
   {
     no: 17,

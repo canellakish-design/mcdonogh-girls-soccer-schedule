@@ -210,7 +210,11 @@ function buildFeed(feed) {
     // parents subscribe to them. That detail lives behind the players' code
     // on the site instead.
     if (item.note) desc.push(item.note)
-    for (const r of item.resources || []) desc.push(`${r.label}: ${r.url}`)
+    // Players-only links stay out of the feeds: parents subscribe to these,
+    // and a feed URL is passed around far more freely than a page.
+    if (!item.resourcesPlayersOnly) {
+      for (const r of item.resources || []) desc.push(`${r.label}: ${r.url}`)
+    }
     if (desc.length) lines.push(`DESCRIPTION:${esc(desc.join('\n'))}`)
 
     // STATUS:CANCELLED is what calendar apps read to grey out an event.

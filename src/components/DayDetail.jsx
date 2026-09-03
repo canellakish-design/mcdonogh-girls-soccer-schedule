@@ -90,8 +90,13 @@ export default function DayDetail({ item }) {
 
       {item.note && <p className="detail-note">{item.note}</p>}
 
-      {/* Links attached to a day — the Yo-Yo description and recording, say. */}
-      {item.resources?.length > 0 && (
+      {/* Links attached to a day — the Yo-Yo description and recording, say.
+          A day can mark them players-only, for a Zoom room we do not want
+          sitting on a public page. */}
+      {item.resources?.length > 0 && item.resourcesPlayersOnly && !unlocked && (
+        <PlayerGate what="The link for this session" />
+      )}
+      {item.resources?.length > 0 && (!item.resourcesPlayersOnly || unlocked) && (
         <ul className="resources">
           {item.resources.map((r) => (
             <li key={r.url}>
