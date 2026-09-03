@@ -787,9 +787,6 @@ export const schedule = [
     time: '8:00 PM',
     location: 'Zoom',
     note: 'Replaces today’s training, which is cancelled because of the heat.',
-    // The room is Harry's personal McDonogh meeting room and the link carries
-    // its own passcode, so it sits behind the team code rather than in the open.
-    resourcesPlayersOnly: true,
     resources: [
       {
         label: 'Join the Zoom',
