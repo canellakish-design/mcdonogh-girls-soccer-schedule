@@ -391,6 +391,42 @@ export const pointsLog = [
       { player: 'Alex', wins: 1, bonus: 9, bonusFor: 'Non-jerseys 9' },
     ],
   },
+  {
+    sortDate: '2026-08-31',
+    session: 'Training',
+    note: 'From the practice points sheet.',
+    tally: [
+      { player: 'Parker', bonus: 1, bonusFor: 'Session total' },
+      { player: 'Kaitlyn', bonus: 1, bonusFor: 'Session total' },
+      { player: 'Zoe', bonus: 1, bonusFor: 'Session total' },
+      { player: 'Grace', bonus: 1, bonusFor: 'Session total' },
+      { player: 'Lily', bonus: 1, bonusFor: 'Session total' },
+      { player: 'Paula', bonus: 1, bonusFor: 'Session total' },
+      { player: 'Samara', bonus: 1, bonusFor: 'Session total' },
+      { player: 'Alyssa', bonus: 2, bonusFor: 'Session total' },
+      { player: 'Amber', bonus: 1, bonusFor: 'Session total' },
+      { player: 'Ari', bonus: 1, bonusFor: 'Session total' },
+      { player: 'Virginia', bonus: 1, bonusFor: 'Session total' },
+      { player: 'Alex', bonus: 2, bonusFor: 'Session total' },
+      { player: 'Anna', bonus: 1, bonusFor: 'Session total' },
+      { player: 'Aubrey', bonus: 2, bonusFor: 'Session total' },
+      { player: 'Isabelle', bonus: 1, bonusFor: 'Session total' },
+      { player: 'Layla', bonus: 2, bonusFor: 'Session total' },
+      { player: 'Maya', bonus: 2, bonusFor: 'Session total' },
+    ],
+  },
+  {
+    sortDate: '2026-09-01',
+    session: 'Training',
+    note: 'From the practice points sheet.',
+    tally: [
+      { player: 'Zoe', bonus: 2, bonusFor: 'Session total' },
+      { player: 'Lily', bonus: 2, bonusFor: 'Session total' },
+      { player: 'Samara', bonus: 2, bonusFor: 'Session total' },
+      { player: 'Aubrey', bonus: 2, bonusFor: 'Session total' },
+      { player: 'Maya', bonus: 2, bonusFor: 'Session total' },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
