@@ -145,7 +145,11 @@ function ListView() {
 
       <a className="profile-link" href="#/profile">
         <span className="points-link-label">Player Profile Questionnaire</span>
-        <span className="points-link-hint">24 statements · answers go to the coaches only</span>
+        <span className="points-link-hint">
+          {unlocked
+            ? '24 statements · answers go to the coaches only'
+            : 'Team code required'}
+        </span>
       </a>
 
       <a className="points-link" href="#/points">

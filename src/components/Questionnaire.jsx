@@ -5,6 +5,8 @@
 
 import { useState } from 'react'
 import { SCALE, SECTIONS, ALL_ITEMS } from '../data/questionnaire.js'
+import PlayerGate from './PlayerGate.jsx'
+import { usePlayerAccess } from '../playerAccess.jsx'
 
 const FORM_NAME = 'player-profile'
 
@@ -15,6 +17,7 @@ function encode(data) {
 }
 
 export default function Questionnaire() {
+  const { unlocked } = usePlayerAccess()
   const [player, setPlayer] = useState('')
   const [answers, setAnswers] = useState({})
   const [state, setState] = useState('idle') // idle | sending | done | error
@@ -54,6 +57,15 @@ export default function Questionnaire() {
       setState('error')
       setError(err.message || 'Something went wrong.')
     }
+  }
+
+  if (!unlocked) {
+    return (
+      <div className="detail">
+        <a className="detail-back" href="#/">← Full schedule</a>
+        <PlayerGate what="The player profile questionnaire" />
+      </div>
+    )
   }
 
   if (state === 'done') {
