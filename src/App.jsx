@@ -3,6 +3,7 @@ import { TEAM, schedule, observances, rules } from './data/schedule.js'
 import ScheduleCard from './components/ScheduleCard.jsx'
 import DayDetail from './components/DayDetail.jsx'
 import Standings from './components/Standings.jsx'
+import Questionnaire from './components/Questionnaire.jsx'
 import { PlayerAccessProvider, usePlayerAccess } from './playerAccess.jsx'
 
 function useHashRoute() {
@@ -142,6 +143,11 @@ function ListView() {
         </section>
       )}
 
+      <a className="profile-link" href="#/profile">
+        <span className="points-link-label">Player Profile Questionnaire</span>
+        <span className="points-link-hint">24 statements · answers go to the coaches only</span>
+      </a>
+
       <a className="points-link" href="#/points">
         <span className="points-link-label">Practice Points (Player Only)</span>
         <span className="points-link-hint">
@@ -226,7 +232,11 @@ export default function App() {
     <PlayerAccessProvider>
       <div className="page">
         <Masthead />
-        {onPoints ? (
+        {onProfile ? (
+          <main className="container">
+            <Questionnaire />
+          </main>
+        ) : onPoints ? (
           <Standings />
         ) : current ? (
           <main className="container">

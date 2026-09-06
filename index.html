@@ -16,6 +16,42 @@
     <meta name="theme-color" content="#141414" />
   </head>
   <body>
+    <!-- Netlify reads this static form at build time to register the fields.
+         The React form posts to it. It must list every field name, and it is
+         hidden from people, not from the crawler — so no `hidden` attribute
+         on the form itself, only a wrapper that is display:none. -->
+    <div style="display:none" aria-hidden="true">
+      <form name="player-profile" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="player-profile" />
+        <input type="text" name="bot-field" />
+        <input type="text" name="player" />
+        <input type="text" name="q1" />
+        <input type="text" name="q2" />
+        <input type="text" name="q3" />
+        <input type="text" name="q4" />
+        <input type="text" name="q5" />
+        <input type="text" name="q6" />
+        <input type="text" name="q7" />
+        <input type="text" name="q8" />
+        <input type="text" name="q9" />
+        <input type="text" name="q10" />
+        <input type="text" name="q11" />
+        <input type="text" name="q12" />
+        <input type="text" name="q13" />
+        <input type="text" name="q14" />
+        <input type="text" name="q15" />
+        <input type="text" name="q16" />
+        <input type="text" name="q17" />
+        <input type="text" name="q18" />
+        <input type="text" name="q19" />
+        <input type="text" name="q20" />
+        <input type="text" name="q21" />
+        <input type="text" name="q22" />
+        <input type="text" name="q23" />
+        <input type="text" name="q24" />
+      </form>
+    </div>
+
     <div id="root"></div>
 
     <script type="module" src="/src/main.jsx"></script>
