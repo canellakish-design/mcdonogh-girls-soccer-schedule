@@ -838,6 +838,23 @@ export const schedule = [
     note: 'Labor Day — later start, no classes.',
   },
   {
+    no: 103,
+    date: 'Tue, Sep 8',
+    sortDate: '2026-09-08',
+    type: 'event',
+    title: 'Parent meeting',
+    time: '12:10 PM',
+    location: 'Zoom',
+    note: 'On Zoom. The link is below.',
+    resources: [
+      {
+        label: 'Join the Zoom meeting',
+        url: 'https://mcdonogh.zoom.us/j/6922573881?pwd=MVBBV3lnUGg1MTBlS1NobUxPekkzZz09',
+        hint: 'Coach Canellakis\u2019s room \u2014 Meeting ID 692 257 3881.',
+      },
+    ],
+  },
+  {
     no: 19,
     date: 'Tue, Sep 8',
     sortDate: '2026-09-08',
