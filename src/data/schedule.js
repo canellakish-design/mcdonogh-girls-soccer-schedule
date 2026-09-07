@@ -849,7 +849,7 @@ export const schedule = [
     resources: [
       {
         label: 'Join the Zoom meeting',
-        url: 'https://mcdonogh.zoom.us/j/6922573881?pwd=MVBBV3lnUGg1MTBlS1NobUxPekkzZz09',
+        url: 'https://mcdonogh.zoom.us/j/6922573881',
         hint: 'Coach Canellakis\u2019s room \u2014 Meeting ID 692 257 3881.',
       },
     ],
