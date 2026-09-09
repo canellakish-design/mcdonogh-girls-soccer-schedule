@@ -427,6 +427,21 @@ export const pointsLog = [
       { player: 'Maya', bonus: 2, bonusFor: 'Session total' },
     ],
   },
+  {
+    sortDate: '2026-09-09',
+    session: 'Training',
+    note:
+      'Goals and assists from the sheet, a point each. The sheet marks them as ' +
+      'one stat, so they are logged together. Match wins still to come.',
+    tally: [
+      { player: 'Zoe', ga: 4 },
+      { player: 'Samara', ga: 3 },
+      { player: 'Ari', ga: 2 },
+      { player: 'Layla', ga: 2 },
+      { player: 'Lily', ga: 2 },
+      { player: 'Isabelle', ga: 1 },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
@@ -442,6 +457,9 @@ export function pointsFor(e) {
     (e.bangBangs || 0) +
     (e.goals || 0) +
     (e.assists || 0) +
+    // `ga` is for the sheets that mark goals and assists as one stat and do
+    // not say which is which. Same price either way, so nothing is lost.
+    (e.ga || 0) +
     shutouts +
     atTheBack +
     (e.bonus || 0)
@@ -472,7 +490,7 @@ export function standings() {
       // A side total from a session scored its own way is still points won,
       // so it sits with the wins rather than in a column of its own.
       row.winPts += (e.wins || 0) * 2 + (e.bonus || 0)
-      row.gaPts += (e.goals || 0) + (e.assists || 0)
+      row.gaPts += (e.goals || 0) + (e.assists || 0) + (e.ga || 0)
       row.shutoutPts += shutouts + atTheBack
       row.bangBangPts += e.bangBangs || 0
       row.sessions += 1
