@@ -915,6 +915,7 @@ export const schedule = [
     time: '3:30 PM',
     teamTalk: '2:45 PM',
     dismissal: '2:00 PM',
+    kit: ['black', 'black', 'black'],
     location: 'McDonogh — Field 16',
     result: '',
     focus: '',
