@@ -89,7 +89,10 @@ function title(item) {
   if (item.title) return prefix + item.title
   if (item.type === 'training') return prefix + (item.focus || 'Training')
   const side = item.home === true ? 'vs. ' : item.home === false ? '@ ' : 'vs. '
-  return prefix + side + item.opponent
+  // Senior Day rides in the summary, not just the description: a month view
+  // is where a family decides which afternoon to take off.
+  const suffix = item.seniorDay ? ' — Senior Day' : ''
+  return prefix + side + item.opponent + suffix
 }
 
 // A 'note' block covers a span of days; endDate is the last day it applies to.
@@ -187,6 +190,7 @@ function buildFeed(feed) {
     if (isMatch) {
       if (item.scrimmage) desc.push('Scrimmage')
       if (item.playoff) desc.push('IAAM Playoffs')
+      if (item.seniorDay) desc.push('Senior Day')
       desc.push(item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral site' : 'Home')
       if (item.arrive) desc.push(`Arrive: ${item.arrive}`)
       if (item.dismissal) desc.push(`Dismissal: ${item.dismissal}`)

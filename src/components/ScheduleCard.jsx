@@ -115,6 +115,7 @@ export default function ScheduleCard({ item, highlight, observance }) {
         {item.tentative && <span className="tag tag-tentative">Tentative</span>}
         {item.scrimmage && <span className="tag tag-grey">Scrimmage</span>}
         {item.playoff && <span className="tag tag-orange-soft">Playoffs</span>}
+        {item.seniorDay && <span className="tag tag-senior">Senior Day</span>}
         {isMatch && (
           <span className={`tag ${item.home === false ? 'tag-away' : 'tag-home'}`}>
             {item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral' : 'Home'}
