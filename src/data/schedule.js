@@ -912,19 +912,17 @@ export const schedule = [
     type: 'match',
     home: true,
     opponent: 'St. Paul\'s School for Girls',
-    time: '4:30 PM',
+    time: '3:30 PM',
+    teamTalk: '2:45 PM',
+    dismissal: '2:00 PM',
     kit: ['black', 'black', 'black'],
     location: 'McDonogh — Field 16',
     result: '',
     focus: '',
-    note: 'IAAM.',
-    // Was a 3:30 kick-off with a 2:00 dismissal. Both are off: the later
-    // start means nobody leaves class early. Team talk removed with them —
-    // 2:45 was tied to the old dismissal.
-    changed: [
-      { field: 'Time', from: '3:30 PM', to: '4:30 PM' },
-      { field: 'Dismissal', from: '2:00 PM', to: 'no early dismissal — go from class' },
-    ],
+    note: 'IAAM. Early 3:30 start so everyone is home before sundown for Rosh Hashanah.',
+    // Briefly moved to 4:30 and back. Flagged because a calendar that
+    // refreshed inside that window is showing the wrong time.
+    changed: [{ field: 'Time', from: '4:30 PM', to: '3:30 PM' }],
   },
   {
     no: 23,
