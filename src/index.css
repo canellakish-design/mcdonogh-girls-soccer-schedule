@@ -221,6 +221,9 @@ a { color: inherit; }
 .tag-training { background: var(--blue-bg); color: var(--blue); }
 .tag-grey { background: var(--grey-bg); color: var(--grey); }
 .tag-orange-soft { background: #fbe3d6; color: var(--mc-orange-dark); }
+/* Gold, so the one Senior Day of the season reads as an occasion and does
+   not get lost among the orange match tags. */
+.tag-senior { background: #f6c14b; color: #5a3f00; }
 .tag-points { background: var(--mc-orange); color: #fff; }
 .tag-changed { background: var(--yellow-bg); color: var(--yellow-ink); }
 .tag-event { background: var(--green-bg); color: var(--green); }
@@ -441,6 +444,7 @@ a { color: inherit; }
 .indicator-grey { background: var(--grey-bg); color: var(--grey); }
 .indicator-event { background: var(--green-bg); color: var(--green); }
 .indicator-orange { background: #fbe3d6; color: var(--mc-orange-dark); }
+.indicator-senior { background: #f6c14b; color: #5a3f00; }
 .indicator-result { background: var(--mc-black); color: #fff; }
 .indicator-tentative { background: #fff8e6; color: #8a6100; border: 1px dashed #d9b45a; }
 .indicator-cancelled { background: #fdecea; color: #a8271a; }

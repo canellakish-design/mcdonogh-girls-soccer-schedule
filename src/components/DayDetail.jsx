@@ -50,6 +50,7 @@ export default function DayDetail({ item }) {
           {item.tentative && <span className="indicator indicator-tentative">Tentative</span>}
           {item.scrimmage && <span className="indicator indicator-grey">Scrimmage</span>}
           {item.playoff && <span className="indicator indicator-orange">IAAM Playoffs</span>}
+          {item.seniorDay && <span className="indicator indicator-senior">Senior Day</span>}
           {isMatch && <span className="indicator indicator-grey">{homeLabel}</span>}
           {item.result && <span className="indicator indicator-result">{item.result}</span>}
         </div>

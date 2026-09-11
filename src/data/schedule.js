@@ -17,6 +17,7 @@
 //   type: 'training' -> blue "TRAINING" badge   |   'match' -> orange "MATCH" badge
 //   home: true (we host, "vs.") | false (we travel, "@") | 'neutral' (third site)
 //   scrimmage: true -> grey "SCRIMMAGE" tag     |   playoff: true -> "PLAYOFFS" tag
+//   seniorDay: true -> gold "SENIOR DAY" tag; one match a season
 //   result: '' -> fill in after the game, e.g. 'W 3–1' / 'L 0–2' / 'T 1–1'
 //   focus:  '' -> training theme or pre-match focus
 //   note:   '' -> bus time, uniforms, conflicts, anything else
@@ -1265,6 +1266,7 @@ export const schedule = [
     opponent: 'John Carroll School',
     time: '4:30 PM',
     location: 'McDonogh — Field 16',
+    seniorDay: true,
     result: '',
     focus: '',
     note: '',
