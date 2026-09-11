@@ -118,6 +118,15 @@ const FEEDS = [
     ns: 'matches',
     include: (item) => item.type === 'match',
   },
+  // Training only. Team events — uniform pickup, media day, the parent
+  // meeting — are deliberately out: this is the practice calendar.
+  {
+    file: 'mcdonogh-training.ics',
+    name: `${TEAM.school} ${TEAM.program} — Training`,
+    desc: `Training only — ${TEAM.season}`,
+    ns: 'training',
+    include: (item) => item.type === 'training',
+  },
 ]
 
 function buildFeed(feed) {

@@ -39,6 +39,7 @@ function Subscribe() {
   const feeds = [
     { file: 'mcdonogh-soccer.ics', label: 'Full schedule', hint: 'Training days and matches' },
     { file: 'mcdonogh-matches.ics', label: 'Matches only', hint: 'Games, no training' },
+    { file: 'mcdonogh-training.ics', label: 'Training only', hint: 'Practices, no games' },
   ]
 
   return (
