@@ -1151,9 +1151,10 @@ export const schedule = [
     sortDate: '2026-10-07',
     type: 'training',
     time: '4:00 PM',
-    location: 'McDonogh — Field 16',
+    location: 'McDonogh — Dixon Field (Turf)',
     focus: 'Training',
-    note: '',
+    note: 'On the turf today — Field 16 has a JV game.',
+    changed: [{ field: 'Location', from: 'Field 16', to: 'Dixon Field (Turf)' }],
   },
   {
     no: 42,
