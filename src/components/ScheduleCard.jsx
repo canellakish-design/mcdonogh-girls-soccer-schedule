@@ -1,6 +1,7 @@
 // One row in the schedule list. Left = date box; middle = matchup/focus; right = tags.
 
 import { usePlayerAccess } from '../playerAccess.jsx'
+import { assignmentFor, assignmentDueOn } from '../data/schedule.js'
 
 function dateBox(sortDate) {
   // sortDate is 'YYYY-MM-DD' — render as month abbrev + day + weekday.
@@ -111,6 +112,12 @@ export default function ScheduleCard({ item, highlight, observance }) {
         )}
         {item.practicePoints && !item.cancelled && unlocked && (
           <span className="tag tag-points">Points</span>
+        )}
+        {!item.cancelled && unlocked && assignmentFor(item.no) && (
+          <span className="tag tag-assign">Assignment</span>
+        )}
+        {!item.cancelled && unlocked && assignmentDueOn(item.no) && (
+          <span className="tag tag-assign">Due</span>
         )}
         {item.tentative && <span className="tag tag-tentative">Tentative</span>}
         {item.scrimmage && <span className="tag tag-grey">Scrimmage</span>}
