@@ -109,7 +109,9 @@ const FEEDS = [
     name: `${TEAM.school} ${TEAM.program}`,
     desc: `${TEAM.title} — ${TEAM.season}`,
     ns: 'all',
-    include: () => true,
+    // Assignment days are players-only and stay off every feed — the feeds
+    // are public and parents subscribe to them.
+    include: (item) => item.type !== 'assignment',
   },
   {
     file: 'mcdonogh-matches.ics',

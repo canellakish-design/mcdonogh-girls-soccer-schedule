@@ -4,7 +4,7 @@ import Teams from './Teams.jsx'
 import PracticePoints from './PracticePoints.jsx'
 import PlayerGate from './PlayerGate.jsx'
 import ChangeNotice from './ChangeNotice.jsx'
-import Assignment, { AssignmentDue } from './Assignment.jsx'
+import Assignment from './Assignment.jsx'
 import { usePlayerAccess } from '../playerAccess.jsx'
 import {
   clearance,
@@ -13,7 +13,6 @@ import {
   venueMap,
   kitFor,
   assignmentFor,
-  assignmentDueOn,
 } from '../data/schedule.js'
 
 function Fact({ label, value }) {
@@ -36,8 +35,8 @@ export default function DayDetail({ item }) {
   const isMatch = item.type === 'match'
   const isEvent = item.type === 'event'
   const homeLabel = item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral site' : 'Home'
+  const isAssignment = item.type === 'assignment'
   const assignment = assignmentFor(item.no)
-  const dueHere = assignmentDueOn(item.no)
 
   return (
     <div className="detail">
@@ -52,11 +51,13 @@ export default function DayDetail({ item }) {
         <div className="indicators">
           {isNote
             ? <span className="indicator indicator-yellow">No Sessions</span>
-            : isEvent
-              ? <span className="indicator indicator-event">Team Event</span>
-              : isTraining
-                ? <span className="indicator indicator-training">Training</span>
-                : <span className="indicator indicator-match">Match</span>}
+            : isAssignment
+              ? <span className="indicator indicator-assign">Assignment</span>
+              : isEvent
+                ? <span className="indicator indicator-event">Team Event</span>
+                : isTraining
+                  ? <span className="indicator indicator-training">Training</span>
+                  : <span className="indicator indicator-match">Match</span>}
           {item.cancelled && <span className="indicator indicator-cancelled">Cancelled</span>}
           {item.tentative && <span className="indicator indicator-tentative">Tentative</span>}
           {item.scrimmage && <span className="indicator indicator-grey">Scrimmage</span>}
@@ -71,7 +72,7 @@ export default function DayDetail({ item }) {
 
       <dl className="facts">
         <Fact label="Date" value={item.date} />
-        <Fact label="Time" value={item.time} />
+        <Fact label={isAssignment ? 'Due by' : 'Time'} value={item.time} />
         <Fact label="Arrive" value={item.arrive} />
         <Fact label="Location" value={item.location} />
         <Fact label="Dismissal" value={item.dismissal} />
@@ -101,15 +102,10 @@ export default function DayDetail({ item }) {
       )}
 
       {/* Assignments are squad business too — same gate as practice points. */}
-      {!item.cancelled && (assignment || dueHere) && (
+      {!item.cancelled && assignment && (
         unlocked
-          ? (
-            <>
-              {dueHere && <AssignmentDue assignment={dueHere} />}
-              {assignment && <Assignment assignment={assignment} />}
-            </>
-          )
-          : <PlayerGate what="The video assignment set for this day" />
+          ? <Assignment assignment={assignment} />
+          : <PlayerGate what="This assignment" />
       )}
 
       {item.note && <p className="detail-note">{item.note}</p>}
