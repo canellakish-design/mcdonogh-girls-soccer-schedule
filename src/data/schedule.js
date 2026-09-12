@@ -1039,11 +1039,15 @@ export const schedule = [
     type: 'match',
     home: true,
     opponent: 'Mount de Sales Academy',
-    time: '4:30 PM',
-    location: 'McDonogh — Field 16',
+    time: '6:30 PM',
+    location: 'McDonogh — Dixon Field (Turf)',
     result: '',
     focus: '',
     note: 'IAAM.',
+    changed: [
+      { field: 'Time', from: '4:30 PM', to: '6:30 PM' },
+      { field: 'Venue', from: 'Field 16', to: 'Dixon Field (Turf)' },
+    ],
   },
   {
     no: 26,
@@ -1229,7 +1233,7 @@ export const schedule = [
     home: true,
     opponent: 'Sidwell Friends School',
     time: '6:30 PM',
-    location: 'McDonogh — Field 16',
+    location: 'McDonogh — Dixon Field (Turf)',
     // Not on the school's athletics page yet; tentative until it is.
     tentative: true,
     result: '',
