@@ -282,16 +282,15 @@ export const practicePoints = {
 // points: this is the squad reviewing its own mistakes, not something for
 // the calendar feeds or for parents.
 //
-//   dayNo     the day the assignment is ABOUT — where it renders in full
-//   dueDayNo  the day it is DUE — gets a short banner pointing back
+//   dayNo  the assignment's own card — a `type: 'assignment'` day, dated
+//          when the work is due, which is where it renders in full
 //
 // Kept out of build-ics.mjs on purpose. The feeds are public.
 // ---------------------------------------------------------------------
 export const assignments = [
   {
     id: 'stpauls-touches',
-    dayNo: 22,
-    dueDayNo: 23,
+    dayNo: 104,
     title: 'Hudl — every touch, and the one you overplayed',
     who: 'Everyone who played against St. Paul\'s.',
     // Nobody is exempt — the ones who did not play are deferred, not excused.
@@ -350,10 +349,6 @@ export const assignments = [
 
 export function assignmentFor(no) {
   return assignments.find((a) => a.dayNo === no) || null
-}
-
-export function assignmentDueOn(no) {
-  return assignments.find((a) => a.dueDayNo === no) || null
 }
 
 // ---------------------------------------------------------------------
@@ -1003,6 +998,17 @@ export const schedule = [
     // Briefly moved to 4:30 and back before kick-off. Game played, so the
     // notice comes down.
     changed: [],
+  },
+  // Sits above Monday's training because ties keep array order.
+  {
+    no: 104,
+    date: 'Mon, Sep 14',
+    sortDate: '2026-09-14',
+    type: 'assignment',
+    title: 'Hudl assignment due',
+    time: '8:30 AM',
+    location: '',
+    note: 'Set after the St. Paul’s game. Team code required.',
   },
   {
     no: 23,

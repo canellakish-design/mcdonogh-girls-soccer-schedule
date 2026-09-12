@@ -67,16 +67,3 @@ export default function Assignment({ assignment }) {
     </section>
   )
 }
-
-// Shown on the day the work is due, pointing back at the day it is about.
-export function AssignmentDue({ assignment }) {
-  if (!assignment) return null
-  return (
-    <a className="assign-due-banner" href={`#/day/${assignment.dayNo}`}>
-      <span className="assign-due-banner-tag">Due today</span>
-      <span className="assign-due-banner-text">
-        {assignment.title} — due {assignment.due}. Tap for the full assignment.
-      </span>
-    </a>
-  )
-}

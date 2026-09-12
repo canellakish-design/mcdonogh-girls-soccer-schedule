@@ -1,7 +1,6 @@
 // One row in the schedule list. Left = date box; middle = matchup/focus; right = tags.
 
 import { usePlayerAccess } from '../playerAccess.jsx'
-import { assignmentFor, assignmentDueOn } from '../data/schedule.js'
 
 function dateBox(sortDate) {
   // sortDate is 'YYYY-MM-DD' — render as month abbrev + day + weekday.
@@ -46,6 +45,7 @@ export function matchTitle(item) {
   // `title` wins outright — for days whose label is not "vs. <opponent>".
   if (item.title) return item.title
   if (item.type === 'event') return 'Team event'
+  if (item.type === 'assignment') return 'Assignment due'
   if (item.type === 'training') return item.focus || 'Training'
   const prefix = item.home === true ? 'vs. ' : item.home === false ? '@ ' : 'vs. '
   return prefix + item.opponent
@@ -58,13 +58,16 @@ export default function ScheduleCard({ item, highlight, observance }) {
   const isNote = item.type === 'note'
   const isMatch = item.type === 'match'
   const isEvent = item.type === 'event'
+  const isAssignment = item.type === 'assignment'
   const boxClass = isNote
     ? 'datebox-note'
-    : isEvent
-      ? 'datebox-event'
-      : isTraining
-        ? 'datebox-training'
-        : 'datebox-match'
+    : isAssignment
+      ? 'datebox-assign'
+      : isEvent
+        ? 'datebox-event'
+        : isTraining
+          ? 'datebox-training'
+          : 'datebox-match'
 
   return (
     <a
@@ -101,23 +104,19 @@ export default function ScheduleCard({ item, highlight, observance }) {
         {item.result && <span className="tag tag-result">{item.result}</span>}
         {isNote
           ? <span className="tag tag-yellow">No Sessions</span>
-          : isEvent
-            ? <span className="tag tag-event">Team Event</span>
-            : isTraining
-              ? <span className="tag tag-training">Training</span>
-              : <span className="tag tag-match">Match</span>}
+          : isAssignment
+            ? <span className="tag tag-assign">Assignment</span>
+            : isEvent
+              ? <span className="tag tag-event">Team Event</span>
+              : isTraining
+                ? <span className="tag tag-training">Training</span>
+                : <span className="tag tag-match">Match</span>}
         {item.cancelled && <span className="tag tag-cancelled">Cancelled</span>}
         {item.changed?.length > 0 && !item.cancelled && (
           <span className="tag tag-changed">Changed</span>
         )}
         {item.practicePoints && !item.cancelled && unlocked && (
           <span className="tag tag-points">Points</span>
-        )}
-        {!item.cancelled && unlocked && assignmentFor(item.no) && (
-          <span className="tag tag-assign">Assignment</span>
-        )}
-        {!item.cancelled && unlocked && assignmentDueOn(item.no) && (
-          <span className="tag tag-assign">Due</span>
         )}
         {item.tentative && <span className="tag tag-tentative">Tentative</span>}
         {item.scrimmage && <span className="tag tag-grey">Scrimmage</span>}
