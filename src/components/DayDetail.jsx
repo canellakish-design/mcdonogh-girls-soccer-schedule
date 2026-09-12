@@ -4,8 +4,17 @@ import Teams from './Teams.jsx'
 import PracticePoints from './PracticePoints.jsx'
 import PlayerGate from './PlayerGate.jsx'
 import ChangeNotice from './ChangeNotice.jsx'
+import Assignment, { AssignmentDue } from './Assignment.jsx'
 import { usePlayerAccess } from '../playerAccess.jsx'
-import { clearance, directionsUrl, venueAddress, venueMap, kitFor } from '../data/schedule.js'
+import {
+  clearance,
+  directionsUrl,
+  venueAddress,
+  venueMap,
+  kitFor,
+  assignmentFor,
+  assignmentDueOn,
+} from '../data/schedule.js'
 
 function Fact({ label, value }) {
   if (!value) return null
@@ -27,6 +36,8 @@ export default function DayDetail({ item }) {
   const isMatch = item.type === 'match'
   const isEvent = item.type === 'event'
   const homeLabel = item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral site' : 'Home'
+  const assignment = assignmentFor(item.no)
+  const dueHere = assignmentDueOn(item.no)
 
   return (
     <div className="detail">
@@ -87,6 +98,18 @@ export default function DayDetail({ item }) {
         unlocked
           ? <PracticePoints day={item.practicePoints} />
           : <PlayerGate what="Practice points for this session" />
+      )}
+
+      {/* Assignments are squad business too — same gate as practice points. */}
+      {!item.cancelled && (assignment || dueHere) && (
+        unlocked
+          ? (
+            <>
+              {dueHere && <AssignmentDue assignment={dueHere} />}
+              {assignment && <Assignment assignment={assignment} />}
+            </>
+          )
+          : <PlayerGate what="The video assignment set for this day" />
       )}
 
       {item.note && <p className="detail-note">{item.note}</p>}
