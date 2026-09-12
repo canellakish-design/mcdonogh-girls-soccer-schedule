@@ -1225,10 +1225,15 @@ export const schedule = [
     no: 40,
     date: 'Tue, Oct 6',
     sortDate: '2026-10-06',
-    type: 'training',
-    time: '4:00 PM',
+    type: 'match',
+    home: true,
+    opponent: 'Sidwell Friends School',
+    time: '6:30 PM',
     location: 'McDonogh — Field 16',
-    focus: 'Training',
+    // Not on the school's athletics page yet; tentative until it is.
+    tentative: true,
+    result: '',
+    focus: '',
     note: '',
   },
   {
