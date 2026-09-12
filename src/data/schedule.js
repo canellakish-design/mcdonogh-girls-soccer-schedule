@@ -315,7 +315,7 @@ export const assignments = [
         body: 'Two sentences in the clip comment. What was on, what you did, what it cost us.',
       },
       {
-        head: 'Share with both coaches',
+        head: 'Share with coaches',
         body: 'Not shared by 8:30 Monday is not done.',
       },
     ],
@@ -331,7 +331,7 @@ export const assignments = [
         'Click the Clips icon, then + on a clip to save it to a playlist. ' +
           'Keyboard: / adds to a playlist, N starts a new one.',
         'Not already a clip? Drag the timeline handles to set the start and end.',
-        'Open the playlist → Share → add both coaches.',
+        'Open the playlist → Share → add the coaches.',
       ],
       caveat: 'Hudl moves buttons between releases. Tell a captain if something isn’t where this says.',
     },
