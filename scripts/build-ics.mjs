@@ -202,6 +202,7 @@ function buildFeed(feed) {
       if (item.scrimmage) desc.push('Scrimmage')
       if (item.playoff) desc.push('IAAM Playoffs')
       if (item.seniorDay) desc.push('Senior Day')
+      if (item.tentative) desc.push('TENTATIVE — not yet on the school’s schedule. Check the site before travelling.')
       desc.push(item.home === false ? 'Away' : item.home === 'neutral' ? 'Neutral site' : 'Home')
       if (item.arrive) desc.push(`Arrive: ${item.arrive}`)
       if (item.dismissal) desc.push(`Dismissal: ${item.dismissal}`)
