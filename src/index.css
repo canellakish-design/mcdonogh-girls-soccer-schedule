@@ -978,14 +978,8 @@ a { color: inherit; }
 .assign-parts h4 { margin: 0 0 3px; font-size: 14.5px; font-weight: 800; }
 .assign-parts p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--muted); }
 
-.assign-rules {
-  margin: 4px 0 0;
-  padding: 12px 14px 12px 32px;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-.assign-rules li { font-size: 13.5px; line-height: 1.5; margin-bottom: 6px; }
+.assign-rules { margin: 2px 0 0; padding-left: 20px; list-style: '— '; }
+.assign-rules li { font-size: 13.5px; line-height: 1.5; margin-bottom: 5px; font-weight: 600; }
 .assign-rules li:last-child { margin-bottom: 0; }
 
 .assign-how {

@@ -293,91 +293,47 @@ export const assignments = [
     dayNo: 22,
     dueDayNo: 23,
     title: 'Hudl — every touch, and the one you overplayed',
-    who: 'Everyone who got on the field against St. Paul\'s.',
+    who: 'Everyone who played against St. Paul\'s.',
     // Nobody is exempt — the ones who did not play are deferred, not excused.
-    alsoYou:
-      'Did not get on against St. Paul’s? You are not off the hook. You do the ' +
-      'same assignment on the first match you play in, on the same terms and the ' +
-      'same deadline — the Monday morning after it.',
+    alsoYou: 'Didn’t play? Same assignment after your first match.',
     due: 'Monday, Sep 14, 8:30 AM',
     parts: [
       {
         head: 'Clip every touch you had',
         body:
-          'Watch the full game and make a clip of every single touch — not just ' +
-          'the good ones. A touch is any time the ball comes off you: pass, first ' +
-          'touch, tackle, clearance, header, shot, throw-in. All of them go in one ' +
-          'playlist, named "Your name — St. Paul’s — Touches".',
+          'All of them, good and bad, in one playlist: "Your name — St. Paul’s — ' +
+          'Touches".',
       },
       {
-        head: 'Share it with the coaches — this is not optional',
+        head: 'Clip the one you should have played simple',
         body:
-          'The playlist must be shared with both Coach Canellakis and Coach Todd. ' +
-          'A playlist sitting in your own account is not a submitted assignment: if ' +
-          'we cannot open it by 8:30 Monday, it is not done. Check that the share ' +
-          'actually went through rather than assuming it did.',
+          'The simple ball was on, you took an extra touch, got caught and killed ' +
+          'the tempo. Start it five seconds before you receive.',
       },
       {
-        head: 'Find the one where you should have played simple',
-        body:
-          'Somewhere in that game there is a moment where the simple ball was on ' +
-          'and you took an extra touch instead — and got caught on the ball, or ' +
-          'slowed us down, or gave their shape time to recover. Find it. Clip it ' +
-          'on its own and start the clip about five seconds BEFORE you receive, so ' +
-          'it shows what was available to you.',
+        head: 'Say what it cost',
+        body: 'Two sentences in the clip comment. What was on, what you did, what it cost us.',
       },
       {
-        head: 'Write down what it cost',
-        body:
-          'Two or three sentences in the clip comment. What was on — who was free ' +
-          'and where. What you did instead. What it cost us: possession, tempo, or ' +
-          'a teammate’s run that went to waste. Be specific. "Bad touch" is not an ' +
-          'answer.',
-      },
-      {
-        head: 'Bring it Monday',
-        body:
-          'Come to training ready to put your moment up and talk through it in ' +
-          'thirty seconds.',
+        head: 'Share with both coaches',
+        body: 'Not shared by 8:30 Monday is not done.',
       },
     ],
     rules: [
-      'You are looking for your own moment, not a teammate’s.',
-      'Every single player has one in there, including the ones who played well. ' +
-        'Not finding it means you are not looking hard enough.',
-      'This is not a punishment. Tempo is the thing we are chasing, and you cannot ' +
-        'fix what you have never watched yourself do.',
-      'Nothing counts until it is shared with both coaches.',
+      'Your moment, not a teammate’s. Everyone has one.',
     ],
     // Researched on Hudl's own support material. Their layout moves around,
-    // hence the closing line rather than a promise the buttons are where we
-    // say they are.
+    // hence the closing line.
     howTo: {
       title: 'Making clips on the new Hudl',
       steps: [
-        'Sign in at hudl.com, open your team’s video and pick the St. Paul’s game.',
-        'In the video player, click the Clips icon. That shows the clips already ' +
-          'attached to the game, which is the fastest way to jump around it.',
-        'To save a clip to a playlist, click the + icon on that clip. The keyboard ' +
-          'is quicker: / adds the selected clip to a playlist, N sends it to a new one.',
-        'To start a new playlist, click the + icon, type the name, then click the ' +
-          'Check icon to confirm it.',
-        'For a moment that is not already its own clip, drag the handles along the ' +
-          'timeline to set where the clip starts and ends, then save it.',
-        'When the playlist is finished, open it, hit Share, and add both coaches. ' +
-          'Sharing is the part that gets forgotten — do it before you close the tab.',
+        'hudl.com → your team’s video → the St. Paul’s game.',
+        'Click the Clips icon, then + on a clip to save it to a playlist. ' +
+          'Keyboard: / adds to a playlist, N starts a new one.',
+        'Not already a clip? Drag the timeline handles to set the start and end.',
+        'Open the playlist → Share → add both coaches.',
       ],
-      tips: [
-        'Five to seven seconds is the right length. Long enough to see it, short ' +
-          'enough to watch forty of them.',
-        'Name the playlist properly. "Untitled playlist 3" helps nobody.',
-        'Do it on a laptop, not your phone. Setting clip edges with a finger is ' +
-          'miserable.',
-      ],
-      caveat:
-        'Hudl moves buttons around between releases. If something is not where this ' +
-        'says it should be, tell a captain and we will fix these instructions rather ' +
-        'than have twenty people guess.',
+      caveat: 'Hudl moves buttons between releases. Tell a captain if something isn’t where this says.',
     },
     resources: [
       {
