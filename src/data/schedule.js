@@ -1078,9 +1078,14 @@ export const schedule = [
     opponent: 'Agnes Irwin School (PA)',
     time: '4:00 PM',
     location: 'Mercy High School',
+    // Showcase day at Mercy. Per the host: IAAM sides in home dark kit.
+    kit: ['black', 'black', 'black'],
     result: '',
     focus: '',
-    note: 'Played on the turf at Mercy.',
+    note:
+      'Showcase at Mercy, played on the turf. Spectators pay $5 at the gate, cash ' +
+      'only — tell your families. Water is provided; the trainer is on site ' +
+      'all day, bring your own tape.',
   },
   {
     no: 29,
