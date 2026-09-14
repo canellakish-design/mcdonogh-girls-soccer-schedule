@@ -1043,14 +1043,16 @@ export const schedule = [
     type: 'match',
     home: true,
     opponent: 'Mount de Sales Academy',
-    time: '6:30 PM',
-    location: 'McDonogh — Dixon Field (Turf)',
+    time: '4:30 PM',
+    location: 'McDonogh — Field 16',
     result: '',
     focus: '',
     note: 'IAAM.',
+    // Was briefly 6:30 on the turf. Flagged because a calendar that refreshed
+    // inside that window is showing the wrong time and the wrong field.
     changed: [
-      { field: 'Time', from: '4:30 PM', to: '6:30 PM' },
-      { field: 'Venue', from: 'Field 16', to: 'Dixon Field (Turf)' },
+      { field: 'Time', from: '6:30 PM', to: '4:30 PM' },
+      { field: 'Venue', from: 'Dixon Field (Turf)', to: 'Field 16' },
     ],
   },
   {
