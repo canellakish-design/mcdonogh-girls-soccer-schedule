@@ -519,6 +519,30 @@ export const pointsLog = [
       { player: 'Isabelle', ga: 1 },
     ],
   },
+  {
+    sortDate: '2026-09-14',
+    session: 'Training — Yellow v. Grey',
+    note:
+      'First round only. Yellow took 2 a player, Grey 1, and Kaitlyn, Grace and ' +
+      'Alyssa 1.5 each. The second round is not on the board yet.',
+    tally: [
+      { player: 'Zoe', bonus: 2, bonusFor: 'Yellow 2' },
+      { player: 'Amber', bonus: 2, bonusFor: 'Yellow 2' },
+      { player: 'Maya', bonus: 2, bonusFor: 'Yellow 2' },
+      { player: 'Paula', bonus: 2, bonusFor: 'Yellow 2' },
+      { player: 'Ari', bonus: 2, bonusFor: 'Yellow 2' },
+      { player: 'Aubrey', bonus: 2, bonusFor: 'Yellow 2' },
+      { player: 'Lily', bonus: 1, bonusFor: 'Grey 1' },
+      { player: 'Anna', bonus: 1, bonusFor: 'Grey 1' },
+      { player: 'Samara', bonus: 1, bonusFor: 'Grey 1' },
+      { player: 'Parker', bonus: 1, bonusFor: 'Grey 1' },
+      { player: 'Alex', bonus: 1, bonusFor: 'Grey 1' },
+      { player: 'Virginia', bonus: 1, bonusFor: 'Grey 1' },
+      { player: 'Kaitlyn', bonus: 1.5, bonusFor: 'Session total' },
+      { player: 'Grace', bonus: 1.5, bonusFor: 'Session total' },
+      { player: 'Alyssa', bonus: 1.5, bonusFor: 'Session total' },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
