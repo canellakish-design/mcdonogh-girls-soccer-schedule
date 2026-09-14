@@ -323,27 +323,29 @@ export const assignments = [
     ],
     // Researched on Hudl's own support material. Their layout moves around,
     // hence the closing line.
+    // The button flow in Hudl's own support docs does not exist on the
+    // players' accounts. These are the keyboard shortcuts that actually work.
     howTo: {
-      title: 'Making clips on the new Hudl',
+      title: 'Hudl clips, how to actually make them',
+      lead:
+        'A few of you have said Hudl will not let you create clips. The tool is ' +
+        'there, it just does not show up as a button for you. You have to use the ' +
+        'keyboard.',
       steps: [
-        'hudl.com → your team’s video → the St. Paul’s game.',
-        'Click the Clips icon, then + on a clip to save it to a playlist. ' +
-          'Keyboard: / adds to a playlist, N starts a new one.',
-        'Not already a clip? Drag the timeline handles to set the start and end.',
+        'Open the game on a laptop, not your phone.',
+        'Play to the moment you want and press C. That saves a clip at that timestamp.',
+        'Shift + C creates the clip and opens it so you can trim or rename it.',
+        'Alt + C creates the clip and lets you pick which playlist it goes into.',
         'Open the playlist → Share → add the coaches.',
       ],
-      caveat: 'Hudl moves buttons between releases. Tell a captain if something isn’t where this says.',
+      tipsTitle: 'While you are scrubbing',
+      tips: [
+        'Space to play and pause.',
+        'Hold F to fast forward, hold A to rewind.',
+        'V jumps forward five seconds, Z jumps back five seconds.',
+      ],
+      caveat: 'The small keyboard icon in the player controls shows the full list.',
     },
-    resources: [
-      {
-        label: 'Hudl — Add video clips to a playlist',
-        url: 'https://support.hudl.com/s/article/use-video-clips-playlists-hudl-tv?language=en_US',
-      },
-      {
-        label: 'Hudl — Create playlists on the new Hudl',
-        url: 'https://support.hudl.com/s/article/create-playlists-new-hudl?language=en_US',
-      },
-    ],
   },
 ]
 

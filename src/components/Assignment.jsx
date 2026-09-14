@@ -37,17 +37,23 @@ export default function Assignment({ assignment }) {
       {a.howTo && (
         <div className="assign-how">
           <h4 className="assign-how-title">{a.howTo.title}</h4>
+          {a.howTo.lead && <p className="assign-how-lead">{a.howTo.lead}</p>}
           <ol className="assign-how-steps">
             {a.howTo.steps.map((s) => (
               <li key={s}>{s}</li>
             ))}
           </ol>
           {a.howTo.tips?.length > 0 && (
-            <ul className="assign-how-tips">
-              {a.howTo.tips.map((t) => (
-                <li key={t}>{t}</li>
-              ))}
-            </ul>
+            <>
+              {a.howTo.tipsTitle && (
+                <p className="assign-how-tips-title">{a.howTo.tipsTitle}</p>
+              )}
+              <ul className="assign-how-tips">
+                {a.howTo.tips.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+            </>
           )}
           {a.howTo.caveat && <p className="assign-how-caveat">{a.howTo.caveat}</p>}
         </div>
