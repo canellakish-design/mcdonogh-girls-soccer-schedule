@@ -295,7 +295,7 @@ export const assignments = [
     who: 'Everyone who played against St. Paul\'s.',
     // Nobody is exempt — the ones who did not play are deferred, not excused.
     alsoYou: 'Didn’t play? Same assignment after your first match.',
-    due: 'Monday, Sep 14, 8:30 AM',
+    due: 'Tuesday, Sep 15, 8:30 AM',
     parts: [
       {
         head: 'Clip every touch you had',
@@ -315,7 +315,7 @@ export const assignments = [
       },
       {
         head: 'Share with coaches',
-        body: 'Not shared by 8:30 Monday is not done.',
+        body: 'Not shared by 8:30 Tuesday is not done.',
       },
     ],
     rules: [
@@ -999,16 +999,18 @@ export const schedule = [
     // notice comes down.
     changed: [],
   },
-  // Sits above Monday's training because ties keep array order.
+  // Kept ahead of Tuesday's training in the array: same date, and ties keep
+  // array order.
   {
     no: 104,
-    date: 'Mon, Sep 14',
-    sortDate: '2026-09-14',
+    date: 'Tue, Sep 15',
+    sortDate: '2026-09-15',
     type: 'assignment',
     title: 'Hudl assignment due',
     time: '8:30 AM',
     location: '',
     note: 'Set after the St. Paul’s game. Team code required.',
+    changed: [{ field: 'Due date', from: 'Monday 8:30 AM', to: 'Tuesday 8:30 AM' }],
   },
   {
     no: 23,
