@@ -521,11 +521,14 @@ export const pointsLog = [
   },
   {
     sortDate: '2026-09-14',
-    session: 'Training — Yellow v. Grey',
+    session: 'Training — two rounds',
     note:
-      'First round only. Yellow took 2 a player, Grey 1, and Kaitlyn, Grace and ' +
-      'Alyssa 1.5 each. The second round is not on the board yet.',
+      'First round: Yellow took 2 a player, Grey 1, and Kaitlyn, Grace and Alyssa ' +
+      '1.5 each. Then a three-team round robin — three games, a win each, so a ' +
+      'point a player across Grey, Orange and Yellow. Alex was in goal for the ' +
+      'round robin and takes no points from it.',
     tally: [
+      // Round one.
       { player: 'Zoe', bonus: 2, bonusFor: 'Yellow 2' },
       { player: 'Amber', bonus: 2, bonusFor: 'Yellow 2' },
       { player: 'Maya', bonus: 2, bonusFor: 'Yellow 2' },
@@ -541,6 +544,22 @@ export const pointsLog = [
       { player: 'Kaitlyn', bonus: 1.5, bonusFor: 'Session total' },
       { player: 'Grace', bonus: 1.5, bonusFor: 'Session total' },
       { player: 'Alyssa', bonus: 1.5, bonusFor: 'Session total' },
+      // Round robin. Every side won one of the three games, so it is a point
+      // a player whichever side they were on.
+      { player: 'Samara', bonus: 1, bonusFor: 'Round robin' },
+      { player: 'Lily', bonus: 1, bonusFor: 'Round robin' },
+      { player: 'Ari', bonus: 1, bonusFor: 'Round robin' },
+      { player: 'Aubrey', bonus: 1, bonusFor: 'Round robin' },
+      { player: 'Anna', bonus: 1, bonusFor: 'Round robin' },
+      { player: 'Amber', bonus: 1, bonusFor: 'Round robin' },
+      { player: 'Virginia', bonus: 1, bonusFor: 'Round robin' },
+      { player: 'Alyssa', bonus: 1, bonusFor: 'Round robin' },
+      { player: 'Grace', bonus: 1, bonusFor: 'Round robin' },
+      { player: 'Kaitlyn', bonus: 1, bonusFor: 'Round robin' },
+      { player: 'Maya', bonus: 1, bonusFor: 'Round robin' },
+      { player: 'Paula', bonus: 1, bonusFor: 'Round robin' },
+      { player: 'Parker', bonus: 1, bonusFor: 'Round robin' },
+      { player: 'Zoe', bonus: 1, bonusFor: 'Round robin' },
     ],
   },
 ]
