@@ -1105,6 +1105,8 @@ export const schedule = [
     type: 'training',
     time: '4:00 PM',
     location: 'McDonogh — Field 16',
+    // Thursday is normally grey/white/white.
+    kit: ['black', 'black', 'black'],
     focus: 'Training',
     note: '',
   },
