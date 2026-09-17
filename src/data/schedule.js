@@ -562,6 +562,25 @@ export const pointsLog = [
       { player: 'Zoe', bonus: 1, bonusFor: 'Round robin' },
     ],
   },
+  {
+    sortDate: '2026-09-17',
+    session: 'Training — Team 1 v. Team 2',
+    note: 'Team 1 took 4 a player, Team 2 one.',
+    tally: [
+      { player: 'Isabelle', bonus: 4, bonusFor: 'Team 1' },
+      { player: 'Lily', bonus: 4, bonusFor: 'Team 1' },
+      { player: 'Aubrey', bonus: 4, bonusFor: 'Team 1' },
+      { player: 'Amber', bonus: 4, bonusFor: 'Team 1' },
+      { player: 'Paula', bonus: 4, bonusFor: 'Team 1' },
+      { player: 'Alex', bonus: 4, bonusFor: 'Team 1' },
+      { player: 'Zoe', bonus: 1, bonusFor: 'Team 2' },
+      { player: 'Virginia', bonus: 1, bonusFor: 'Team 2' },
+      { player: 'Maya', bonus: 1, bonusFor: 'Team 2' },
+      { player: 'Samara', bonus: 1, bonusFor: 'Team 2' },
+      { player: 'Anna', bonus: 1, bonusFor: 'Team 2' },
+      { player: 'Ari', bonus: 1, bonusFor: 'Team 2' },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
