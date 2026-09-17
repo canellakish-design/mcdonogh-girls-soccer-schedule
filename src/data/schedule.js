@@ -573,6 +573,7 @@ export const pointsLog = [
       { player: 'Amber', bonus: 4, bonusFor: 'Team 1' },
       { player: 'Paula', bonus: 4, bonusFor: 'Team 1' },
       { player: 'Alex', bonus: 4, bonusFor: 'Team 1' },
+      { player: 'Parker', bonus: 4, bonusFor: 'Team 1' },
       { player: 'Zoe', bonus: 1, bonusFor: 'Team 2' },
       { player: 'Virginia', bonus: 1, bonusFor: 'Team 2' },
       { player: 'Maya', bonus: 1, bonusFor: 'Team 2' },
