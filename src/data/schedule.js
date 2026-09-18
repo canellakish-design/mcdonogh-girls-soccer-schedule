@@ -1135,10 +1135,17 @@ export const schedule = [
     date: 'Fri, Sep 18',
     sortDate: '2026-09-18',
     type: 'training',
+    cancelled: true,
     time: '4:00 PM',
     location: 'McDonogh — Field 16',
     focus: 'Training',
-    note: '',
+    note:
+      'We are going to cancel today\u2019s session. Lots of sickness and little ' +
+      'injuries that could just use some rest for the big game tomorrow.\n\n' +
+      'With that said, I know there is a lot going on tonight. I want to ask that ' +
+      'in the same spirit of us cancelling training, you do your part by going home ' +
+      'and resting. A night home just relaxing will do you a world of good.\n\n' +
+      'YNWA,\nHarry',
   },
   {
     no: 28,
