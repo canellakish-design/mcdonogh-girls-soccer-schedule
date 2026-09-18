@@ -312,6 +312,7 @@ a { color: inherit; }
   line-height: 1.4;
   color: var(--slate);
   font-weight: 600;
+  white-space: pre-line;
 }
 .card-note .card-note-line { color: var(--yellow-ink); font-weight: 500; }
 
@@ -478,6 +479,8 @@ a { color: inherit; }
   font-size: 14px;
   color: var(--slate);
   line-height: 1.5;
+  /* Notes can carry paragraph breaks — a message to the squad, say. */
+  white-space: pre-line;
 }
 
 .detail-kit {
