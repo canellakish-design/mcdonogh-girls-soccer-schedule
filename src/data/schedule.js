@@ -1156,6 +1156,8 @@ export const schedule = [
     opponent: 'Agnes Irwin School (PA)',
     time: '4:00 PM',
     location: 'Mercy High School',
+    // 90 minutes before kick-off.
+    arrive: '2:30 PM',
     // Showcase day at Mercy. Per the host: IAAM sides in home dark kit.
     kit: ['black', 'black', 'black'],
     result: '',
