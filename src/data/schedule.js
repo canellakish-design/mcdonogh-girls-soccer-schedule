@@ -1172,6 +1172,7 @@ export const schedule = [
     date: 'Mon, Sep 21',
     sortDate: '2026-09-21',
     type: 'training',
+    cancelled: true,
     time: '4:00 PM',
     location: 'McDonogh — Field 16',
     focus: 'Training',
