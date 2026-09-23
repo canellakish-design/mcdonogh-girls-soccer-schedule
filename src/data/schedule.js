@@ -582,6 +582,28 @@ export const pointsLog = [
       { player: 'Ari', bonus: 1, bonusFor: 'Team 2' },
     ],
   },
+  {
+    sortDate: '2026-09-23',
+    session: 'Training — Team 1 v. Team 2',
+    note: 'Team 1 took 2 a player, Team 2 one. Bang bangs on top \u2014 three of them for Lily.',
+    tally: [
+      { player: 'Paula', bonus: 2, bonusFor: 'Team 1', bangBangs: 1 },
+      { player: 'Virginia', bonus: 2, bonusFor: 'Team 1', bangBangs: 1 },
+      { player: 'Parker', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Samara', bonus: 2, bonusFor: 'Team 1', bangBangs: 1 },
+      { player: 'Alyssa', bonus: 2, bonusFor: 'Team 1', bangBangs: 1 },
+      { player: 'Zoe', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Ari', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Maya', bonus: 1, bonusFor: 'Team 2' },
+      { player: 'Aubrey', bonus: 1, bonusFor: 'Team 2' },
+      { player: 'Anna', bonus: 1, bonusFor: 'Team 2' },
+      { player: 'Kaitlyn', bonus: 1, bonusFor: 'Team 2', bangBangs: 1 },
+      { player: 'Alex', bonus: 1, bonusFor: 'Team 2' },
+      { player: 'Amber', bonus: 1, bonusFor: 'Team 2', bangBangs: 1 },
+      { player: 'Lily', bonus: 1, bonusFor: 'Team 2', bangBangs: 3 },
+      { player: 'Grace', bonus: 1, bonusFor: 'Team 2', bangBangs: 1 },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
