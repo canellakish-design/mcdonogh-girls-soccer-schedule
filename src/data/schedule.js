@@ -1266,9 +1266,19 @@ export const schedule = [
     time: '5:30 PM',
     dismissal: '1:30 PM',
     location: 'Our Lady of Good Counsel H.S.',
+    kit: ['white', 'white', 'white'],
+    // From Good Counsel's visiting-team letter.
+    note:
+      'Grey practice shirt for the warm-up. All white for the game.\n\n' +
+      'Kline Stadium. The bus drops at the main stadium entrance.\n\n' +
+      'Bring a water bottle \u2014 there is a cooler on the bench but no cups. Our ' +
+      'bench is opposite the main stand, nearest the scoreboard. Nothing on the ' +
+      'turf: no food, gum or seeds, and clear the bench afterwards.\n\n' +
+      'Families: park in any marked space on campus, and sit in the main stand ' +
+      'below the press box on the school side \u2014 not behind the benches. ' +
+      'Bathrooms are just inside the main stadium gates. No pets.',
     result: '',
     focus: '',
-    note: '',
   },
   {
     no: 34,
