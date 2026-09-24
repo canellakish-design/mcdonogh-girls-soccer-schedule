@@ -1264,15 +1264,16 @@ export const schedule = [
     home: false,
     opponent: 'Our Lady of Good Counsel H.S.',
     time: '5:30 PM',
-    dismissal: '2:30 PM',
+    dismissal: '2:15 PM',
     location: 'Our Lady of Good Counsel H.S.',
     kit: ['white', 'white', 'white'],
-    // Dismissal and transport per the weekly athletic calendar, Sep 21-27.
-    changed: [{ field: 'Dismissal', from: '1:30 PM', to: '2:30 PM' }],
+    // The weekly athletic calendar said 2:30; moved to 2:15 on the day. The
+    // notice names 1:30, which is what was published all week.
+    changed: [{ field: 'Dismissal', from: '1:30 PM', to: '2:15 PM' }],
     // From Good Counsel's visiting-team letter.
     note:
       'Grey practice shirt for the warm-up. All white for the game.\n\n' +
-      'Dismissal 2:30. We travel on Mini 109 and Transit 3.\n\n' +
+      'Dismissal 2:15. We travel on Mini 109 and Transit 3.\n\n' +
       'Kline Stadium. The bus drops at the main stadium entrance.\n\n' +
       'Bring a water bottle \u2014 there is a cooler on the bench but no cups. Our ' +
       'bench is opposite the main stand, nearest the scoreboard. Nothing on the ' +
