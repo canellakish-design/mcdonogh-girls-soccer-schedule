@@ -604,6 +604,28 @@ export const pointsLog = [
       { player: 'Grace', bonus: 1, bonusFor: 'Team 2', bangBangs: 1 },
     ],
   },
+  {
+    sortDate: '2026-09-24',
+    session: 'Training — Team 1 v. Team 2',
+    note: 'Two a player on both sides, with goals on top.',
+    tally: [
+      { player: 'Lily', bonus: 2, bonusFor: 'Team 1', goals: 1 },
+      { player: 'Isabelle', bonus: 2, bonusFor: 'Team 1', goals: 2 },
+      { player: 'Grace', bonus: 2, bonusFor: 'Team 1', goals: 2 },
+      { player: 'Paula', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Parker', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Amber', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Maya', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Alex', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Zoe', bonus: 2, bonusFor: 'Team 2', goals: 2 },
+      { player: 'Samara', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Alyssa', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Anna', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Aubrey', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Ari', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Kaitlyn', bonus: 2, bonusFor: 'Team 2' },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
