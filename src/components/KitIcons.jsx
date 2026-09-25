@@ -3,17 +3,38 @@
 // plus a low-opacity detail line (collar, waistband, cuff) that works over
 // any fill without needing a second colour.
 
+import { useId } from 'react'
+
 const STROKE = '#7d838c'
 const DETAIL = 'rgba(0,0,0,0.28)'
+const STRIPE = '#e8541e'
 
-function Shirt({ color }) {
+// Shared so the stripe can be clipped to exactly the shirt it sits on.
+const SHIRT_PATH =
+  'M12 4 L6 7 Q4 8 4.6 10.2 L6.2 15 Q6.6 16.2 7.8 15.9 L9.8 15.3 L9.8 26.5 ' +
+  'Q9.8 28 11.3 28 L20.7 28 Q22.2 28 22.2 26.5 L22.2 15.3 L24.2 15.9 ' +
+  'Q25.4 16.2 25.8 15 L27.4 10.2 Q28 8 26 7 L20 4 Z'
+
+// `stripe` is the match-day shirt: one orange band down the centre.
+function Shirt({ color, stripe }) {
+  // Scoped so two shirts on one page (a split-squad day) do not share a clip.
+  const clip = `shirt-clip-${useId().replace(/:/g, '')}`
+
   return (
     <svg viewBox="0 0 32 32" className="kit-svg" aria-hidden="true">
+      {stripe && (
+        <clipPath id={clip}>
+          <path d={SHIRT_PATH} />
+        </clipPath>
+      )}
+      <path d={SHIRT_PATH} fill={color} stroke="none" />
+      {stripe && (
+        // Runs past the hem at both ends; the clip trims it to the shirt.
+        <rect x="13.4" y="2" width="5.2" height="28" fill={STRIPE} clipPath={`url(#${clip})`} />
+      )}
       <path
-        d="M12 4 L6 7 Q4 8 4.6 10.2 L6.2 15 Q6.6 16.2 7.8 15.9 L9.8 15.3 L9.8 26.5
-           Q9.8 28 11.3 28 L20.7 28 Q22.2 28 22.2 26.5 L22.2 15.3 L24.2 15.9
-           Q25.4 16.2 25.8 15 L27.4 10.2 Q28 8 26 7 L20 4 Z"
-        fill={color}
+        d={SHIRT_PATH}
+        fill="none"
         stroke={STROKE}
         strokeWidth="1.3"
         strokeLinejoin="round"
@@ -79,7 +100,8 @@ function Socks({ color }) {
   )
 }
 
-export default function KitIcons({ kit }) {
+// `stripe` marks a match day, where the shirt carries the orange centre band.
+export default function KitIcons({ kit, stripe = false }) {
   if (!kit) return null
   // Days with no fixed colours just state who decides.
   if (kit.text) return <p className="kit-text">{kit.text}</p>
@@ -95,7 +117,7 @@ export default function KitIcons({ kit }) {
       {parts.map(([key, Icon, v]) => (
         <li key={key} className="kit-row">
           <span className="kit-icon">
-            <Icon color={v.color} />
+            <Icon color={v.color} stripe={key === 'shirt' && stripe} />
           </span>
           <span className="kit-name">{v.label}</span>
         </li>
