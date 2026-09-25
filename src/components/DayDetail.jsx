@@ -88,7 +88,7 @@ export default function DayDetail({ item }) {
       {!item.cancelled && !teamsCarryKit && kitFor(item) && (
         <div className="detail-kit">
           <h3 className="detail-kit-label">Kit</h3>
-          <KitIcons kit={kitFor(item)} />
+          <KitIcons kit={kitFor(item)} stripe={isMatch} />
         </div>
       )}
 
