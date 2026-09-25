@@ -1,8 +1,9 @@
 import { useState, useEffect, useMemo } from 'react'
-import { TEAM, schedule, observances, rules } from './data/schedule.js'
+import { TEAM, schedule, observances, rules, buses } from './data/schedule.js'
 import ScheduleCard from './components/ScheduleCard.jsx'
 import DayDetail from './components/DayDetail.jsx'
 import Standings from './components/Standings.jsx'
+import Teams from './components/Teams.jsx'
 import { PlayerAccessProvider, usePlayerAccess } from './playerAccess.jsx'
 
 function useHashRoute() {
@@ -101,6 +102,8 @@ function ListView() {
   const [filter, setFilter] = useState('all')
   const [showPast, setShowPast] = useState(false)
   const [showRules, setShowRules] = useState(true)
+  // Collapsed by default — it is reference, not something to read every visit.
+  const [showBuses, setShowBuses] = useState(false)
   const today = todayISO()
 
   // Holiday notes ride inside the card for that date.
@@ -139,6 +142,25 @@ function ListView() {
                 </li>
               ))}
             </ul>
+          )}
+        </section>
+      )}
+
+      {buses.length > 0 && (
+        <section className="rules">
+          <button
+            className="rules-head"
+            onClick={() => setShowBuses((v) => !v)}
+            aria-expanded={showBuses}
+          >
+            <span className={`caret ${showBuses ? 'caret-open' : ''}`} aria-hidden="true" />
+            Bus Groups
+          </button>
+          {showBuses && (
+            <>
+              <p className="rules-sub">Same split every away game. Seniors ride bus 1 with their buddy.</p>
+              <Teams teams={buses} />
+            </>
           )}
         </section>
       )}
