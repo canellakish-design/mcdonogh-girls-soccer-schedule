@@ -1040,3 +1040,11 @@ a { color: inherit; }
   .toolbar { flex-wrap: wrap; gap: 8px; }
   .facts { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
 }
+
+/* Lead line under a collapsible heading in the list view. */
+.rules-sub {
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--slate);
+}
