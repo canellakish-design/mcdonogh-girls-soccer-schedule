@@ -278,6 +278,37 @@ export const practicePoints = {
 }
 
 // ---------------------------------------------------------------------
+// BUSES — standing travel split, shown on any day we travel. Seniors ride
+// bus 1 with their buddy; the remaining pairs take bus 2. Cassie is not in
+// the pairing, since she plays her games with JV.
+//
+// Buddy pairs are kept side by side in the order below, so a player can
+// find herself by looking for the name she is paired with.
+// ---------------------------------------------------------------------
+export const buses = [
+  {
+    name: 'Bus 1',
+    players: [
+      'Grace', 'Isabelle',
+      'Zoe', 'Ari',
+      'Parker', 'Virginia',
+      'Lily', 'Kate',
+      'Kaitlyn', 'Samara',
+    ],
+  },
+  {
+    name: 'Bus 2',
+    players: [
+      'Alyssa', 'Layla',
+      'Maya', 'Anna',
+      'Alex', 'Amber',
+      'Aubrey', 'Viv',
+      'Paula', 'Mary',
+    ],
+  },
+]
+
+// ---------------------------------------------------------------------
 // ASSIGNMENTS — video work set for the squad. Players-only, like practice
 // points: this is the squad reviewing its own mistakes, not something for
 // the calendar feeds or for parents.
