@@ -13,6 +13,7 @@ import {
   venueMap,
   kitFor,
   assignmentFor,
+  buses,
 } from '../data/schedule.js'
 
 function Fact({ label, value }) {
@@ -93,6 +94,12 @@ export default function DayDetail({ item }) {
       )}
 
       {!item.cancelled && <Teams teams={item.teams} at={item.teamTalk} />}
+
+      {/* Travel days carry the standing bus split. A day with its own
+          sides keeps those instead. */}
+      {!item.cancelled && isMatch && item.home !== true && !item.teams && (
+        <Teams teams={buses} />
+      )}
 
       {/* Practice points are squad business — parents see the gate instead. */}
       {!item.cancelled && item.practicePoints && (
