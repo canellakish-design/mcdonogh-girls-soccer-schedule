@@ -1347,7 +1347,10 @@ export const schedule = [
     location: 'Notre Dame Prep',
     result: '',
     focus: '',
-    note: 'IAAM.',
+    note:
+      'IAAM.\n\n' +
+      'Dinner in the Alumni Room at 4:00 PM. Bus rolls out at 4:30 PM — ' +
+      'same bus groups as last time (see Bus Groups).',
   },
   {
     no: 37,
