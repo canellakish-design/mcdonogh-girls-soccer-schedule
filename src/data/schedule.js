@@ -1410,11 +1410,12 @@ export const schedule = [
     type: 'match',
     home: true,
     opponent: 'Sidwell Friends School',
-    time: '5:00 PM',
+    time: '4:45 PM',
     location: 'McDonogh — Dixon Field (Turf)',
-    // Now on the school's athletics page, so no longer tentative. That page
-    // lists 4:45; 5:00 is Harry's time.
-    changed: [{ field: 'Time', from: '6:30 PM', to: '5:00 PM' }],
+    // Matches the school's athletics page, which is also why this is no
+    // longer tentative. The notice names 6:30, the time that stood for a
+    // fortnight; 5:00 was live for minutes.
+    changed: [{ field: 'Time', from: '6:30 PM', to: '4:45 PM' }],
     result: '',
     focus: '',
     note: '',
