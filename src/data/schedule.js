@@ -657,6 +657,35 @@ export const pointsLog = [
       { player: 'Kaitlyn', bonus: 2, bonusFor: 'Team 2' },
     ],
   },
+  {
+    sortDate: '2026-10-05',
+    session: 'Training — three-team games, then two',
+    note:
+      'Team 1 won both: three sides in the first game, two in the second, a ' +
+      'point a player each time. Goals on top.',
+    tally: [
+      // First game — three sides, Team 1 the only one on the board.
+      { player: 'Zoe', bonus: 1, bonusFor: 'Game 1' },
+      { player: 'Virginia', bonus: 1, bonusFor: 'Game 1' },
+      { player: 'Alex', bonus: 1, bonusFor: 'Game 1' },
+      { player: 'Ari', bonus: 1, bonusFor: 'Game 1' },
+      { player: 'Grace', bonus: 1, bonusFor: 'Game 1' },
+      // Second game — two sides, Team 1 again.
+      { player: 'Zoe', bonus: 1, bonusFor: 'Game 2' },
+      { player: 'Virginia', bonus: 1, bonusFor: 'Game 2' },
+      { player: 'Alex', bonus: 1, bonusFor: 'Game 2' },
+      { player: 'Ari', bonus: 1, bonusFor: 'Game 2' },
+      { player: 'Grace', bonus: 1, bonusFor: 'Game 2' },
+      { player: 'Alyssa', bonus: 1, bonusFor: 'Game 2' },
+      { player: 'Maya', bonus: 1, bonusFor: 'Game 2' },
+      { player: 'Aubrey', bonus: 1, bonusFor: 'Game 2' },
+      // Goals.
+      { player: 'Grace', goals: 2 },
+      { player: 'Zoe', goals: 1 },
+      { player: 'Amber', goals: 1 },
+      { player: 'Alyssa', goals: 1 },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
