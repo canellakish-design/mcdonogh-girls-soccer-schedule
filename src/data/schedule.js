@@ -658,7 +658,9 @@ export const pointsLog = [
     ],
   },
   {
-    sortDate: '2026-10-05',
+    // Dated to the last training day before College Visit Weekend. Harry
+    // placed it only as "a previous session"; the day is unconfirmed.
+    sortDate: '2026-10-01',
     session: 'Training — three-team games, then two',
     note:
       'Team 1 won both: three sides in the first game, two in the second, a ' +
@@ -684,6 +686,28 @@ export const pointsLog = [
       { player: 'Zoe', goals: 1 },
       { player: 'Amber', goals: 1 },
       { player: 'Alyssa', goals: 1 },
+    ],
+  },
+  {
+    sortDate: '2026-10-05',
+    session: 'Training — Team 1 v. Team 2',
+    note: 'Team 1 took 4 a player, Team 2 three.',
+    tally: [
+      { player: 'Lily', bonus: 4, bonusFor: 'Team 1' },
+      { player: 'Parker', bonus: 4, bonusFor: 'Team 1' },
+      { player: 'Samara', bonus: 4, bonusFor: 'Team 1' },
+      { player: 'Grace', bonus: 4, bonusFor: 'Team 1' },
+      { player: 'Anna', bonus: 4, bonusFor: 'Team 1' },
+      { player: 'Amber', bonus: 4, bonusFor: 'Team 1' },
+      { player: 'Maya', bonus: 4, bonusFor: 'Team 1' },
+      { player: 'Zoe', bonus: 3, bonusFor: 'Team 2' },
+      { player: 'Paula', bonus: 3, bonusFor: 'Team 2' },
+      { player: 'Alyssa', bonus: 3, bonusFor: 'Team 2' },
+      { player: 'Layla', bonus: 3, bonusFor: 'Team 2' },
+      { player: 'Alex', bonus: 3, bonusFor: 'Team 2' },
+      { player: 'Aubrey', bonus: 3, bonusFor: 'Team 2' },
+      { player: 'Virginia', bonus: 3, bonusFor: 'Team 2' },
+      { player: 'Ari', bonus: 3, bonusFor: 'Team 2' },
     ],
   },
 ]
