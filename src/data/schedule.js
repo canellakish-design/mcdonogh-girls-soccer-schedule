@@ -710,6 +710,36 @@ export const pointsLog = [
       { player: 'Ari', bonus: 3, bonusFor: 'Team 2' },
     ],
   },
+  {
+    sortDate: '2026-10-07',
+    session: 'Training — Team 1 v. Team 2',
+    note: 'Team 2 took 2 a player. Team 1 did not score.',
+    tally: [
+      { player: 'Zoe', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Parker', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Maya', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Alex', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Virginia', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Paula', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Isabelle', bonus: 2, bonusFor: 'Team 2' },
+    ],
+  },
+  {
+    sortDate: '2026-10-08',
+    session: 'Training — Team 1 v. Team 2',
+    note: 'Team 1 took 2 a player. Team 2 did not score.',
+    tally: [
+      { player: 'Lily', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Kaitlyn', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Grace', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Alyssa', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Anna', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Kate', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Aubrey', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Parker', bonus: 2, bonusFor: 'Team 1' },
+      { player: 'Isabelle', bonus: 2, bonusFor: 'Team 1' },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
