@@ -27,12 +27,14 @@ export function meetNote(item) {
   if (item.type === 'note') return null
   const parts = []
 
-  // `arrive` is set per day and applies wherever we are playing — the team
-  // talk below is a home fixture's own arrangement.
+  // `arrive` is set per day and applies wherever we are playing.
   if (item.arrive) parts.push(`Arrive at ${item.arrive}.`)
 
-  // Split-squad days: each side has its own room, listed on its own panel.
-  if (item.type === 'match' && item.home === true && !item.teams) {
+  // Home days get a team talk by default. An away day only gets one when it
+  // names a time — we meet on campus before travelling on some trips, not
+  // all. Split-squad days are excluded: each side lists its own room.
+  const hasOwnTalk = !!(item.teamTalk || item.teamTalkRoom)
+  if (item.type === 'match' && !item.teams && (item.home === true || hasOwnTalk)) {
     const at = item.teamTalk || DEFAULT_TEAM_TALK
     const room = item.teamTalkRoom || DEFAULT_TEAM_TALK_ROOM
     parts.push(`Team talk in the ${room} at ${at}.`)

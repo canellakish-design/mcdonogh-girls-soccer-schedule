@@ -1536,6 +1536,9 @@ export const schedule = [
     opponent: 'Mercy High School',
     time: '7:00 PM',
     dismissal: '3:15 PM',
+    // Football has the Alumni Room, so we meet in Parsons office.
+    teamTalk: '4:00 PM',
+    teamTalkRoom: 'Parsons office',
     location: 'Mercy High School',
     result: '',
     focus: '',
