@@ -1551,8 +1551,14 @@ export const schedule = [
     type: 'training',
     time: '4:00 PM',
     location: 'McDonogh — Dixon Field (Turf)',
-    focus: 'Training',
-    note: '',
+    // 4:00 film through to 5:45 on the turf, rather than the usual 90.
+    minutes: 105,
+    focus: 'Film, then turf',
+    note:
+      'Film in the Alumni Room at 4:00. On the turf from 4:30 until about ' +
+      '5:45, so everyone makes the late bus.\n\n' +
+      'The grass is closed \u2014 11, 12, 13 and 16 are all shut after the ' +
+      'rain. We are sharing the turf, so keep to our half.',
   },
   {
     no: 45,
