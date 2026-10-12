@@ -182,8 +182,10 @@ function buildFeed(feed) {
       lines.push(`DTEND;VALUE=DATE:${nextDay(noteEndDate(item)).replace(/-/g, '')}`)
       lines.push('TRANSP:TRANSPARENT')
     } else if (t) {
+      // A day can state its own length; otherwise the default for its type.
       const minutes =
-        item.type === 'event' ? EVENT_MINUTES : isTraining ? TRAINING_MINUTES : MATCH_MINUTES
+        item.minutes ||
+        (item.type === 'event' ? EVENT_MINUTES : isTraining ? TRAINING_MINUTES : MATCH_MINUTES)
       const end = addMinutes(item.sortDate, t.h, t.m, minutes)
       lines.push(`DTSTART;TZID=America/New_York:${localStamp(item.sortDate, t.h, t.m)}`)
       lines.push(`DTEND;TZID=America/New_York:${localStamp(end.date, end.h, end.m)}`)
