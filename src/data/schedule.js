@@ -740,6 +740,42 @@ export const pointsLog = [
       { player: 'Isabelle', bonus: 2, bonusFor: 'Team 1' },
     ],
   },
+  {
+    sortDate: '2026-10-12',
+    session: 'Training — two games',
+    note:
+      'First game: Team 2 took 3 a player, Team 1 two. Then three sides — ' +
+      'Yellow 3 a player, Team 3 two, Orange nothing.',
+    tally: [
+      // First game.
+      { player: 'Isabelle', bonus: 3, bonusFor: 'Game 1, Team 2' },
+      { player: 'Alyssa', bonus: 3, bonusFor: 'Game 1, Team 2' },
+      { player: 'Samara', bonus: 3, bonusFor: 'Game 1, Team 2' },
+      { player: 'Amber', bonus: 3, bonusFor: 'Game 1, Team 2' },
+      { player: 'Maya', bonus: 3, bonusFor: 'Game 1, Team 2' },
+      { player: 'Kaitlyn', bonus: 3, bonusFor: 'Game 1, Team 2' },
+      { player: 'Paula', bonus: 3, bonusFor: 'Game 1, Team 2' },
+      { player: 'Lily', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Zoe', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Virginia', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Grace', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Aubrey', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Anna', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Alex', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Parker', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      // Second game — three sides. Orange did not score.
+      { player: 'Parker', bonus: 3, bonusFor: 'Game 2, Yellow' },
+      { player: 'Lily', bonus: 3, bonusFor: 'Game 2, Yellow' },
+      { player: 'Paula', bonus: 3, bonusFor: 'Game 2, Yellow' },
+      { player: 'Zoe', bonus: 3, bonusFor: 'Game 2, Yellow' },
+      { player: 'Samara', bonus: 3, bonusFor: 'Game 2, Yellow' },
+      { player: 'Isabelle', bonus: 2, bonusFor: 'Game 2, Team 3' },
+      { player: 'Grace', bonus: 2, bonusFor: 'Game 2, Team 3' },
+      { player: 'Maya', bonus: 2, bonusFor: 'Game 2, Team 3' },
+      { player: 'Kaitlyn', bonus: 2, bonusFor: 'Game 2, Team 3' },
+      { player: 'Alyssa', bonus: 2, bonusFor: 'Game 2, Team 3' },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
