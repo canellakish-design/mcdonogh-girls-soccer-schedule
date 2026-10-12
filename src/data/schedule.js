@@ -1540,7 +1540,7 @@ export const schedule = [
     teamTalk: '4:00 PM',
     teamTalkRoom: 'Parsons office',
     location: 'Mercy High School',
-    result: '',
+    result: 'W 1\u20130',
     focus: '',
     note: 'IAAM.',
   },
