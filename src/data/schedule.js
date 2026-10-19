@@ -776,6 +776,23 @@ export const pointsLog = [
       { player: 'Alyssa', bonus: 2, bonusFor: 'Game 2, Team 3' },
     ],
   },
+  {
+    sortDate: '2026-10-19',
+    session: 'Training — five-team games, then two',
+    note:
+      'Second game only. Team 2 took 2 a player. The five-team game is not ' +
+      'on the board yet.',
+    tally: [
+      { player: 'Zoe', bonus: 2, bonusFor: 'Game 2, Team 2' },
+      { player: 'Isabelle', bonus: 2, bonusFor: 'Game 2, Team 2' },
+      { player: 'Grace', bonus: 2, bonusFor: 'Game 2, Team 2' },
+      { player: 'Ari', bonus: 2, bonusFor: 'Game 2, Team 2' },
+      { player: 'Kaitlyn', bonus: 2, bonusFor: 'Game 2, Team 2' },
+      { player: 'Aubrey', bonus: 2, bonusFor: 'Game 2, Team 2' },
+      { player: 'Maya', bonus: 2, bonusFor: 'Game 2, Team 2' },
+      { player: 'Alex', bonus: 2, bonusFor: 'Game 2, Team 2' },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
