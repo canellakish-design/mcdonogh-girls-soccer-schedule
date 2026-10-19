@@ -1663,7 +1663,8 @@ export const schedule = [
     sortDate: '2026-10-20',
     type: 'training',
     time: '4:00 PM',
-    location: 'McDonogh — Dixon Field (Turf)',
+    // Had the turf under the allocation; back on grass.
+    location: 'McDonogh — Field 16',
     focus: 'Training',
     note: '',
   },
