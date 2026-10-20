@@ -16,6 +16,14 @@ const KEY_ABBR = {
   'Bang bang': 'BB',
 }
 
+// A shared side total can divide into thirds, so a score is not always a
+// round number. Show at most one decimal, and drop a trailing .0 — the
+// stored value stays exact, so nothing drifts as the season adds up.
+function num(n) {
+  if (!n) return '—'
+  return Number.isInteger(n) ? String(n) : String(Math.round(n * 10) / 10)
+}
+
 function Rank({ i, pts, prev }) {
   // Players level on points share a rank rather than being ordered arbitrarily.
   const tied = prev !== null && prev === pts
@@ -83,11 +91,11 @@ export default function Standings() {
                   <Rank i={i} pts={r.pts} prev={i > 0 ? rows[i - 1].pts : null} />
                 </td>
                 <th scope="row" className="col-player">{r.player}</th>
-                <td className="num">{r.winPts || '—'}</td>
-                <td className="num">{r.gaPts || '—'}</td>
-                <td className="num">{r.shutoutPts || '—'}</td>
-                <td className="num">{r.bangBangPts || '—'}</td>
-                <td className="num col-pts">{r.pts}</td>
+                <td className="num">{num(r.winPts)}</td>
+                <td className="num">{num(r.gaPts)}</td>
+                <td className="num">{num(r.shutoutPts)}</td>
+                <td className="num">{num(r.bangBangPts)}</td>
+                <td className="num col-pts">{num(r.pts)}</td>
               </tr>
             ))}
           </tbody>

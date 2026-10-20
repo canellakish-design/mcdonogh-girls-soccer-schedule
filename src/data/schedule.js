@@ -780,9 +780,28 @@ export const pointsLog = [
     sortDate: '2026-10-19',
     session: 'Training — five-team games, then two',
     note:
-      'Second game only. Team 2 took 2 a player. The five-team game is not ' +
-      'on the board yet.',
+      'Five small-sided sides, each sharing its total between its three ' +
+      'players: Team 3 took 22, Team 2 15, Team 1 14, Team 4 12, Team 5 five. ' +
+      'Then two sides, and Team 2 took 2 a player.',
     tally: [
+      // Five-team game. Each side's total is split three ways, so the game
+      // is worth its 68 points rather than 68 to every player.
+      { player: 'Grace', bonus: 22 / 3, bonusFor: 'Team 3, 22 shared' },
+      { player: 'Kaitlyn', bonus: 22 / 3, bonusFor: 'Team 3, 22 shared' },
+      { player: 'Paula', bonus: 22 / 3, bonusFor: 'Team 3, 22 shared' },
+      { player: 'Zoe', bonus: 15 / 3, bonusFor: 'Team 2, 15 shared' },
+      { player: 'Amber', bonus: 15 / 3, bonusFor: 'Team 2, 15 shared' },
+      { player: 'Ari', bonus: 15 / 3, bonusFor: 'Team 2, 15 shared' },
+      { player: 'Isabelle', bonus: 14 / 3, bonusFor: 'Team 1, 14 shared' },
+      { player: 'Maya', bonus: 14 / 3, bonusFor: 'Team 1, 14 shared' },
+      { player: 'Aubrey', bonus: 14 / 3, bonusFor: 'Team 1, 14 shared' },
+      { player: 'Parker', bonus: 12 / 3, bonusFor: 'Team 4, 12 shared' },
+      { player: 'Lily', bonus: 12 / 3, bonusFor: 'Team 4, 12 shared' },
+      { player: 'Samara', bonus: 12 / 3, bonusFor: 'Team 4, 12 shared' },
+      { player: 'Virginia', bonus: 5 / 3, bonusFor: 'Team 5, 5 shared' },
+      { player: 'Alex', bonus: 5 / 3, bonusFor: 'Team 5, 5 shared' },
+      { player: 'Alyssa', bonus: 5 / 3, bonusFor: 'Team 5, 5 shared' },
+      // Second game.
       { player: 'Zoe', bonus: 2, bonusFor: 'Game 2, Team 2' },
       { player: 'Isabelle', bonus: 2, bonusFor: 'Game 2, Team 2' },
       { player: 'Grace', bonus: 2, bonusFor: 'Game 2, Team 2' },
