@@ -401,6 +401,22 @@ export function assignmentFor(no) {
 // the table can be read back months later:
 //
 //   { player: 'Grace', bonus: 1, bonusFor: 'Bang bang' }
+//
+// ---------------------------------------------------------------------
+// READING THE SHEETS. The coaches' lists follow a few conventions. Getting
+// these wrong is the main way the table goes astray, so they live here.
+//
+//   • A bare name is worth 1 — one win, one goal, whatever the list is of.
+//     A number beside a name is how many: "Lily 3" is three, not one.
+//   • A figure on a TEAM heading applies to every player on that side:
+//     "Team 2: 3 points" is 3 each, not 3 split between them.
+//   • A side-wide total from a small-sided tournament is SHARED between
+//     that side's players — Team 3's 22 across three players is 22, not 66.
+//     (August's five-team session predates this and still pays in full.)
+//   • A team listed with no figure at all scored nothing.
+//   • Short forms seen so far: Zoey = Zoe, Broom/Broome = Anna, V = Virginia,
+//     Grave = Grace, Allyssa = Alyssa, Caitlin = Kaitlyn, Isabel = Isabelle,
+//     Aubry = Aubrey, Vivian = Viv.
 // ---------------------------------------------------------------------
 export const pointsLog = [
   {
