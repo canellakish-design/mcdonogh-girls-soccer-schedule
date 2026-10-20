@@ -812,6 +812,45 @@ export const pointsLog = [
       { player: 'Alex', bonus: 2, bonusFor: 'Game 2, Team 2' },
     ],
   },
+  {
+    sortDate: '2026-10-20',
+    session: 'Training — Black v. Orange, then short games',
+    note:
+      'Black and Orange both took 3 a player in the first game. Then three ' +
+      'short games, a point a player to the side that won.',
+    tally: [
+      // First game — both sides on 3.
+      { player: 'Samara', bonus: 3, bonusFor: 'Black' },
+      { player: 'Maya', bonus: 3, bonusFor: 'Black' },
+      { player: 'Ari', bonus: 3, bonusFor: 'Black' },
+      { player: 'Lily', bonus: 3, bonusFor: 'Black' },
+      { player: 'Zoe', bonus: 3, bonusFor: 'Black' },
+      { player: 'Paula', bonus: 3, bonusFor: 'Black' },
+      { player: 'Amber', bonus: 3, bonusFor: 'Black' },
+      { player: 'Virginia', bonus: 3, bonusFor: 'Black' },
+      { player: 'Aubrey', bonus: 3, bonusFor: 'Orange' },
+      { player: 'Isabelle', bonus: 3, bonusFor: 'Orange' },
+      { player: 'Alyssa', bonus: 3, bonusFor: 'Orange' },
+      { player: 'Alex', bonus: 3, bonusFor: 'Orange' },
+      { player: 'Grace', bonus: 3, bonusFor: 'Orange' },
+      { player: 'Anna', bonus: 3, bonusFor: 'Orange' },
+      { player: 'Kaitlyn', bonus: 3, bonusFor: 'Orange' },
+      // Short games, a point each.
+      { player: 'Alex', bonus: 1, bonusFor: 'Game 2' },
+      { player: 'Kaitlyn', bonus: 1, bonusFor: 'Game 2' },
+      { player: 'Anna', bonus: 1, bonusFor: 'Game 2' },
+      { player: 'Ari', bonus: 1, bonusFor: 'Game 2' },
+      { player: 'Aubrey', bonus: 1, bonusFor: 'Game 2' },
+      { player: 'Amber', bonus: 1, bonusFor: 'Game 3' },
+      { player: 'Maya', bonus: 1, bonusFor: 'Game 3' },
+      { player: 'Alyssa', bonus: 1, bonusFor: 'Game 3' },
+      { player: 'Lily', bonus: 1, bonusFor: 'Game 3' },
+      { player: 'Ari', bonus: 1, bonusFor: 'Game 3' },
+      // Last block on the sheet carries no game number.
+      { player: 'Zoe', bonus: 1, bonusFor: 'Game 4' },
+      { player: 'Paula', bonus: 1, bonusFor: 'Game 4' },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
