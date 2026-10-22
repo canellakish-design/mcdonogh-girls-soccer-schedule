@@ -867,6 +867,55 @@ export const pointsLog = [
       { player: 'Paula', bonus: 1, bonusFor: 'Game 4' },
     ],
   },
+  {
+    sortDate: '2026-10-22',
+    session: 'Training — three games',
+    note:
+      'Both sides took 2 a player in the first game. Then Team 1 two and ' +
+      'Team 2 one, and finally Team 2 two with Team 1 scoring nothing.',
+    tally: [
+      // Game 1 — both sides on 2.
+      { player: 'Zoe', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Parker', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Virginia', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Maya', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Amber', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Alyssa', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Anna', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Alex', bonus: 2, bonusFor: 'Game 1, Team 1' },
+      { player: 'Lily', bonus: 2, bonusFor: 'Game 1, Team 2' },
+      { player: 'Isabelle', bonus: 2, bonusFor: 'Game 1, Team 2' },
+      { player: 'Paula', bonus: 2, bonusFor: 'Game 1, Team 2' },
+      { player: 'Aubrey', bonus: 2, bonusFor: 'Game 1, Team 2' },
+      { player: 'Grace', bonus: 2, bonusFor: 'Game 1, Team 2' },
+      { player: 'Samara', bonus: 2, bonusFor: 'Game 1, Team 2' },
+      { player: 'Kaitlyn', bonus: 2, bonusFor: 'Game 1, Team 2' },
+      { player: 'Ari', bonus: 2, bonusFor: 'Game 1, Team 2' },
+      // Game 2.
+      { player: 'Isabelle', bonus: 2, bonusFor: 'Game 2, Team 1' },
+      { player: 'Grace', bonus: 2, bonusFor: 'Game 2, Team 1' },
+      { player: 'Lily', bonus: 2, bonusFor: 'Game 2, Team 1' },
+      { player: 'Samara', bonus: 2, bonusFor: 'Game 2, Team 1' },
+      { player: 'Alyssa', bonus: 2, bonusFor: 'Game 2, Team 1' },
+      { player: 'Parker', bonus: 2, bonusFor: 'Game 2, Team 1' },
+      { player: 'Paula', bonus: 2, bonusFor: 'Game 2, Team 1' },
+      { player: 'Amber', bonus: 2, bonusFor: 'Game 2, Team 1' },
+      { player: 'Virginia', bonus: 2, bonusFor: 'Game 2, Team 1' },
+      { player: 'Zoe', bonus: 2, bonusFor: 'Game 2, Team 1' },
+      { player: 'Aubrey', bonus: 1, bonusFor: 'Game 2, Team 2' },
+      { player: 'Kaitlyn', bonus: 1, bonusFor: 'Game 2, Team 2' },
+      { player: 'Ari', bonus: 1, bonusFor: 'Game 2, Team 2' },
+      { player: 'Anna', bonus: 1, bonusFor: 'Game 2, Team 2' },
+      { player: 'Maya', bonus: 1, bonusFor: 'Game 2, Team 2' },
+      // Game 3 — Team 1 carries no figure, so it scored nothing. Amber is
+      // written twice on Team 2; she counts once.
+      { player: 'Lily', bonus: 2, bonusFor: 'Game 3, Team 2' },
+      { player: 'Amber', bonus: 2, bonusFor: 'Game 3, Team 2' },
+      { player: 'Alex', bonus: 2, bonusFor: 'Game 3, Team 2' },
+      { player: 'Parker', bonus: 2, bonusFor: 'Game 3, Team 2' },
+      { player: 'Maya', bonus: 2, bonusFor: 'Game 3, Team 2' },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
@@ -1916,10 +1965,11 @@ export const schedule = [
     date: 'Sun, Oct 25',
     sortDate: '2026-10-25',
     type: 'training',
-    time: '4:00 PM',
+    time: '4:15 PM',
     location: 'McDonogh — Field 16',
     focus: 'Training',
     note: '',
+    changed: [{ field: 'Time', from: '4:00 PM', to: '4:15 PM' }],
   },
   // Paul VI (NJ) is parked — they can only play on a weekend, and no weekend in the
   // Sep 30 → Oct 9 gap is available. Re-add with a weekend sortDate if a date is agreed.
