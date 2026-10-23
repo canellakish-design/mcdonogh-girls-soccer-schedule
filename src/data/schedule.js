@@ -1846,7 +1846,7 @@ export const schedule = [
     location: 'Roland Park Country School',
     result: '',
     focus: '',
-    note: 'IAAM.',
+    note: 'IAAM. Bus leaves at 2:20 PM — be on it.',
   },
   {
     no: 54,
