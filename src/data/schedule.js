@@ -1846,7 +1846,7 @@ export const schedule = [
     location: 'Roland Park Country School',
     result: '',
     focus: '',
-    note: 'IAAM.',
+    note: 'IAAM.\n\nBus after the 2:00 PM dismissal — same bus groups as always (see Bus Groups).',
   },
   {
     no: 54,
