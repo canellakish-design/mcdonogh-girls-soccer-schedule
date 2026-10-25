@@ -1970,7 +1970,7 @@ export const schedule = [
     time: '4:15 PM',
     location: 'McDonogh — Field 16',
     focus: 'Training',
-    note: '',
+    note: 'We start at 4:15 today, not 4:00. Be on the field ready to go.',
     changed: [{ field: 'Time', from: '4:00 PM', to: '4:15 PM' }],
   },
   // Paul VI (NJ) is parked — they can only play on a weekend, and no weekend in the
