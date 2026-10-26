@@ -1858,6 +1858,8 @@ export const schedule = [
     home: true,
     opponent: 'Archbishop Spalding',
     time: '4:00 PM',
+    teamTalk: '3:15 PM',
+    dismissal: '2:45 PM',
     location: 'McDonogh — Field 16',
     result: '',
     focus: '',
