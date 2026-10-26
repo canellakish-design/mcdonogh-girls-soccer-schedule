@@ -1857,11 +1857,12 @@ export const schedule = [
     type: 'match',
     home: true,
     opponent: 'Archbishop Spalding',
-    time: '4:30 PM',
+    time: '4:00 PM',
     location: 'McDonogh — Field 16',
     result: '',
     focus: '',
     note: '',
+    changed: [{ field: 'Kick-off', from: '4:30 PM', to: '4:00 PM' }],
   },
   {
     no: 55,
