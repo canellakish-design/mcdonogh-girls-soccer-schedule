@@ -916,6 +916,40 @@ export const pointsLog = [
       { player: 'Maya', bonus: 2, bonusFor: 'Game 3, Team 2' },
     ],
   },
+  {
+    sortDate: '2026-10-27',
+    session: 'Training — a pairs game, then three sides',
+    note:
+      'Fourteen out, split into pairs for the first game, which Team 1 took ' +
+      'a point a player. Then three sides: Team 3 five a player, Team 1 and ' +
+      'Team 2 four each.',
+    tally: [
+      // Game 1 — the pairs game. 'Point for team 1' names the stat without a
+      // figure, so it is one apiece, the way a bare name is.
+      { player: 'Alyssa', bonus: 1, bonusFor: 'Game 1, Team 1' },
+      { player: 'Isabelle', bonus: 1, bonusFor: 'Game 1, Team 1' },
+      { player: 'Anna', bonus: 1, bonusFor: 'Game 1, Team 1' },
+      { player: 'Aubrey', bonus: 1, bonusFor: 'Game 1, Team 1' },
+      { player: 'Amber', bonus: 1, bonusFor: 'Game 1, Team 1' },
+      { player: 'Ari', bonus: 1, bonusFor: 'Game 1, Team 1' },
+      { player: 'Zoe', bonus: 1, bonusFor: 'Game 1, Team 1' },
+      // Game 2 — three sides, all of them scoring.
+      { player: 'Alyssa', bonus: 4, bonusFor: 'Game 2, Team 1' },
+      { player: 'Parker', bonus: 4, bonusFor: 'Game 2, Team 1' },
+      { player: 'Ari', bonus: 4, bonusFor: 'Game 2, Team 1' },
+      { player: 'Aubrey', bonus: 4, bonusFor: 'Game 2, Team 1' },
+      { player: 'Isabelle', bonus: 4, bonusFor: 'Game 2, Team 1' },
+      { player: 'Zoe', bonus: 4, bonusFor: 'Game 2, Team 2' },
+      { player: 'Kaitlyn', bonus: 4, bonusFor: 'Game 2, Team 2' },
+      { player: 'Alex', bonus: 4, bonusFor: 'Game 2, Team 2' },
+      { player: 'Maya', bonus: 4, bonusFor: 'Game 2, Team 2' },
+      { player: 'Virginia', bonus: 5, bonusFor: 'Game 2, Team 3' },
+      { player: 'Lily', bonus: 5, bonusFor: 'Game 2, Team 3' },
+      { player: 'Amber', bonus: 5, bonusFor: 'Game 2, Team 3' },
+      { player: 'Paula', bonus: 5, bonusFor: 'Game 2, Team 3' },
+      { player: 'Anna', bonus: 5, bonusFor: 'Game 2, Team 3' },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
