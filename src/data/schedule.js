@@ -1938,11 +1938,12 @@ export const schedule = [
     home: false,
     playoff: true,
     opponent: 'IAAM Playoffs — Quarterfinals',
-    time: '4:00 PM',
+    time: '3:30 PM',
     location: 'TBD',
     result: '',
     focus: '',
     note: 'Site & opponent by seeding.',
+    changed: [{ field: 'Kick-off', from: '4:00 PM', to: '3:30 PM' }],
   },
   {
     no: 59,
