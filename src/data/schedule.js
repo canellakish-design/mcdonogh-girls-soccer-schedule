@@ -1939,6 +1939,7 @@ export const schedule = [
     playoff: true,
     opponent: 'IAAM Playoffs — Quarterfinals',
     time: '3:30 PM',
+    kit: ['black', 'black', 'black'],
     location: 'TBD',
     result: '',
     focus: '',
