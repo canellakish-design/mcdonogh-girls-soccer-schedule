@@ -975,6 +975,31 @@ export const pointsLog = [
       { player: 'Samara', bonus: 1, bonusFor: 'Team 2' },
     ],
   },
+  {
+    sortDate: '2026-10-29',
+    session: 'Training — a pairs game',
+    note:
+      'Sixteen out again, paired off. Team 1 took six a player, Team 2 two. ' +
+      'The widest margin of the season.',
+    tally: [
+      { player: 'Virginia', bonus: 6, bonusFor: 'Team 1' },
+      { player: 'Isabelle', bonus: 6, bonusFor: 'Team 1' },
+      { player: 'Anna', bonus: 6, bonusFor: 'Team 1' },
+      { player: 'Aubrey', bonus: 6, bonusFor: 'Team 1' },
+      { player: 'Amber', bonus: 6, bonusFor: 'Team 1' },
+      { player: 'Parker', bonus: 6, bonusFor: 'Team 1' },
+      { player: 'Zoe', bonus: 6, bonusFor: 'Team 1' },
+      { player: 'Kaitlyn', bonus: 6, bonusFor: 'Team 1' },
+      { player: 'Alex', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Samara', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Grace', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Maya', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Lily', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Alyssa', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Paula', bonus: 2, bonusFor: 'Team 2' },
+      { player: 'Ari', bonus: 2, bonusFor: 'Team 2' },
+    ],
+  },
 ]
 
 // One player's haul from one session, priced by the rules above.
