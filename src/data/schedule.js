@@ -2031,6 +2031,13 @@ export const schedule = [
     focus: '',
     note: 'Site & opponent by seeding.',
     changed: [{ field: 'Kick-off', from: '4:00 PM', to: '4:30 PM' }],
+    resources: [
+      {
+        label: 'Watch the livestream',
+        url: 'https://fan.hudl.com/usa/md/severn/organization/15439/archbishop-spalding-high-school/schedule?date=2026-11-01&range=Week&s=U2NoZWR1bGVFbnRyeTM1MTYzMDMz',
+        hint: 'Hudl Fan — for anyone who cannot be there.',
+      },
+    ],
   },
   {
     no: 62,
