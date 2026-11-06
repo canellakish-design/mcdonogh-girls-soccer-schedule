@@ -82,6 +82,12 @@ export const VENUES = {
     address: '5204 Roland Avenue, Baltimore, MD 21210',
     map: '/venues/roland-park.png',
   },
+  // Stevenson has two soccer venues — Mustang Stadium on Owings Mills
+  // Boulevard and the East Campus field on Garrison Forest Road. Until the
+  // IAAM says which, the pin is the campus itself.
+  'Stevenson University': {
+    address: 'Stevenson University, Owings Mills, MD 21117',
+  },
 }
 
 // Google Maps directions from wherever the viewer is. No API key needed.
@@ -2073,6 +2079,29 @@ export const schedule = [
   },
   // Paul VI (NJ) is parked — they can only play on a weekend, and no weekend in the
   // Sep 30 → Oct 9 gap is available. Re-add with a weekend sortDate if a date is agreed.
+  // Championship day runs in three parts, so it gets three cards. They sit
+  // here in the order they happen — the list sorts by date alone, so within
+  // a day the array order is the running order.
+  {
+    no: 105,
+    date: 'Sat, Nov 7',
+    sortDate: '2026-11-07',
+    type: 'event',
+    title: 'Board Room meeting',
+    time: '10:00 AM',
+    location: 'McDonogh — Board Room',
+    note: 'Championship morning starts here. Training straight after.',
+  },
+  {
+    no: 106,
+    date: 'Sat, Nov 7',
+    sortDate: '2026-11-07',
+    type: 'training',
+    time: '10:45 AM',
+    location: 'McDonogh — Field 16',
+    focus: 'Championship morning session',
+    note: 'Straight out after the Board Room meeting. Then home to rest and relax.',
+  },
   {
     no: 64,
     date: 'Sat, Nov 7',
@@ -2081,18 +2110,12 @@ export const schedule = [
     home: 'neutral',
     playoff: true,
     opponent: 'IAAM Championship',
-    time: 'TBA',
+    time: '5:30 PM',
     arrive: '3:15 PM',
-    location: 'TBD',
+    location: 'Stevenson University',
     result: '',
     focus: '',
-    note:
-      'The day:\n\n' +
-      '10:00 AM — Board Room meeting\n' +
-      '10:45 AM — training\n' +
-      'Then home to rest and relax\n' +
-      '3:15 PM — meet at school\n' +
-      '4:00 PM — we leave\n\n' +
-      'Kick-off time and venue to follow.',
+    note: 'Meet at school at 3:15. We leave at 4:00.',
+    changed: [{ field: 'Kick-off', from: 'TBA', to: '5:30 PM' }],
   },
 ]
