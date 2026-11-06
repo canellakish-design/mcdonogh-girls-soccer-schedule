@@ -2057,7 +2057,7 @@ export const schedule = [
     time: '4:00 PM',
     location: 'McDonogh — Field 16',
     focus: 'Training',
-    note: '',
+    note: 'Meet in the Board Room at 3:45 before we go out.',
   },
   // Added session — weekends are otherwise off.
   {
@@ -2082,9 +2082,17 @@ export const schedule = [
     playoff: true,
     opponent: 'IAAM Championship',
     time: 'TBA',
+    arrive: '3:15 PM',
     location: 'TBD',
     result: '',
     focus: '',
-    note: 'If we qualify.',
+    note:
+      'The day:\n\n' +
+      '10:00 AM — Board Room meeting\n' +
+      '10:45 AM — training\n' +
+      'Then home to rest and relax\n' +
+      '3:15 PM — meet at school\n' +
+      '4:00 PM — we leave\n\n' +
+      'Kick-off time and venue to follow.',
   },
 ]
