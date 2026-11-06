@@ -2083,24 +2083,27 @@ export const schedule = [
   // here in the order they happen — the list sorts by date alone, so within
   // a day the array order is the running order.
   {
+    no: 106,
+    date: 'Sat, Nov 7',
+    sortDate: '2026-11-07',
+    type: 'training',
+    time: '10:00 AM',
+    // 45 minutes, not the usual 90 — the Board Room meeting is at 10:45, so
+    // the default would have the two overlapping in a calendar app.
+    minutes: 45,
+    location: 'McDonogh — Field 16',
+    focus: 'Championship morning session',
+    note: 'Championship morning starts here. Board Room meeting straight after.',
+  },
+  {
     no: 105,
     date: 'Sat, Nov 7',
     sortDate: '2026-11-07',
     type: 'event',
     title: 'Board Room meeting',
-    time: '10:00 AM',
-    location: 'McDonogh — Board Room',
-    note: 'Championship morning starts here. Training straight after.',
-  },
-  {
-    no: 106,
-    date: 'Sat, Nov 7',
-    sortDate: '2026-11-07',
-    type: 'training',
     time: '10:45 AM',
-    location: 'McDonogh — Field 16',
-    focus: 'Championship morning session',
-    note: 'Straight out after the Board Room meeting. Then home to rest and relax.',
+    location: 'McDonogh — Board Room',
+    note: 'Straight in off the field. Then home to rest and relax.',
   },
   {
     no: 64,
