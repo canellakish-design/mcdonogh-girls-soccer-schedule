@@ -82,11 +82,10 @@ export const VENUES = {
     address: '5204 Roland Avenue, Baltimore, MD 21210',
     map: '/venues/roland-park.png',
   },
-  // Stevenson has two soccer venues — Mustang Stadium on Owings Mills
-  // Boulevard and the East Campus field on Garrison Forest Road. Until the
-  // IAAM says which, the pin is the campus itself.
-  'Stevenson University': {
-    address: 'Stevenson University, Owings Mills, MD 21117',
+  // Stevenson has two soccer venues. This is the stadium one, on Owings
+  // Mills Boulevard — not the East Campus field on Garrison Forest Road.
+  'Stevenson University — Mustang Stadium': {
+    address: '11005 Owings Mills Boulevard, Owings Mills, MD 21117',
   },
 }
 
@@ -2115,7 +2114,7 @@ export const schedule = [
     opponent: 'IAAM Championship',
     time: '5:30 PM',
     arrive: '3:15 PM',
-    location: 'Stevenson University',
+    location: 'Stevenson University — Mustang Stadium',
     result: '',
     focus: '',
     note: 'Meet at school at 3:15. We leave at 4:00.',
