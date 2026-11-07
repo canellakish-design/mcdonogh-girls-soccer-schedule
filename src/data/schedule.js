@@ -2086,13 +2086,14 @@ export const schedule = [
     date: 'Sat, Nov 7',
     sortDate: '2026-11-07',
     type: 'training',
-    time: '10:00 AM',
-    // 45 minutes, not the usual 90 — the Board Room meeting is at 10:45, so
-    // the default would have the two overlapping in a calendar app.
-    minutes: 45,
+    time: '10:30 AM',
+    // Short, and the Board Room meeting follows — the usual 90 would have
+    // the two overlapping in a calendar app.
+    minutes: 30,
     location: 'McDonogh — Field 16',
     focus: 'Championship morning session',
     note: 'Championship morning starts here. Board Room meeting straight after.',
+    changed: [{ field: 'Time', from: '10:00 AM', to: '10:30 AM' }],
   },
   {
     no: 105,
@@ -2100,9 +2101,13 @@ export const schedule = [
     sortDate: '2026-11-07',
     type: 'event',
     title: 'Board Room meeting',
-    time: '10:45 AM',
+    time: '11:00 AM',
+    minutes: 45,
     location: 'McDonogh — Board Room',
-    note: 'Straight in off the field. Then home to rest and relax.',
+    note:
+      'Straight in off the field. Finishes around 11:30–11:45, then home ' +
+      'to rest and relax.\n\n' +
+      'Back at McDonogh for 3:15. The bus leaves at 4:00.',
   },
   {
     no: 64,
