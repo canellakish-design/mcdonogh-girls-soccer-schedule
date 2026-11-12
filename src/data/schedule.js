@@ -302,17 +302,9 @@ export const practicePoints = {
 export const uniformReturn = {
   where: 'Mary Beth Todd’s office',
   warning: 'Anything not returned is charged to the family.',
-  items: [
-    'White shirt',
-    'Black shirt',
-    'Grey practice shirt',
-    'Black training top',
-    'White shorts',
-    'Black shorts',
-    'Blue shorts',
-    'White socks',
-    'Black socks',
-  ],
+  // Match kit only. Practice tops, training gear and socks are the
+  // players' own and stay with them.
+  items: ['Black top', 'Black shorts', 'White top', 'White shorts'],
   // Nothing is back yet. Add items as they come in, e.g. Zoe: ['White shirt'].
   returned: {},
 }
@@ -2174,9 +2166,10 @@ export const schedule = [
     location: 'McDonogh — Mary Beth Todd’s office',
     uniformReturn: true,
     note:
-      'Every uniform item goes back to Mary Beth Todd’s office. Anything ' +
-      'not returned is charged to the family.\n\n' +
-      'Wash it, bring the whole kit in together, and hand it to Mary Beth ' +
-      'in person so she can check it off.',
+      'Four items go back: black top, black shorts, white top, white ' +
+      'shorts. They go to Mary Beth Todd’s office, and anything not ' +
+      'returned is charged to the family.\n\n' +
+      'Wash them, bring all four in together, and hand them to Mary Beth ' +
+      'in person so she can check you off.',
   },
 ]
