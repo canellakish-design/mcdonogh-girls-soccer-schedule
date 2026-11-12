@@ -31,6 +31,14 @@ export const TEAM = {
   season: 'Fall 2026',
   title: 'Team Schedule',
   coaches: 'Harry Canellakis · Mary Beth Todd',
+  // The site now covers three programmes, not one. `school` and `program`
+  // above still name the varsity side, which is what the calendar feeds are
+  // called — renaming those would break every existing subscription.
+  programs: [
+    { name: 'McDonogh Varsity Girls Soccer', when: 'Fall' },
+    { name: 'Phantoms Futsal', when: 'Winter' },
+    { name: 'Phantoms 7v7', when: 'Summer' },
+  ],
 }
 
 // ---------------------------------------------------------------------
@@ -280,6 +288,33 @@ export const practicePoints = {
         'counts as its own thing, not as goals on top.',
     },
   ],
+}
+
+// ---------------------------------------------------------------------
+// UNIFORM RETURN — the end-of-season check-in grid. Every player starts
+// owing every item; a name moves to green only once Harry says it is in.
+//
+// `returned` maps a player to the items she has handed back, by the same
+// label used in `items`. An empty list, or no entry at all, means nothing
+// is in yet. Names come from roster.js, so the grid cannot drift from the
+// squad list.
+// ---------------------------------------------------------------------
+export const uniformReturn = {
+  where: 'Mary Beth Todd’s office',
+  warning: 'Anything not returned is charged to the family.',
+  items: [
+    'White shirt',
+    'Black shirt',
+    'Grey practice shirt',
+    'Black training top',
+    'White shorts',
+    'Black shorts',
+    'Blue shorts',
+    'White socks',
+    'Black socks',
+  ],
+  // Nothing is back yet. Add items as they come in, e.g. Zoe: ['White shirt'].
+  returned: {},
 }
 
 // ---------------------------------------------------------------------
@@ -2124,5 +2159,24 @@ export const schedule = [
     focus: '',
     note: 'Meet at school at 3:15. We leave at 4:00.',
     changed: [{ field: 'Kick-off', from: 'TBA', to: '5:30 PM' }],
+  },
+  // Last thing on the calendar, and pinned so it sits above the list while
+  // everything else scrolls under it. The instructions are public; the grid
+  // of who still owes what is behind the players' code.
+  {
+    no: 107,
+    date: 'Mon, Nov 30',
+    sortDate: '2026-11-30',
+    type: 'event',
+    pinned: true,
+    title: 'Uniform return',
+    time: 'TBA',
+    location: 'McDonogh — Mary Beth Todd’s office',
+    uniformReturn: true,
+    note:
+      'Every uniform item goes back to Mary Beth Todd’s office. Anything ' +
+      'not returned is charged to the family.\n\n' +
+      'Wash it, bring the whole kit in together, and hand it to Mary Beth ' +
+      'in person so she can check it off.',
   },
 ]

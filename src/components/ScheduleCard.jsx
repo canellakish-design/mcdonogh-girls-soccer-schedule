@@ -86,7 +86,9 @@ export default function ScheduleCard({ item, highlight, observance }) {
 
       <span className="card-main">
         {highlight && (
-          <span className="card-flag">{highlight === 'today' ? 'Today' : 'Next up'}</span>
+          <span className="card-flag">
+            {highlight === 'today' ? 'Today' : highlight === 'pinned' ? 'Action needed' : 'Next up'}
+          </span>
         )}
         <span className="card-title">{matchTitle(item)}</span>
         {/* No date here — the box on the left already carries it. */}

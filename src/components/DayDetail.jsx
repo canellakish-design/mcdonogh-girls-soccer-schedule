@@ -5,6 +5,7 @@ import PracticePoints from './PracticePoints.jsx'
 import PlayerGate from './PlayerGate.jsx'
 import ChangeNotice from './ChangeNotice.jsx'
 import Assignment from './Assignment.jsx'
+import UniformReturn from './UniformReturn.jsx'
 import { usePlayerAccess } from '../playerAccess.jsx'
 import {
   clearance,
@@ -116,6 +117,14 @@ export default function DayDetail({ item }) {
       )}
 
       {item.note && <p className="detail-note">{item.note}</p>}
+
+      {/* The instructions above are for everyone. Who still owes what is
+          squad business, so the grid sits behind the players' code. */}
+      {item.uniformReturn && (
+        unlocked
+          ? <UniformReturn />
+          : <PlayerGate what="The uniform return grid" />
+      )}
 
       {/* Links attached to a day — the Yo-Yo description and recording, say. */}
       {item.resources?.length > 0 && (

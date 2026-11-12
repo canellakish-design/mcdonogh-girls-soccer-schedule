@@ -24,8 +24,10 @@ function Masthead() {
           <img className="crest" src="/eagle-orange.png" alt="McDonogh Eagles" />
         </a>
         <div className="masthead-text">
-          <p className="eyebrow">{TEAM.school} · {TEAM.program}</p>
-          <h1>{TEAM.title}</h1>
+          <h1>{TEAM.programs[0].name}</h1>
+          <p className="eyebrow">
+            {TEAM.programs.slice(1).map((p) => p.name).join(' · ')}
+          </p>
           <p className="season">{TEAM.season}</p>
         </div>
       </div>
@@ -78,7 +80,7 @@ function Subscribe() {
 function Footer() {
   return (
     <footer className="site-footer">
-      <p>{TEAM.school} — {TEAM.program} · {TEAM.season}</p>
+      <p>{TEAM.programs.map((p) => p.name).join(' · ')}</p>
       <p className="fine">Coaches: {TEAM.coaches}</p>
     </footer>
   )
@@ -112,13 +114,17 @@ function ListView() {
     [],
   )
 
-  const { upcoming, past } = useMemo(() => {
+  const { pinned, upcoming, past } = useMemo(() => {
     const rows = schedule
       .filter((d) => filter === 'all' || d.type === filter)
       .sort((a, b) => (a.sortDate || '').localeCompare(b.sortDate || ''))
+    // A pinned day is lifted out of the run of dates and sits above the
+    // list, so it stays put while everything else scrolls under it.
+    const rest = rows.filter((d) => !d.pinned)
     return {
-      upcoming: rows.filter((d) => (d.sortDate || '') >= today), // today floats to the top
-      past: rows.filter((d) => (d.sortDate || '') < today).reverse(), // most recent first
+      pinned: rows.filter((d) => d.pinned),
+      upcoming: rest.filter((d) => (d.sortDate || '') >= today), // today floats to the top
+      past: rest.filter((d) => (d.sortDate || '') < today).reverse(), // most recent first
     }
   }, [filter, today])
 
@@ -198,6 +204,14 @@ function ListView() {
         </div>
         <span className="count">{upcoming.length} upcoming</span>
       </div>
+
+      {pinned.length > 0 && (
+        <div className="pinned">
+          {pinned.map((item) => (
+            <ScheduleCard key={item.no} item={item} highlight="pinned" />
+          ))}
+        </div>
+      )}
 
       <div className="list">
         {upcoming.map((item, i) => (
